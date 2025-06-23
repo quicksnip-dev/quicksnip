@@ -48,6 +48,21 @@ app.get("/languages", (_req, res) => {
   return;
 });
 
+// Get all content (consolidated file) for language
+app.get("/languages/:language", (req, res) => {
+  const { language } = req.params;
+
+  const file = path.join(dataDir, `consolidated/${language}.json`);
+  const json = readJSON(file);
+  if (!json) {
+    res.status(404).json({ error: "Language file not found" });
+    return;
+  }
+
+  res.json(json);
+  return;
+});
+
 // Get all categories for a given language
 app.get("/categories/:language", (req, res) => {
   const { language } = req.params;
