@@ -1,56 +1,36 @@
-# QuickSnip
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-QuickSnip is an open-source tool designed for developers who want to organize, search, and share code snippets across various programming languages. It provides a centralized platform for managing handy snippets. Built with love and powered by an awesome community. 🚀
+## Getting Started
 
-<div>
-<a href="https://youtu.be/BhRi7fJzPgk?si=z1sVXU7uRS0bkSEt" target="_blank">
-  <img src="https://img.shields.io/static/v1?label=&message=Watch%20on%20YouTube&labelColor=FFFFFF&color=FF0000&style=for-the-badge&logo=youtube&logoColor=FF0000" alt="Watch on YouTube">
-</a>
-<div>
+First, run the development server:
 
-<br>
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-![Website preview](/preview.png)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## How to Contribute
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-Want to help make QuickSnip even better? You can contribute by:
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-- **Improving the Code**: Fix bugs, suggest new features, or optimize the project.
-- **Adding New Snippets**: Share your favorite snippets to grow the database.
+## Learn More
 
-Check out the [CONTRIBUTING.md](/CONTRIBUTING.md) file for detailed contribution guidelines.
+To learn more about Next.js, take a look at the following resources:
 
-## General Rules
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-To keep everything smooth and consistent, please:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-- [x] Follow the project’s style and contribution rules.
-- [x] Be kind and respectful to others.
-- [x] If you’re unsure, ask questions.
+## Deploy on Vercel
 
-Following these rules helps us build an awesome community. 🚀
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Third-Party
-
-We love to see the creativity of our community! If you build something using QuickSnip, let us know. Here are some featured examples:
-
-- ⚡️ [**Raycast Extension**](https://www.raycast.com/anders_morille/quicksnip): An extension to browse and use QuickSnip snippets directly from Raycast. (Thanks to the creator: [@lille-morille](https://github.com/lille-morille))
-
-If you’d like to create your own extension or tool:
-
-- [x] Please ensure it adheres to our project’s licensing and attribution requirements.
-- [x] Please link to the [original QuickSnip repository](https://github.com/technoph1le/quicksnip) in your extension/tool to attribute the source.
-- [x] Share your work with us — we’d be thrilled to feature it!
-
-## Project Vision
-
-For a detailed look into our goals, future direction, and aspirations, see the [VISION.md](/VISION.md) file.
-
-## License
-
-QuickSnip is licensed under the [MIT License](/LICENSE). Feel free to use and share it as you like.
-
-<a href="https://www.producthunt.com/products/quicksnip" target="_blank" style="text-decoration: none;">
-  <img src="https://img.shields.io/static/v1?label=&message=Leave%20a%20Review&labelColor=FFFFFF&color=DA552F&style=for-the-badge&logo=product-hunt&logoColor=DA552F" alt="Leave a Review">
-</a>
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
