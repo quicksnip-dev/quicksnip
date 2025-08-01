@@ -45,20 +45,20 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
+  --background: hsl(0, 0%, 95%);
+  --foreground: hsl(0, 0%, 16%);
+  --card: hsl(0, 0%, 90%);
+  --card-foreground: hsl(0, 0%, 24%);
+  --popover: hsl(0, 0%, 90%);
+  --popover-foreground: hsl(0, 0%, 24%);
+  --primary: hsl(0, 0%, 95%);
+  --primary-foreground: hsl(0, 0%, 11%);
+  --secondary: hsl(0, 0%, 90%);
+  --secondary-foreground: hsl(0, 0%, 16%);
+  --muted: hsl(0, 0%, 80%);
+  --muted-foreground: hsl(0, 0%, 24%);
+  --accent: hsl(181, 100%, 22%);
+  --accent-foreground: hsl(0, 0%, 11%);
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
@@ -79,20 +79,20 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --background: hsl(0, 0%, 11%);
+  --foreground: hsl(0, 0%, 90%);
+  --card: hsl(0, 0%, 16%);
+  --card-foreground: hsl(0, 0%, 80%);
+  --popover: hsl(0, 0%, 16%);
+  --popover-foreground: hsl(0, 0%, 80%);
+  --primary: hsl(0, 0%, 11%);
+  --primary-foreground: hsl(0, 0%, 90%);
+  --secondary: hsl(0, 0%, 16%);
+  --secondary-foreground: hsl(0, 0%, 80%);
+  --muted: hsl(0, 0%, 24%);
+  --muted-foreground: hsl(0, 0%, 70%);
+  --accent: hsl(181, 100%, 36%);
+  --accent-foreground: hsl(0, 0%, 11%);
   --destructive: oklch(0.704 0.191 22.216);
   --border: oklch(1 0 0 / 10%);
   --input: oklch(1 0 0 / 15%);
@@ -118,5 +118,11 @@
   }
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply max-w-7xl mx-auto px-4;
   }
 }
