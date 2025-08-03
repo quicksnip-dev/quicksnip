@@ -2,29 +2,28 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import { Menu, X, ArrowRight, Zap, Search, Gamepad, Cat } from "lucide-react";
+import { Menu, X, Gamepad, Cat } from "lucide-react";
 import Link from "next/link";
 import Logo from "../Logo";
-import { Switch } from "../ui/switch";
-import { Label } from "../ui/label";
 import DarkModeSwitch from "../DarkModeSwitch";
+import Image from "next/image";
 
 const NAV_ITEMS = [
   { name: "Snippets", url: "/snippets" },
   { name: "Guide", url: "/guide" },
   { name: "Extensions", url: "/extensions" },
-  { name: "Contribute", url: "/contribute" },
-  { name: "License", url: "/license" },
+  { name: "Community", url: "/community" },
+  { name: "Contribute", url: "/contributing" },
 ];
 
 const SOCIAL_ITEMS = [
   {
-    icon: <Cat className="h-6 w-6" />,
+    icon: "/github.svg",
     name: "GitHub",
     url: "https://github.com/quicksnip-dev/quicksnip",
   },
   {
-    icon: <Gamepad className="h-6 w-6" />,
+    icon: "/discord.svg",
     name: "Discord",
     url: "https://discord.com",
   },
@@ -86,6 +85,7 @@ export default function Header() {
 
   return (
     <>
+      <div className="h-16 w-screen" />
       <motion.header
         className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
           isScrolled
@@ -96,7 +96,7 @@ export default function Header() {
         initial="hidden"
         animate="visible"
       >
-        <div className="mx-auto px-4 max-w-[90rem]">
+        <div className="container-lg">
           <div className="flex h-16 items-center justify-between">
             <Logo />
 
@@ -129,8 +129,18 @@ export default function Header() {
                 variants={itemVariants}
               >
                 {SOCIAL_ITEMS.map((item) => (
-                  <Link href={item.url} title={item.name} className="">
-                    {item.icon}
+                  <Link
+                    key={item.name}
+                    href={item.url}
+                    title={item.name}
+                    className=""
+                  >
+                    <Image
+                      src={item.icon}
+                      alt={item.name}
+                      width={24}
+                      height={24}
+                    />
                   </Link>
                 ))}
               </motion.div>

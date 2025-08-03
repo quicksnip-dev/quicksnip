@@ -1,7 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    remotePatterns: [
+      new URL("https://img.youtube.com/vi/**"),
+      new URL("https://storage.ko-fi.com/cdn/**"),
+    ],
+  },
 };
 
 export default nextConfig;

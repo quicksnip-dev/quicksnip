@@ -3,7 +3,7 @@ import { Button } from "../ui/button";
 
 const Hero = () => {
   return (
-    <section className="mt-20">
+    <section>
       <div className="container grid md:grid-cols-2">
         <article className="space-y-6 py-12">
           <Link

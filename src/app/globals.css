@@ -125,4 +125,8 @@
   .container {
     @apply max-w-7xl mx-auto px-4;
   }
+
+  .container-lg {
+    @apply max-w-[90rem] mx-auto px-4;
+  }
 }
