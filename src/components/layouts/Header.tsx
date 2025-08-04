@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import { Menu, X, Gamepad, Cat } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Logo from "../Logo";
 import DarkModeSwitch from "../DarkModeSwitch";
