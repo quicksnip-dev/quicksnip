@@ -1,5 +1,5 @@
 import { createContext, FC, useContext, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useLanguages } from "@hooks/useLanguages";
 import { AppState, LanguageType, SnippetType } from "@types";
@@ -12,7 +12,7 @@ const AppContext = createContext<AppState>(defaultState);
 export const AppProvider: FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { languageName, subLanguageName, categoryName } = useParams();
   const { fetchedLanguages } = useLanguages();
 
@@ -48,17 +48,18 @@ export const AppProvider: FC<{ children: React.ReactNode }> = ({
       !fetchedLanguages.find((lang) => slugify(lang.name) === languageName);
 
     if (isInvalid) {
-      navigate(defaultURLPath, { replace: true });
+      console.log(defaultURLPath);
+      // navigate(defaultURLPath, { replace: true });
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const isLoading = language === null || category === null;
+  // const isLoading = language === null || category === null;
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
   return (
     <AppContext.Provider

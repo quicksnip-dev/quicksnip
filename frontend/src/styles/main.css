@@ -875,3 +875,16 @@ body:has(.modal-overlay) {
   grid-area: footer_content;
   max-width: 60ch;
 }
+
+.migration-screen {
+  display: grid;
+  min-height: 100vh;
+  place-content: center;
+  text-align: center;
+  gap: 1.5rem;
+}
+
+.migration-screen p {
+  max-width: 50ch;
+  margin-inline: auto;
+}
