@@ -6,6 +6,7 @@ import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { DISCORD_URL, GITHUB_URL } from "@/data/meta";
 
 const QUICKSNIP_YT_VIDEOS = [
   {
@@ -31,9 +32,9 @@ const Communitypage = () => {
             >
               <Image
                 src="/github.svg"
-                alt="Discord"
-                width={200}
-                height={200}
+                alt="GitHub"
+                width={150}
+                height={150}
                 className="shadow-[0_0_5rem_1rem_hsl(225,22%,15%)] rounded-[3rem]"
               />
             </motion.div>
@@ -41,11 +42,7 @@ const Communitypage = () => {
               QuickSnip is Open-Source
             </h2>
             <Button size="lg" asChild>
-              <Link
-                href="https://github.com/quicksnip-dev/quicksnip"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
+              <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
                 See the code <ExternalLink />
               </Link>
             </Button>
@@ -59,8 +56,8 @@ const Communitypage = () => {
               <Image
                 src="/discord.svg"
                 alt="Discord"
-                width={200}
-                height={200}
+                width={150}
+                height={150}
                 className="shadow-[0_0_5rem_1rem_hsl(235,86%,65%,0.5)] rounded-[3rem]"
               />
             </motion.div>
@@ -69,7 +66,7 @@ const Communitypage = () => {
             </h2>
             <Button size="lg" asChild>
               <Link
-                href="https://discord.com/invite/Nm5K46yUy5"
+                href={DISCORD_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >

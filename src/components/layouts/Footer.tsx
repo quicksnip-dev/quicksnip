@@ -27,7 +27,7 @@ const NAV_ITEMS = [
 
 const Footer = () => {
   return (
-    <footer className="border-t border-secondary text-secondary-foreground">
+    <footer className="h-16 border-t border-secondary text-secondary-foreground">
       <div className="container-lg py-8 grid gap-8 md:grid-cols-[1fr_auto]">
         <p>
           Released under the{" "}

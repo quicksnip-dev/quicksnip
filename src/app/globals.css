@@ -136,3 +136,23 @@
     @apply max-w-[90rem] mx-auto px-4;
   }
 }
+
+#nd-docs-layout {
+  display: grid;
+  gap: 1rem;
+  padding: 0 !important;
+
+  @media (min-width: 800px) {
+    grid-template-columns: auto auto auto;
+  }
+}
+
+#nd-sidebar {
+  bottom: 3rem;
+  position: initial;
+  background: var(--background);
+}
+
+#nd-page {
+  /* border: 1px solid green; */
+}
