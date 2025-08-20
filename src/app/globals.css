@@ -128,12 +128,20 @@
 }
 
 @layer utilities {
-  .container {
-    @apply max-w-7xl mx-auto px-4;
+  .wrapper {
+    @apply max-w-7xl w-full mx-auto px-4;
   }
 
-  .container-lg {
-    @apply max-w-[90rem] mx-auto px-4;
+  .wrapper-sm {
+    @apply max-w-6xl w-full mx-auto px-4;
+  }
+
+  .wrapper-xs {
+    @apply max-w-4xl w-full mx-auto px-4;
+  }
+
+  .wrapper-lg {
+    @apply max-w-[90rem] w-full mx-auto px-4;
   }
 }
 

@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Features />
       <FeaturedExtensions />
-      {/* <div className="container">
+      {/* <div className="wrapper">
         <Link href="https://ko-fi.com/D1D217QALD" target="_blank">
           <Image
             width={100}

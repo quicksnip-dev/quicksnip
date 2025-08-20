@@ -8,7 +8,7 @@ import type { ExtensionType } from "@/types";
 export const FeaturedExtensions = () => {
   return (
     <section>
-      <div className="container py-8 grid justify-items-center gap-6">
+      <div className="wrapper py-8 grid justify-items-center gap-6">
         <h2 className="text-center text-2xl">Available for:</h2>
         <div className="flex gap-4 flex-wrap">
           {EXTENSIONS.map((extension) => (

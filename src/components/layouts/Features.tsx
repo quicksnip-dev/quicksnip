@@ -42,7 +42,7 @@ const features = [
 export default function Features() {
   return (
     <section className="relative py-4 my-6">
-      <div className="container">
+      <div className="wrapper">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((item, idx) => (
             <li key={idx} className="space-y-3 rounded-xl bg-card p-6">

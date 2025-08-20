@@ -42,18 +42,6 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const containerVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
   const itemVariants = {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
@@ -88,16 +76,13 @@ export default function Header() {
     <>
       <div className="h-16 w-screen" />
       <motion.header
-        className={`fixed top-0 right-0 left-0 z-50 transition-all duration-500 ${
+        className={`fixed top-0 right-0 left-0 z-50 transition-all border-b border-border/50 duration-500 ${
           isScrolled
-            ? "border-border/50 bg-background/80 border-b shadow-sm backdrop-blur-md"
+            ? "bg-background/80 shadow-sm backdrop-blur-md"
             : "bg-transparent"
         }`}
-        variants={containerVariants}
-        initial="hidden"
-        animate="visible"
       >
-        <div className="container-lg">
+        <div className="wrapper-lg">
           <div className="flex h-16 items-center justify-between">
             <Logo />
 

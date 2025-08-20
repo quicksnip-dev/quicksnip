@@ -23,7 +23,7 @@ const Communitypage = () => {
   return (
     <>
       <section>
-        <div className="container grid py-20 gap-8 lg:grid-cols-2">
+        <div className="wrapper grid py-20 gap-8 lg:grid-cols-2">
           <div className="space-y-8 grid justify-items-center">
             <motion.div
               whileHover={{ rotate: "10deg", scale: 1.1 }}
@@ -78,7 +78,7 @@ const Communitypage = () => {
       </section>
 
       <section>
-        <div className="container pt-8 pb-16 space-y-8">
+        <div className="wrapper pt-8 pb-16 space-y-8">
           <h2 className="text-xl text-muted-foreground font-bold text-center">
             Videos from Technophile
           </h2>

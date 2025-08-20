@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 const Hero = () => {
   return (
     <section>
-      <div className="container grid md:grid-cols-2">
+      <div className="wrapper grid md:grid-cols-2">
         <article className="space-y-6 py-12">
           <Link
             className="block bg-secondary px-4 py-2 rounded-md w-fit text-lg font-semibold hover:bg-muted transition-colors duration-200 leading-none"

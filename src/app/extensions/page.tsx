@@ -20,7 +20,7 @@ export const ExtensionsAvatarGroup = () => {
 const ExtensionsPage = () => {
   return (
     <section>
-      <div className="container py-8 space-y-8">
+      <div className="wrapper py-8 space-y-8">
         <h2 className="text-3xl font-bold text-center">Extensions</h2>
         <ul className="grid gap-4 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3">
           {EXTENSIONS.map((extension) => (
