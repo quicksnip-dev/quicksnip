@@ -1,0 +1,7 @@
+{
+  "title": "Reverse String",
+  "description": "Reverses the characters in a string.",
+  "languages": ["js", "cpp", "py"],
+  "contributors": ["technoph1le", "Vaibhav-kesarwani"],
+  "tags": ["string", "reverse"]
+}

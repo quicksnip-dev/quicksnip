@@ -1,0 +1,12 @@
+{
+  "title": "Truncate String",
+  "description": "Truncates a string after a specified length.",
+  "languages": ["js", "java", "py"],
+  "contributors": [
+    "realvishalrana",
+    "Mcbencrafter",
+    "axorax",
+    "MinerMinerMods"
+  ],
+  "tags": ["string", "truncate", "mask", "hide"]
+}
