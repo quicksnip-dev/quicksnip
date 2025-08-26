@@ -1,0 +1,28 @@
+{
+  "id": "truncate-sring",
+  "category": "string-manipulation",
+  "title": "Truncate String",
+  "description": "Truncates a string after a specified length.",
+  "languages": [
+    "js",
+    "java",
+    "py"
+  ],
+  "contributors": [
+    "realvishalrana",
+    "Mcbencrafter",
+    "axorax",
+    "MinerMinerMods"
+  ],
+  "tags": [
+    "string",
+    "truncate",
+    "mask",
+    "hide"
+  ],
+  "snippets": {
+    "js": "const truncateText = (text = '', maxLength = 50) => {\r\n  return `${text.slice(0, maxLength)}${text.length >= maxLength ? '...' : ''}`;\r\n};\r\n\r\n// Usage:\r\nconst title = \"Hello, World! This is a Test.\";\r\ntruncateText(title, 10); // Returns: 'Hello, Wor...'",
+    "java": "public static String truncate(String text, int length, String suffix) {\r\n    if (text.length() <= length)\r\n        return text;\r\n    \r\n    return text.substring(0, length).trim() + (suffix != null ? suffix : \"\");\r\n}\r\n\r\n// Usage:\r\nSystem.out.println(truncate(\"hello world\", 5, \"...\")); // \"hello...\"",
+    "py": "def truncate(s:str, length:int, suffix:bool = True) -> str :\r\n    return (s[:length] + (\"...\" if suffix else \"\")) if len(s) > length else s\r\n\r\n# Usage:\r\ntruncate('This is a long string', 10) # Returns: 'This is a ...'\r\ntruncate('This is a long string', 10, False) # Returns: 'This is a '"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "id": "string-to-snake-case",
+  "category": "string-manipulation",
+  "title": "Convert String to Snake Case",
+  "description": "Converts a given string into snake_case.",
+  "languages": [
+    "js",
+    "java"
+  ],
+  "contributors": [
+    "axorax",
+    "Mcbencrafter"
+  ],
+  "tags": [
+    "string",
+    "case"
+  ],
+  "snippets": {
+    "js": "function toSnakeCase(str) {\r\n  return str.replace(/([a-z])([A-Z])/g, '$1_$2')\r\n            .replace(/\\s+/g, '_')\r\n            .toLowerCase();\r\n}\r\n\r\n// Usage:\r\ntoSnakeCase('Hello World Test'); // Returns: 'hello_world_test'",
+    "java": "public static String stringToSnakeCase(String text) {\r\n    return text.toLowerCase().replaceAll(\"\\\\s+\", \"_\");\r\n}\r\n\r\n// Usage:\r\nSystem.out.println(stringToSnakeCase(\"Hello World 123\")); // \"hello_world_123\""
+  }
+}

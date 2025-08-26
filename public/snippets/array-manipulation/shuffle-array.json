@@ -1,0 +1,20 @@
+{
+  "id": "shuffle-array",
+  "category": "array-manipulation",
+  "title": "Shuffle Array",
+  "description": "Shuffles the items in an array.",
+  "languages": [
+    "js"
+  ],
+  "contributors": [
+    "loxt-nixo"
+  ],
+  "tags": [
+    "array",
+    "shuffle",
+    "random"
+  ],
+  "snippets": {
+    "js": "function shuffleArray(array) {\r\n    for (let i = array.length - 1; i >= 0; i--) {\r\n        const j = Math.floor(Math.random() * (i + 1));\r\n        [array[i], array[j]] = [array[j], array[i]];\r\n    }\r\n}\r\n\r\n// Usage:\r\nconst array = [1, 2, 3, 4, 5];\r\nshuffleArray(array); // Shuffles `array` in place"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "id": "reverse-string",
+  "category": "string-manipulation",
+  "title": "Reverse String",
+  "description": "Reverses the characters in a string.",
+  "languages": [
+    "js",
+    "cpp",
+    "py"
+  ],
+  "contributors": [
+    "technoph1le",
+    "Vaibhav-kesarwani"
+  ],
+  "tags": [
+    "string",
+    "reverse"
+  ],
+  "snippets": {
+    "js": "const reverseString = (str) => str.split('').reverse().join('');\r\n\r\n// Usage:\r\nreverseString('hello'); // Returns: 'olleh'",
+    "cpp": "#include <string>\r\n#include <algorithm>\r\n\r\nstd::string reverseString(const std::string& input) {\r\n    std::string reversed = input;\r\n    std::reverse(reversed.begin(), reversed.end());\r\n    return reversed;\r\n}\r\n\r\n// Usage:\r\nreverseString(\"quicksnip\"); // Returns: \"pinskciuq\"",
+    "py": "def reverse_string(s:str) -> str:\r\n    return s[::-1]\r\n\r\n# Usage:\r\nreverse_string('hello') # Returns: 'olleh'"
+  }
+}

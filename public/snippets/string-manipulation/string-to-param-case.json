@@ -1,0 +1,22 @@
+{
+  "id": "string-to-param-case",
+  "category": "string-manipulation",
+  "title": "Convert String to Param Case",
+  "description": "Converts a given string into param-case.",
+  "languages": [
+    "js",
+    "java"
+  ],
+  "contributors": [
+    "aumirza",
+    "Mcbencrafter"
+  ],
+  "tags": [
+    "string",
+    "case"
+  ],
+  "snippets": {
+    "js": "function toParamCase(str) {\r\n  return str.toLowerCase().replace(/\\s+/g, '-');\r\n}\r\n\r\n// Usage:\r\ntoParamCase('Hello World Test'); // Returns: 'hello-world-test'",
+    "java": "public static String stringToParamCase(String text) {\r\n    return text.toLowerCase().replaceAll(\"\\\\s+\", \"-\");\r\n}\r\n\r\n// Usage:\r\nSystem.out.println(stringToParamCase(\"Hello World 123\")); // \"hello-world-123\""
+  }
+}
