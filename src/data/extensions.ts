@@ -2,6 +2,14 @@ import type { ExtensionType } from "@/types";
 
 export const EXTENSIONS: ExtensionType[] = [
   {
+    icon: "/extensions/cli.svg",
+    name: "CLI",
+    description: "CLI extension for QuickSnip.",
+    guide_url: "/guide/extensions/quicksnip-cli",
+    source_url: "https://github.com",
+    downloads: 9865,
+  },
+  {
     icon: "/extensions/raycast.svg",
     name: "Raycast",
     description: "Raycast extension for QuickSnip.",

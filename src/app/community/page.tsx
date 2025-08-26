@@ -31,7 +31,7 @@ const Communitypage = () => {
               transition={{ type: "spring" }}
             >
               <Image
-                src="/github.svg"
+                src="/icons/github.svg"
                 alt="GitHub"
                 width={150}
                 height={150}
@@ -54,7 +54,7 @@ const Communitypage = () => {
               transition={{ type: "spring" }}
             >
               <Image
-                src="/discord.svg"
+                src="/icons/discord.svg"
                 alt="Discord"
                 width={150}
                 height={150}

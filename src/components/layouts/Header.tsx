@@ -19,12 +19,12 @@ const NAV_ITEMS = [
 
 const SOCIAL_ITEMS = [
   {
-    icon: "/github.svg",
+    icon: "/icons/github.svg",
     name: "GitHub",
     url: GITHUB_URL,
   },
   {
-    icon: "/discord.svg",
+    icon: "/icons/discord.svg",
     name: "Discord",
     url: DISCORD_URL,
   },
@@ -148,6 +148,7 @@ export default function Header() {
         </div>
       </motion.header>
 
+      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
