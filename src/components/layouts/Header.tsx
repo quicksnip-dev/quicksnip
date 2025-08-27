@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Logo from "../ui/Logo";
+import Logo from "../ui/logo";
 import DarkModeSwitch from "../ui/dark-mode-switch";
 import Image from "next/image";
 import { DISCORD_URL, GITHUB_URL } from "@/data/meta";
