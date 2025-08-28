@@ -1,4 +1,3 @@
-import Logo from "@/components/ui/Logo";
 import { BaseLayoutProps } from "fumadocs-ui/layouts/shared";
 
 export const baseOptions: BaseLayoutProps = {

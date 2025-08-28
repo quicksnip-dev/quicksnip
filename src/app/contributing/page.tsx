@@ -13,10 +13,9 @@ export default function ContributingPage() {
     <article className="wrapper-xs py-8 lg:py-16 prose dark:prose-invert">
       <Markdown
         remarkPlugins={[remarkGfm]}
-        children={fileContent}
         components={{
           code(props) {
-            const { children, className, node, ...rest } = props;
+            const { children, className, ...rest } = props;
             const match = /language-(\w+)/.exec(className || "");
             return match ? (
               <SyntaxHighlighter language={match[1]} style={oneDark}>
@@ -29,7 +28,9 @@ export default function ContributingPage() {
             );
           },
         }}
-      />
+      >
+        {fileContent}
+      </Markdown>
     </article>
   );
 }

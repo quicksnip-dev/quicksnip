@@ -14,7 +14,7 @@ const NAV_ITEMS = [
   { name: "Guide", url: "/guide" },
   { name: "Extensions", url: "/extensions" },
   { name: "Community", url: "/community" },
-  { name: "Contribute", url: "/contributing" },
+  { name: "Contributing", url: "/contributing" },
 ];
 
 const SOCIAL_ITEMS = [
