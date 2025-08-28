@@ -6,6 +6,7 @@ import {
   Book,
   PlusCircle,
 } from "lucide-react";
+import { Card, CardContent, CardHeader } from "../ui/card";
 
 const features = [
   {
@@ -45,13 +46,17 @@ export default function Features() {
       <div className="wrapper">
         <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((item, idx) => (
-            <li key={idx} className="space-y-3 rounded-xl bg-card p-6">
-              <div className="text-accent w-fit transform-gpu rounded-full bg-background p-4">
-                {item.icon}
-              </div>
-              <h4 className="text-lg font-bold">{item.title}</h4>
-              <p className="text-muted-foreground">{item.desc}</p>
-            </li>
+            <Card key={idx}>
+              <CardHeader>
+                <div className="text-accent w-fit transform-gpu rounded-full bg-background p-4">
+                  {item.icon}
+                </div>
+              </CardHeader>
+              <CardContent>
+                <h4 className="text-lg font-bold">{item.title}</h4>
+                <p className="text-muted-foreground">{item.desc}</p>
+              </CardContent>
+            </Card>
           ))}
         </ul>
       </div>

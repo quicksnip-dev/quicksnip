@@ -1,23 +1,10 @@
-import { ExtensionItem } from "@/components/layouts/Extensions";
+import ExtensionItem from "@/components/ui/extension-item";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { EXTENSIONS, FUTURE_EXTENSIONS } from "@/data/extensions";
 
 import Link from "next/link";
 
-export const ExtensionsAvatarGroup = () => {
-  return (
-    <div className="flex -space-x-4">
-      {FUTURE_EXTENSIONS.map((extension) => (
-        <Avatar key={extension.name} className="size-14 bg-secondary p-3">
-          <AvatarImage src={extension.icon} alt={extension.name} />
-          <AvatarFallback>{extension.shortcut_name}</AvatarFallback>
-        </Avatar>
-      ))}
-    </div>
-  );
-};
-
-const ExtensionsPage = () => {
+export default function ExtensionsPage() {
   return (
     <section>
       <div className="wrapper py-8 space-y-8">
@@ -39,9 +26,20 @@ const ExtensionsPage = () => {
       </div>
     </section>
   );
-};
+}
 
-export default ExtensionsPage;
+function ExtensionsAvatarGroup() {
+  return (
+    <div className="flex -space-x-4">
+      {FUTURE_EXTENSIONS.map((extension) => (
+        <Avatar key={extension.name} className="size-14 bg-secondary p-3">
+          <AvatarImage src={extension.icon} alt={extension.name} />
+          <AvatarFallback>{extension.shortcut_name}</AvatarFallback>
+        </Avatar>
+      ))}
+    </div>
+  );
+}
 
 /**
  * 📦 Official Extensions

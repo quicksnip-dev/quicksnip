@@ -19,7 +19,7 @@ const QUICKSNIP_YT_VIDEOS = [
   },
 ];
 
-const Communitypage = () => {
+export default function Communitypage() {
   return (
     <>
       <section>
@@ -120,9 +120,7 @@ const Communitypage = () => {
       </section>
     </>
   );
-};
-
-export default Communitypage;
+}
 
 /**
  * Fetch `CONTRIBUTING.md`

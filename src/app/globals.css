@@ -140,6 +140,10 @@
     @apply max-w-4xl w-full mx-auto px-4;
   }
 
+  .wrapper-2xs {
+    @apply max-w-2xl w-full mx-auto px-4;
+  }
+
   .wrapper-lg {
     @apply max-w-[90rem] w-full mx-auto px-4;
   }
