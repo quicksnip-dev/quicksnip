@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Button } from "../ui/button";
+import { GITHUB_URL } from "@/data/meta";
 
 const Hero = () => {
   return (
@@ -37,7 +38,9 @@ const Hero = () => {
               variant="secondary"
               className=" rounded-full"
             >
-              <Link href="/snippets">GitHub</Link>
+              <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                GitHub
+              </Link>
             </Button>
           </div>
         </article>

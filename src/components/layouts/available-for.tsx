@@ -3,7 +3,7 @@ import { EXTENSIONS } from "@/data/extensions";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import { Button } from "../ui/button";
 
-export const FeaturedExtensions = () => {
+export default function AvailableFor() {
   return (
     <section>
       <div className="wrapper py-8 grid justify-items-center gap-6">
@@ -24,4 +24,4 @@ export const FeaturedExtensions = () => {
       </div>
     </section>
   );
-};
+}

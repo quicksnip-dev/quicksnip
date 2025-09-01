@@ -1,8 +1,7 @@
-import ExtensionItem from "@/components/ui/extension-item";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { EXTENSIONS, FUTURE_EXTENSIONS } from "@/data/extensions";
-
-import Link from "next/link";
+import ExtensionItem, {
+  NewExtensionItem,
+} from "@/components/ui/extension-item";
+import { EXTENSIONS } from "@/data/extensions";
 
 export default function ExtensionsPage() {
   return (
@@ -13,31 +12,10 @@ export default function ExtensionsPage() {
           {EXTENSIONS.map((extension) => (
             <ExtensionItem key={extension.name} extension={extension} />
           ))}
-          <Link
-            href="/guide/extensions"
-            className="bg-transparent h-full outline-2 outline-secondary transition-colors duration-200 hover:outline-muted space-y-4 p-6 rounded-lg grid gap-4 place-content-center justify-items-center text-secondary-foreground"
-          >
-            <ExtensionsAvatarGroup />
-            <span className="text-lg font-semibold">
-              Add your extension here...
-            </span>
-          </Link>
+          <NewExtensionItem />
         </ul>
       </div>
     </section>
-  );
-}
-
-function ExtensionsAvatarGroup() {
-  return (
-    <div className="flex -space-x-4">
-      {FUTURE_EXTENSIONS.map((extension) => (
-        <Avatar key={extension.name} className="size-14 bg-secondary p-3">
-          <AvatarImage src={extension.icon} alt={extension.name} />
-          <AvatarFallback>{extension.shortcut_name}</AvatarFallback>
-        </Avatar>
-      ))}
-    </div>
   );
 }
 

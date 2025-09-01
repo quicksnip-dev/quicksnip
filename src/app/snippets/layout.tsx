@@ -1,3 +1,5 @@
+import Sidebar from "@/components/layouts/sidebar";
+
 export default function SnippetsLayout({
   children,
 }: {
@@ -5,7 +7,7 @@ export default function SnippetsLayout({
 }) {
   return (
     <main>
-      <aside>Sidebar here</aside>
+      <Sidebar />
       <section>{children}</section>
     </main>
   );

@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { SPONSOR_URL } from "@/data/meta";
 
 export default function Sponsor() {
   return (
@@ -22,7 +23,7 @@ export default function Sponsor() {
           </CardDescription>
         </CardHeader>
         <CardFooter>
-          <Link href="https://ko-fi.com/D1D217QALD" target="_blank">
+          <Link href={SPONSOR_URL} target="_blank">
             <Image
               width={200}
               height={80}

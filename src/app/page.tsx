@@ -1,14 +1,14 @@
-import { FeaturedExtensions } from "@/components/layouts/Extensions";
-import Features from "@/components/layouts/Features";
-import Hero from "@/components/layouts/Hero";
-import Sponsor from "@/components/layouts/Sponsor";
+import AvailableFor from "@/components/layouts/available-for";
+import Features from "@/components/layouts/features";
+import Hero from "@/components/layouts/hero";
+import Sponsor from "@/components/layouts/sponsor";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Features />
-      <FeaturedExtensions />
+      <AvailableFor />
       <Sponsor />
     </>
   );

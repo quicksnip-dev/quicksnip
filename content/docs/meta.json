@@ -4,8 +4,8 @@
   "pages": [
     "---Introduction---",
     "index.mdx",
-    "usage.mdx",
-    "code-snippet.mdx",
+    "installation.mdx",
+    "comparison.mdx",
     "---Extensions---",
     "...extensions",
     "---Contributing---",

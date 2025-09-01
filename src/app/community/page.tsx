@@ -7,17 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { DISCORD_URL, GITHUB_URL } from "@/data/meta";
-
-const QUICKSNIP_YT_VIDEOS = [
-  {
-    id: "2_AfhnMVuSY",
-    title: "We made QuickSnip even better (v1)",
-  },
-  {
-    id: "BhRi7fJzPgk",
-    title: "I built a library of code snippets for developers",
-  },
-];
+import { YOUTUBE_VIDEOS } from "@/data/yt-videos";
 
 export default function Communitypage() {
   return (
@@ -83,18 +73,21 @@ export default function Communitypage() {
             Videos from Technophile
           </h2>
           <ul className="grid gap-4 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3">
-            {QUICKSNIP_YT_VIDEOS.map((video) => (
+            {YOUTUBE_VIDEOS.map((video) => (
               <li key={video.id}>
                 <Link
                   href={`https://www.youtube.com/watch?v=${video.id}`}
                   className="block space-y-2"
                 >
-                  <AspectRatio ratio={16 / 9} className="bg-muted rounded-lg">
+                  <AspectRatio
+                    ratio={16 / 9}
+                    className="bg-muted rounded-lg border-4 border-secondary overflow-hidden"
+                  >
                     <Image
                       src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
                       alt={video.title}
                       fill
-                      className="h-full w-full rounded-lg object-cover"
+                      className="h-full w-full object-cover"
                     />
                   </AspectRatio>
                   <h3 className="text-lg font-semibold">{video.title}</h3>

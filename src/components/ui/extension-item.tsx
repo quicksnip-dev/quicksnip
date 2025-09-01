@@ -11,6 +11,8 @@ import {
   CardTitle,
 } from "./card";
 import { Button } from "./button";
+import { FUTURE_EXTENSIONS } from "@/data/extensions";
+import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 
 export default function ExtensionItem({
   extension,
@@ -59,5 +61,30 @@ export default function ExtensionItem({
         </CardAction>
       </CardFooter>
     </Card>
+  );
+}
+
+export function NewExtensionItem() {
+  return (
+    <Link
+      href="/guide/extensions"
+      className="bg-transparent h-full outline-2 outline-secondary transition-colors duration-200 hover:outline-muted space-y-4 p-6 rounded-lg grid gap-4 place-content-center justify-items-center text-secondary-foreground"
+    >
+      <ExtensionsAvatarGroup />
+      <span className="text-lg font-semibold">Add your extension here...</span>
+    </Link>
+  );
+}
+
+function ExtensionsAvatarGroup() {
+  return (
+    <div className="flex -space-x-4">
+      {FUTURE_EXTENSIONS.map((extension) => (
+        <Avatar key={extension.name} className="size-14 bg-secondary p-3">
+          <AvatarImage src={extension.icon} alt={extension.name} />
+          <AvatarFallback>{extension.shortcut_name}</AvatarFallback>
+        </Avatar>
+      ))}
+    </div>
   );
 }
