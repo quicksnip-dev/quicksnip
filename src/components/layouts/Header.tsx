@@ -19,12 +19,12 @@ const NAV_ITEMS = [
 
 const SOCIAL_ITEMS = [
   {
-    icon: "/icons/github.svg",
+    icon: "/assets/icons/github.svg",
     name: "GitHub",
     url: GITHUB_URL,
   },
   {
-    icon: "/icons/discord.svg",
+    icon: "/assets/icons/discord.svg",
     name: "Discord",
     url: DISCORD_URL,
   },

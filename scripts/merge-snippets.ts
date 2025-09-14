@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 
 const SNIPPETS_DIR = path.join(process.cwd(), "snippets");
-const OUTPUT_DIR = path.join(process.cwd(), "public", "snippets");
+const OUTPUT_DIR = path.join(process.cwd(), "public", "data", "snippets");
 
 /**
  * Extracts the code from markdown into a `{ language: code }` object.

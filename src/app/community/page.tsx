@@ -21,7 +21,7 @@ export default function Communitypage() {
               transition={{ type: "spring" }}
             >
               <Image
-                src="/icons/github.svg"
+                src="/assets/icons/github.svg"
                 alt="GitHub"
                 width={150}
                 height={150}
@@ -44,7 +44,7 @@ export default function Communitypage() {
               transition={{ type: "spring" }}
             >
               <Image
-                src="/icons/discord.svg"
+                src="/assets/icons/discord.svg"
                 alt="Discord"
                 width={150}
                 height={150}

@@ -6,3 +6,8 @@ export type ExtensionType = {
   source_url: string;
   downloads: number;
 };
+
+export type SnippetType = {
+  title: string;
+  languages: string[];
+};

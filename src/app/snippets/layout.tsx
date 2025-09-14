@@ -1,4 +1,4 @@
-import Sidebar from "@/components/layouts/sidebar";
+import SnippetSidebar from "@/components/layouts/snippet-sidebar";
 
 export default function SnippetsLayout({
   children,
@@ -7,7 +7,7 @@ export default function SnippetsLayout({
 }) {
   return (
     <main>
-      <Sidebar />
+      <SnippetSidebar />
       <section>{children}</section>
     </main>
   );

@@ -2,7 +2,7 @@ import type { ExtensionType } from "@/types";
 
 export const EXTENSIONS: ExtensionType[] = [
   {
-    icon: "/extensions/cli.svg",
+    icon: "/assets/extensions/cli.svg",
     name: "CLI",
     description: "CLI extension for QuickSnip.",
     guide_url: "/guide/extensions/quicksnip-cli",
@@ -10,7 +10,7 @@ export const EXTENSIONS: ExtensionType[] = [
     downloads: 9865,
   },
   {
-    icon: "/extensions/raycast.svg",
+    icon: "/assets/extensions/raycast.svg",
     name: "Raycast",
     description: "Raycast extension for QuickSnip.",
     guide_url: "/guide/extensions/quicksnip-raycast",
@@ -18,7 +18,7 @@ export const EXTENSIONS: ExtensionType[] = [
     downloads: 3580,
   },
   {
-    icon: "/extensions/vscode.svg",
+    icon: "/assets/extensions/vscode.svg",
     name: "VS Code",
     description: "VS Code extension for QuickSnip.",
     guide_url: "/guide/extensions/quicksnip-vscode",
@@ -30,17 +30,17 @@ export const EXTENSIONS: ExtensionType[] = [
 export const FUTURE_EXTENSIONS = [
   {
     name: "JetBrains",
-    icon: "/extensions/jetbrains.svg",
+    icon: "/assets/extensions/jetbrains.svg",
     shortcut_name: "JB",
   },
   {
     name: "NeoVim",
-    icon: "/extensions/neovim.svg",
+    icon: "/assets/extensions/neovim.svg",
     shortcut_name: "NV",
   },
   {
     name: "Vim",
-    icon: "/extensions/vim.svg",
+    icon: "/assets/extensions/vim.svg",
     shortcut_name: "VM",
   },
 ];

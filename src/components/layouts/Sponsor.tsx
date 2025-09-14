@@ -28,7 +28,7 @@ export default function Sponsor() {
               width={200}
               height={80}
               className="mx-auto"
-              src="/images/kofi-button.png"
+              src="/assets/images/kofi-button.png"
               alt="Buy Me a Coffee at ko-fi.com"
             />
           </Link>
