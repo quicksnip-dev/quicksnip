@@ -8,6 +8,11 @@ export type ExtensionType = {
 };
 
 export type SnippetType = {
+  id: string;
+  category: string;
   title: string;
+  description: string;
   languages: string[];
+  contributors: string[];
+  tags: string[];
 };

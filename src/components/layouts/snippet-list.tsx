@@ -2,13 +2,15 @@ import SnippetItem from "../ui/snippet-item";
 
 import type { SnippetType } from "@/types";
 
-export default function SnippetList() {
-  const snippets: SnippetType[] = [];
+interface SnippetListProps {
+  snippets: SnippetType[];
+}
 
+export default function SnippetList({ snippets }: SnippetListProps) {
   return (
-    <ul>
+    <ul className="grid gap-4 sm:grid-cols-3 md:grid-cols-4">
       {snippets.map((snippet) => (
-        <SnippetItem snippet={snippet} />
+        <SnippetItem key={snippet.id} snippet={snippet} />
       ))}
     </ul>
   );
