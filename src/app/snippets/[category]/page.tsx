@@ -1,31 +1,26 @@
-import SnippetList from "@/components/layouts/snippet-list";
+"use client";
 
-export default function Categories() {
-  const sampleData = [
-    {
-      id: "truncate-string",
-      category: "string-manipulation",
-      title: "Reverse String",
-      description: "Reverses the characters in a string.",
-      languages: ["js", "cpp", "py"],
-      contributors: ["technoph1le", "Vaibhav-kesarwani"],
-      tags: ["string", "reverse"],
-    },
-    {
-      id: "string-to-camel-case",
-      category: "string-manipulation",
-      title: "Convert String to Camel Case",
-      description: "Converts a given string into camelCase.",
-      languages: ["js", "java"],
-      contributors: ["aumirza", "Mcbencrafter"],
-      tags: ["string", "case"],
-    },
-  ];
+import SnippetList from "@/components/layouts/snippet-list";
+import { unslugify } from "@/lib/utils";
+import { useSnippetsStore } from "@/store/useSnippetsStore";
+import { use } from "react";
+
+interface Props {
+  params: Promise<{ category: string }>;
+}
+
+export default function Categories({ params }: Props) {
+  const { snippets } = useSnippetsStore();
+  const { category } = use(params);
+
+  const filteredSnippets = snippets.filter(
+    (snippet) => snippet.category === category
+  );
 
   return (
     <section className="space-y-4">
-      <h2 className="text-2xl font-bold">String Manipulation</h2>
-      <SnippetList snippets={sampleData} />
+      <h2 className="text-2xl font-bold">{unslugify(category)}</h2>
+      <SnippetList snippets={filteredSnippets} />
     </section>
   );
 }

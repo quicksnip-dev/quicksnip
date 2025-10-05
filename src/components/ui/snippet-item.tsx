@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { Card, CardContent, CardTitle } from "./card";
 import type { SnippetType } from "@/types";
 import Link from "next/link";

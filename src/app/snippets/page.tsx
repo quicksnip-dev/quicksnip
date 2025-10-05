@@ -1,27 +1,18 @@
+"use client";
+
 import SnippetList from "@/components/layouts/snippet-list";
+import { useSnippetsStore } from "@/store/useSnippetsStore";
+import { useEffect } from "react";
 
 export default function SnippetsPage() {
-  const sampleData = [
-    {
-      id: "reverse-string",
-      category: "string-manipulation",
-      title: "Reverse String",
-      description: "Reverses the characters in a string.",
-      languages: ["js", "cpp", "py"],
-      contributors: ["technoph1le", "Vaibhav-kesarwani"],
-      tags: ["string", "reverse"],
-    },
-    {
-      id: "string-to-camel-case",
-      category: "string-manipulation",
-      title: "Convert String to Camel Case",
-      description: "Converts a given string into camelCase.",
-      languages: ["js", "java"],
-      contributors: ["aumirza", "Mcbencrafter"],
-      tags: ["string", "case"],
-    },
-  ];
+  const { setSnippets, snippets } = useSnippetsStore();
+
+  useEffect(() => {
+    fetch("/data/snippets/all.json")
+      .then((res) => res.json())
+      .then((data) => setSnippets(data));
+  }, [setSnippets]);
 
   // This is for showing all the snippets
-  return <SnippetList snippets={sampleData} />;
+  return <SnippetList snippets={snippets} />;
 }
