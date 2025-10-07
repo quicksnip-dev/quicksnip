@@ -9,6 +9,9 @@ export default function Layout({ children }: { children: ReactNode }) {
       tree={source.pageTree}
       {...baseOptions}
       themeSwitch={{ enabled: false }}
+      sidebar={{
+        collapsible: false,
+      }}
     >
       {children}
     </DocsLayout>
