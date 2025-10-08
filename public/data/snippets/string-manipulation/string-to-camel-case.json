@@ -1,0 +1,22 @@
+{
+  "id": "string-to-camel-case",
+  "category": "string-manipulation",
+  "title": "Convert String to Camel Case",
+  "description": "Converts a given string into camelCase.",
+  "languages": [
+    "js",
+    "java"
+  ],
+  "contributors": [
+    "aumirza",
+    "Mcbencrafter"
+  ],
+  "tags": [
+    "string",
+    "case"
+  ],
+  "snippets": {
+    "js": "function toCamelCase(str) {\r\n  return str.replace(/\\W+(.)/g, (match, chr) => chr.toUpperCase());\r\n}\r\n\r\n// Usage:\r\ntoCamelCase('hello world test'); // Returns: 'helloWorldTest'",
+    "java": "public static String stringToCamelCase(String text) {\r\n    String[] words = text.split(\"\\\\s+\");\r\n    StringBuilder camelCase = new StringBuilder(\r\n        words[0].substring(0, 1).toLowerCase() + words[0].substring(1)\r\n    );\r\n\r\n    for (int i = 1; i < words.length; i++) {\r\n        camelCase.append(words[i].substring(0, 1).toUpperCase());\r\n        camelCase.append(words[i].substring(1));\r\n    }\r\n\r\n    return camelCase.toString();\r\n}\r\n\r\n// Usage:\r\nSystem.out.println(stringToCamelCase(\"Hello world test\")); // \"helloWorldTest\""
+  }
+}

@@ -1,8 +1,5 @@
 # QuickSnip
 
-> **⚠️ IMPORTANT! ⚠️ QuickSnip is migrating to NextJS. You can view the [nextjs-migration](https://github.com/quicksnip-dev/quicksnip/tree/nextjs-migration) branch here.**
-
-
 QuickSnip is an open-source tool designed for developers who want to organize, search, and share code snippets across various programming languages. It provides a centralized platform for managing handy snippets. Built with love and powered by an awesome community. 🚀
 
 <div>

@@ -1,0 +1,22 @@
+{
+  "id": "string-to-pascal-case",
+  "category": "string-manipulation",
+  "title": "Convert String to Pascal Case",
+  "description": "Converts a given string into PascalCase.",
+  "languages": [
+    "js",
+    "java"
+  ],
+  "contributors": [
+    "aumirza",
+    "Mcbencrafter"
+  ],
+  "tags": [
+    "string",
+    "case"
+  ],
+  "snippets": {
+    "js": "function toPascalCase(str) {\r\n  return str.replace(/\\b\\w/g, (s) => s.toUpperCase()).replace(/\\W+(.)/g, (match, chr) => chr.toUpperCase());\r\n}\r\n\r\n// Usage:\r\ntoPascalCase('hello world test'); // Returns: 'HelloWorldTest'",
+    "java": "public static String stringToPascalCase(String text) {\r\n    String[] words = text.split(\"\\\\s+\");\r\n    StringBuilder pascalCase = new StringBuilder();\r\n\r\n    for (String word : words) {\r\n        pascalCase.append(word.substring(0, 1).toUpperCase());\r\n        pascalCase.append(word.substring(1).toLowerCase());\r\n    }\r\n\r\n    return pascalCase.toString();\r\n}\r\n\r\n// Usage:\r\nSystem.out.println(stringToPascalCase(\"hello world\")); // \"HelloWorld\""
+  }
+}

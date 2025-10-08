@@ -1,5 +1,7 @@
 # Contributing to QuickSnip
 
+> THIS FILE NEEDS TO BE REWORKED. IT'S IMPORTED FROM PREVIOUS VERSION FOR TESTING.
+
 Hey there! 👋 First off, thanks for taking the time to contribute! ❤️
 
 You can contribute in two main ways:

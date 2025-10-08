@@ -1,0 +1,7 @@
+{
+  "title": "Shuffle Array",
+  "description": "Shuffles the items in an array.",
+  "languages": ["js"],
+  "contributors": ["loxt-nixo"],
+  "tags": ["array", "shuffle", "random"]
+}

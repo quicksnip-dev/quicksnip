@@ -1,0 +1,9 @@
+{
+  "title": "Extensions",
+  "pages": [
+    "quicksnip",
+    "quicksnip-cli",
+    "quicksnip-vscode",
+    "quicksnip-raycast"
+  ]
+}

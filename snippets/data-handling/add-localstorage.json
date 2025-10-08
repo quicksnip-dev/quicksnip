@@ -1,0 +1,7 @@
+{
+  "title": "Add Item to localStorage",
+  "description": "Stores a value in localStorage under the given key.",
+  "languages": ["js"],
+  "contributors": ["technoph1le"],
+  "tags": ["localStorage", "storage", "memory"]
+}

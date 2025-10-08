@@ -1,0 +1,7 @@
+{
+  "title": "Convert Number to Currency",
+  "description": "Converts a number to a currency format with a specific locale.",
+  "languages": ["js"],
+  "contributors": ["axorax"],
+  "tags": ["number", "currency"]
+}

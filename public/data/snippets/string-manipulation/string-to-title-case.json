@@ -1,0 +1,19 @@
+{
+  "id": "string-to-title-case",
+  "category": "string-manipulation",
+  "title": "Convert String to Title Case",
+  "description": "Converts a given string into Title Case.",
+  "languages": [
+    "js"
+  ],
+  "contributors": [
+    "aumirza"
+  ],
+  "tags": [
+    "string",
+    "case"
+  ],
+  "snippets": {
+    "js": "function toTitleCase(str) {\r\n  return str.toLowerCase().replace(/\\b\\w/g, (s) => s.toUpperCase());\r\n}\r\n\r\n// Usage:\r\ntoTitleCase('hello world test'); // Returns: 'Hello World Test'"
+  }
+}

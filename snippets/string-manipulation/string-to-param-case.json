@@ -1,0 +1,7 @@
+{
+  "title": "Convert String to Param Case",
+  "description": "Converts a given string into param-case.",
+  "languages": ["js", "java"],
+  "contributors": ["aumirza", "Mcbencrafter"],
+  "tags": ["string", "case"]
+}

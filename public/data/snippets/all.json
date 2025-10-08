@@ -1,0 +1,182 @@
+[
+  {
+    "id": "shuffle-array",
+    "category": "array-manipulation",
+    "title": "Shuffle Array",
+    "description": "Shuffles the items in an array.",
+    "languages": [
+      "js"
+    ],
+    "contributors": [
+      "loxt-nixo"
+    ],
+    "tags": [
+      "array",
+      "shuffle",
+      "random"
+    ]
+  },
+  {
+    "id": "add-localstorage",
+    "category": "data-handling",
+    "title": "Add Item to localStorage",
+    "description": "Stores a value in localStorage under the given key.",
+    "languages": [
+      "js"
+    ],
+    "contributors": [
+      "technoph1le"
+    ],
+    "tags": [
+      "localStorage",
+      "storage",
+      "memory"
+    ]
+  },
+  {
+    "id": "number-to-currency",
+    "category": "number-formatting",
+    "title": "Convert Number to Currency",
+    "description": "Converts a number to a currency format with a specific locale.",
+    "languages": [
+      "js"
+    ],
+    "contributors": [
+      "axorax"
+    ],
+    "tags": [
+      "number",
+      "currency"
+    ]
+  },
+  {
+    "id": "reverse-string",
+    "category": "string-manipulation",
+    "title": "Reverse String",
+    "description": "Reverses the characters in a string.",
+    "languages": [
+      "js",
+      "cpp",
+      "py"
+    ],
+    "contributors": [
+      "technoph1le",
+      "Vaibhav-kesarwani"
+    ],
+    "tags": [
+      "string",
+      "reverse"
+    ]
+  },
+  {
+    "id": "string-to-camel-case",
+    "category": "string-manipulation",
+    "title": "Convert String to Camel Case",
+    "description": "Converts a given string into camelCase.",
+    "languages": [
+      "js",
+      "java"
+    ],
+    "contributors": [
+      "aumirza",
+      "Mcbencrafter"
+    ],
+    "tags": [
+      "string",
+      "case"
+    ]
+  },
+  {
+    "id": "string-to-param-case",
+    "category": "string-manipulation",
+    "title": "Convert String to Param Case",
+    "description": "Converts a given string into param-case.",
+    "languages": [
+      "js",
+      "java"
+    ],
+    "contributors": [
+      "aumirza",
+      "Mcbencrafter"
+    ],
+    "tags": [
+      "string",
+      "case"
+    ]
+  },
+  {
+    "id": "string-to-pascal-case",
+    "category": "string-manipulation",
+    "title": "Convert String to Pascal Case",
+    "description": "Converts a given string into PascalCase.",
+    "languages": [
+      "js",
+      "java"
+    ],
+    "contributors": [
+      "aumirza",
+      "Mcbencrafter"
+    ],
+    "tags": [
+      "string",
+      "case"
+    ]
+  },
+  {
+    "id": "string-to-snake-case",
+    "category": "string-manipulation",
+    "title": "Convert String to Snake Case",
+    "description": "Converts a given string into snake_case.",
+    "languages": [
+      "js",
+      "java"
+    ],
+    "contributors": [
+      "axorax",
+      "Mcbencrafter"
+    ],
+    "tags": [
+      "string",
+      "case"
+    ]
+  },
+  {
+    "id": "string-to-title-case",
+    "category": "string-manipulation",
+    "title": "Convert String to Title Case",
+    "description": "Converts a given string into Title Case.",
+    "languages": [
+      "js"
+    ],
+    "contributors": [
+      "aumirza"
+    ],
+    "tags": [
+      "string",
+      "case"
+    ]
+  },
+  {
+    "id": "truncate-sring",
+    "category": "string-manipulation",
+    "title": "Truncate String",
+    "description": "Truncates a string after a specified length.",
+    "languages": [
+      "js",
+      "java",
+      "py"
+    ],
+    "contributors": [
+      "realvishalrana",
+      "Mcbencrafter",
+      "axorax",
+      "MinerMinerMods"
+    ],
+    "tags": [
+      "string",
+      "truncate",
+      "mask",
+      "hide"
+    ]
+  }
+]

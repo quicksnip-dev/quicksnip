@@ -1,0 +1,19 @@
+{
+  "id": "number-to-currency",
+  "category": "number-formatting",
+  "title": "Convert Number to Currency",
+  "description": "Converts a number to a currency format with a specific locale.",
+  "languages": [
+    "js"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "tags": [
+    "number",
+    "currency"
+  ],
+  "snippets": {
+    "js": "const convertToCurrency = (num, locale = 'en-US', currency = 'USD') => {\r\n  return new Intl.NumberFormat(locale, {\r\n    style: 'currency',\r\n    currency: currency\r\n  }).format(num);\r\n};\r\n\r\n// Usage:\r\nconvertToCurrency(1234567.89); // Returns: '$1,234,567.89'\r\nconvertToCurrency(987654.32, 'de-DE', 'EUR'); // Returns: '987.654,32 €'"
+  }
+}

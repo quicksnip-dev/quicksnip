@@ -1,0 +1,14 @@
+{
+  "title": "Docs",
+  "root": true,
+  "pages": [
+    "---Introduction---",
+    "index.mdx",
+    "installation.mdx",
+    "comparison.mdx",
+    "---Extensions---",
+    "...extensions",
+    "---Contributing---",
+    "...contributing"
+  ]
+}
