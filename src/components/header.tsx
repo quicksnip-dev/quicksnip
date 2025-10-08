@@ -3,10 +3,13 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence, easeInOut } from "framer-motion";
 import { Menu, X } from "lucide-react";
+
 import Link from "next/link";
-import Logo from "../ui/logo";
-import DarkModeSwitch from "../ui/dark-mode-switch";
 import Image from "next/image";
+
+import Logo from "@/components/ui/logo";
+import DarkModeSwitch from "@/components/ui/dark-mode-switch";
+
 import { DISCORD_URL, GITHUB_URL } from "@/data/meta";
 
 const NAV_ITEMS = [

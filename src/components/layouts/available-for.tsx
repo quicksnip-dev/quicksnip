@@ -1,7 +1,9 @@
 import Link from "next/link";
+
 import { EXTENSIONS } from "@/data/extensions";
-import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import { Button } from "../ui/button";
+
+import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 export default function AvailableFor() {
   return (

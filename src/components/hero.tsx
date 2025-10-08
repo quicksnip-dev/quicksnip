@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Button } from "../ui/button";
+import { Button } from "./ui/button";
 import { GITHUB_URL } from "@/data/meta";
 
 const Hero = () => {

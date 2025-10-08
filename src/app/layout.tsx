@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { RootProvider } from "fumadocs-ui/provider";
 import "./globals.css";
-import Header from "@/components/layouts/header";
-import Footer from "@/components/layouts/footer";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +31,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[auto_1fr_auto] min-h-screen antialiased bg-background text-foreground dark`}
       >
         <Header />
-
         <RootProvider>{children}</RootProvider>
         <Footer />
       </body>
