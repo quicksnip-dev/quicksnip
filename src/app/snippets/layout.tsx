@@ -11,7 +11,7 @@ export default function SnippetsLayout({
   return (
     <SidebarProvider>
       <SnippetSidebar />
-      <main className="p-4 space-y-4 w-full">
+      <main className="py-4 pl-4 space-y-4 w-full">
         <SnippetHeader />
         {children}
       </main>

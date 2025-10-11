@@ -1,7 +1,7 @@
-import Features from "@/components/features";
-import Hero from "@/components/hero";
+import Features from "@/components/layouts/features";
+import Hero from "@/components/layouts/hero";
 import AvailableFor from "@/components/layouts/available-for";
-import Sponsor from "@/components/sponsor";
+import Sponsor from "@/components/layouts/sponsor";
 
 export default function Home() {
   return (

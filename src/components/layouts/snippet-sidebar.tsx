@@ -85,7 +85,7 @@ export default function SnippetSidebar() {
   const cats = categories();
 
   return (
-    <Sidebar collapsible="none" className="border-r border-border">
+    <Sidebar className="z-40 border-r border-border">
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>

@@ -78,10 +78,14 @@
   --sidebar-accent-foreground: oklch(0.205 0 0);
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
+
   --fd-layout-width: 90rem;
-  /* --fd-nav-height: 4rem; */
   --fd-sidebar-margin: 0 2rem;
   --fd-banner-height: 4rem;
+  /* --fd-nav-height: 4rem; */
+
+  --header-height: 4rem;
+  --footer-height: 4rem;
 }
 
 .dark {
@@ -149,22 +153,16 @@
   }
 }
 
-#nd-docs-layout {
-  display: grid;
-  gap: 1rem;
+/* #nd-docs-layout {
   padding: 0 !important;
-
-  @media (min-width: 800px) {
-    grid-template-columns: auto auto auto;
-  }
-}
-
-#nd-sidebar {
-  bottom: 3rem;
-  position: initial;
-  background: var(--background);
 }
 
 #nd-page {
-  /* border: 1px solid green; */
+  border: 1px solid green;
+} */
+
+#nd-sidebar {
+  background: var(--background);
+  bottom: var(--footer-height);
+  position: absolute;
 }

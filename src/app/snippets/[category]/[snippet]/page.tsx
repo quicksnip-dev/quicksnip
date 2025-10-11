@@ -1,29 +1,39 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { use } from "react";
+
+import { useRouter } from "next/navigation";
+
+import { Button } from "@/components/ui/button";
+
+import { unslugify } from "@/lib/utils";
 
 interface Props {
   params: Promise<{ category: string; snippet: string }>;
 }
 
-export default function SnippetDetail({ params }: Props) {
+export default function SnippetPage({ params }: Props) {
   const router = useRouter();
   const { category, snippet } = use(params);
 
+  const handleCloseModal = () => {
+    /**
+     * If a snippet is visited directly from URL,
+     * it won't have history to go back to.
+     * Thus, fallback to `/snippets/` page.
+     */
+    if (window.history.length > 2) router.back();
+    else router.push("/snippets");
+  };
+
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
-      <div className="bg-white p-6 rounded-lg shadow-lg w-[400px]">
-        <h2 className="text-lg font-bold">{snippet}</h2>
-        <p className="mt-2 text-sm text-gray-600">
-          Snippet details for {category}/{snippet}
-        </p>
-        <button
-          onClick={() => router.push("/snippets")}
-          className="mt-4 px-4 py-2 rounded hover:bg-gray-300"
-        >
-          Close
-        </button>
+      <div className="bg-secondary text-secondary-foreground p-6 rounded-lg space-y-4 shadow-lg w-[400px]">
+        <h2 className="text-lg font-bold">
+          {unslugify(category)} / {unslugify(snippet)}
+        </h2>
+        <p>Snippet details here</p>
+        <Button onClick={handleCloseModal}>Close</Button>
       </div>
     </div>
   );

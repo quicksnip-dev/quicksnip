@@ -6,7 +6,7 @@ import {
   Book,
   PlusCircle,
 } from "lucide-react";
-import { Card, CardContent, CardHeader } from "./ui/card";
+import { Card, CardContent, CardHeader } from "../ui/card";
 
 const features = [
   {

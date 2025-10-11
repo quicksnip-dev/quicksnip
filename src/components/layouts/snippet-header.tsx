@@ -1,26 +1,29 @@
 import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
+
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
+} from "@/components/ui/select";
+import { SidebarTrigger } from "@/components/ui/sidebar";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 
 export default function SnippetHeader() {
   return (
-    <section className="grid gap-4 md:grid-cols-[1fr_auto_auto]">
-      <div className="relative">
-        <div className="absolute left-2 top-1/2 transform -translate-y-1/2">
+    <section className="grid gap-4 items-center md:grid-cols-[auto_1fr_auto_auto]">
+      <SidebarTrigger />
+      <InputGroup>
+        <InputGroupInput placeholder="Search 875 snippets..." />
+        <InputGroupAddon>
           <Search size={16} />
-        </div>
-        <Input
-          placeholder="Search 875 snippets..."
-          type="search"
-          className="pl-8 w-full"
-        />
-      </div>
+        </InputGroupAddon>
+      </InputGroup>
       <Select>
         <SelectTrigger className="w-[10rem]">
           <SelectValue placeholder="Sort by" />
