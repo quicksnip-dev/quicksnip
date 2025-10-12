@@ -16,3 +16,14 @@ export type SnippetType = {
   contributors: string[];
   tags: string[];
 };
+
+export type FullSnippet = {
+  id: string;
+  category: string;
+  title: string;
+  description: string;
+  languages: string[];
+  contributors: string[];
+  tags: string[];
+  snippets: Record<string, string>;
+};
