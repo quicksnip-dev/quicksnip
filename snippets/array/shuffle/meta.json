@@ -1,0 +1,17 @@
+{
+  "title": "Shuffle",
+  "description": "Returns a uniformly shuffled copy of an array (Fisher–Yates) without mutating it.",
+  "tags": [
+    "array",
+    "shuffle",
+    "random"
+  ],
+  "contributors": [
+    "loxt-nixo"
+  ],
+  "usage": {
+    "ts": [
+      "shuffle([1, 2, 3, 4, 5]); // e.g. [3, 5, 1, 4, 2]"
+    ]
+  }
+}

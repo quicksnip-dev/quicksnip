@@ -1,0 +1,18 @@
+{
+  "title": "Zip Arrays",
+  "description": "Combines two arrays by pairing corresponding elements from each array.",
+  "tags": [
+    "array",
+    "map"
+  ],
+  "contributors": [
+    "Swaraj-Singh-30"
+  ],
+  "usage": {
+    "js": [
+      "const arr1 = ['a', 'b', 'c'];",
+      "const arr2 = [1, 2, 3];",
+      "console.log(zip(arr1, arr2)); // Output: [['a', 1], ['b', 2], ['c', 3]]"
+    ]
+  }
+}

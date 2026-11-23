@@ -1,0 +1,23 @@
+{
+  "title": "Nullable Keys",
+  "description": "Extracts keys from an object type that allow null or undefined values.",
+  "tags": [
+    "helper-types",
+    "typedefinition",
+    "nullable"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = {",
+      "    id: string;",
+      "    name?: string;",
+      "    description: string | null;",
+      "};",
+      "",
+      "type Nullable = NullableKeys<A>; // \"name\" | \"description\""
+    ]
+  }
+}

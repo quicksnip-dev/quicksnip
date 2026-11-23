@@ -1,0 +1,18 @@
+{
+  "title": "Convert Snake Case to Camel Case",
+  "description": "Converts a snake_case string to camelCase.",
+  "tags": [
+    "string",
+    "snake-case",
+    "camel-case",
+    "convert"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "snake_to_camel('hello_world') # Returns: 'helloWorld'"
+    ]
+  }
+}

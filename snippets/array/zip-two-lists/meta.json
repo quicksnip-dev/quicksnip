@@ -1,0 +1,22 @@
+{
+  "title": "Zip Two Lists",
+  "description": "Zips two lists into a list of paired elements, combining corresponding elements from both lists.",
+  "tags": [
+    "lists",
+    "zip",
+    "stream-api",
+    "collections"
+  ],
+  "contributors": [
+    "davidanukam"
+  ],
+  "usage": {
+    "java": [
+      "List<String> arr1 = Arrays.asList(\"a\", \"b\", \"c\");",
+      "List<Integer> arr2 = Arrays.asList(1, 2, 3);",
+      "List<List<Object>> zipped = zip(arr1, arr2);",
+      "",
+      "System.out.println(zipped); // Output: [[a, 1], [b, 2], [c, 3]]"
+    ]
+  }
+}

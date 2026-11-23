@@ -1,0 +1,21 @@
+{
+  "title": "Validate JWT",
+  "description": "Validates a JWT.",
+  "tags": [
+    "jwt",
+    "validate"
+  ],
+  "contributors": [
+    "chaitanya-jvnm"
+  ],
+  "usage": {
+    "cs": [
+      "string JWT = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";",
+      "string correctSecret = \"your-256-bit-secret\";",
+      "string wrongSecret = \"this-is-not-the-right-secret\";",
+      "",
+      "ValidateJwt(JWT, correctSecret); // Returns: true",
+      "ValidateJwt(JWT, wrongSecret); // Returns: false"
+    ]
+  }
+}

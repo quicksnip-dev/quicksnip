@@ -1,0 +1,16 @@
+{
+  "title": "XOR of Range",
+  "description": "Finds XOR of all numbers from 1 to n using properties of XOR.",
+  "tags": [
+    "bit-manipulation",
+    "xor"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "c": [
+      "xor_upto_n(5); // Returns: 1 (1 ^ 2 ^ 3 ^ 4 ^ 5 = 1)"
+    ]
+  }
+}

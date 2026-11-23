@@ -1,0 +1,19 @@
+{
+  "title": "Duration Formatting Minutes Seconds",
+  "description": "Converts a given time duration to a human-readable string in the format \"mm:ss\"",
+  "tags": [
+    "time",
+    "formatting",
+    "minutes",
+    "seconds"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(formatDurationToMinutesAndSeconds(120, TimeUnit.SECONDS)); // \"02:00\"",
+      "System.out.println(formatDurationToMinutesAndSeconds(75, TimeUnit.SECONDS)); // \"01:15\""
+    ]
+  }
+}

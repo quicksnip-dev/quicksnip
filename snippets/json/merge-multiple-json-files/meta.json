@@ -1,0 +1,18 @@
+{
+  "title": "Merge Multiple JSON Files",
+  "description": "Merges multiple JSON files into one and writes the merged data into a new file.",
+  "tags": [
+    "json",
+    "merge",
+    "file"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "files_to_merge = ['file1.json', 'file2.json']",
+      "merge_json_files(files_to_merge, 'merged.json')"
+    ]
+  }
+}

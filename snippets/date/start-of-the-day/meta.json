@@ -1,0 +1,17 @@
+{
+  "title": "Start of the Day",
+  "description": "Returns the start of the day (midnight) for a given date.",
+  "tags": [
+    "date",
+    "start-of-day"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const today = new Date();",
+      "startOfDay(today); // Returns: Date object for midnight"
+    ]
+  }
+}

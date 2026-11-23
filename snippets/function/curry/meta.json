@@ -1,0 +1,19 @@
+{
+  "title": "Curry Function",
+  "description": "Transforms a function into its curried form.",
+  "tags": [
+    "curry",
+    "function"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const add = (a, b, c) => a + b + c;",
+      "const curriedAdd = curry(add);",
+      "curriedAdd(1)(2)(3); // Returns: 6",
+      "curriedAdd(1, 2)(3); // Returns: 6"
+    ]
+  }
+}

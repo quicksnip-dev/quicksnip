@@ -1,0 +1,17 @@
+{
+  "title": "Fibonacci Number",
+  "description": "Calculates the nth Fibonacci number using recursion.",
+  "tags": [
+    "math",
+    "fibonacci",
+    "recursion"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "c": [
+      "fibonacci(6); // Returns: 8"
+    ]
+  }
+}

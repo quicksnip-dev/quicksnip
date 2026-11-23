@@ -1,0 +1,18 @@
+{
+  "title": "Prime Number",
+  "description": "Checks if a number is a prime number or not.",
+  "tags": [
+    "math",
+    "number-theory",
+    "algebra"
+  ],
+  "contributors": [
+    "JanluOfficial"
+  ],
+  "usage": {
+    "js": [
+      "isPrime(69); // Returns:  false",
+      "isPrime(17); // Returns:  true"
+    ]
+  }
+}

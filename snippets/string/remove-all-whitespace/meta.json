@@ -1,0 +1,16 @@
+{
+  "title": "Remove All Whitespace",
+  "description": "Removes all whitespace from a string.",
+  "tags": [
+    "string",
+    "whitespace"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "removeWhitespace('Hello world!'); // Returns: 'Helloworld!'"
+    ]
+  }
+}

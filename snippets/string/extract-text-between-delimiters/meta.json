@@ -1,0 +1,18 @@
+{
+  "title": "Extract Text Between Delimiters",
+  "description": "Extracts a text between two given delimiters from a string",
+  "tags": [
+    "string",
+    "delimiters",
+    "start",
+    "end"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(extractBetweenDelimiters(\"hello, world!\", \",\", \"!\")); // \" world\""
+    ]
+  }
+}

@@ -1,9 +1,16 @@
+import type { Metadata } from "next";
 import fs from "fs";
 import path from "path";
 import remarkGfm from "remark-gfm";
 import Markdown from "react-markdown";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+
+export const metadata: Metadata = {
+  title: "Contributing",
+  description: "How to add, verify and improve QuickSnip snippets.",
+  alternates: { canonical: "/contributing" },
+};
 
 export default function ContributingPage() {
   const filePath = path.join(process.cwd(), "CONTRIBUTING.md");

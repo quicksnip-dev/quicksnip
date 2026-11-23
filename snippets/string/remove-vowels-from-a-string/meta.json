@@ -1,0 +1,17 @@
+{
+  "title": "Remove Vowels from a String",
+  "description": "Removes all vowels from a given string.",
+  "tags": [
+    "string",
+    "remove",
+    "vowels"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "removeVowels('Hello World'); // Returns: 'Hll Wrld'"
+    ]
+  }
+}

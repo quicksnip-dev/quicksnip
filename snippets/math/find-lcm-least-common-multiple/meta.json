@@ -1,0 +1,18 @@
+{
+  "title": "Find LCM (Least Common Multiple)",
+  "description": "Calculates the least common multiple (LCM) of two numbers.",
+  "tags": [
+    "math",
+    "lcm",
+    "gcd"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "lcm(12, 15) # Returns: 60",
+      "lcm(7, 5) # Returns: 35"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Grid Container",
+  "description": "Creates a responsive grid container with customizable column counts.",
+  "tags": [
+    "grid",
+    "layout"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

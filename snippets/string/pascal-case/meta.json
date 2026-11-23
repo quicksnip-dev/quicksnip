@@ -1,0 +1,22 @@
+{
+  "title": "PascalCase",
+  "description": "Converts any string (spaces, kebab, snake, camel) to PascalCase.",
+  "tags": [
+    "string",
+    "case",
+    "pascalcase"
+  ],
+  "contributors": [
+    "aumirza",
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "ts": [
+      "pascalCase(\"user_id\");    // \"UserId\"",
+      "pascalCase(\"hello world\"); // \"HelloWorld\""
+    ],
+    "java": [
+      "System.out.println(stringToPascalCase(\"hello world\")); // \"HelloWorld\""
+    ]
+  }
+}

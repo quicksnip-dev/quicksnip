@@ -1,0 +1,17 @@
+{
+  "title": "Partition List",
+  "description": "Partitions a list into sublists of a given size.",
+  "tags": [
+    "list",
+    "partition"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "data = [1, 2, 3, 4, 5, 6, 7]",
+      "list(partition_list(data, 3)) # Returns: [[1, 2, 3], [4, 5, 6], [7]]"
+    ]
+  }
+}

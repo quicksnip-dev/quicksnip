@@ -1,0 +1,10 @@
+{
+  "title": "Whitespace Trimmer",
+  "description": "Matches leading and/or trailing whitespace.",
+  "tags": [
+    "trim"
+  ],
+  "contributors": [
+    "majvax"
+  ]
+}

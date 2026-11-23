@@ -1,0 +1,18 @@
+{
+  "title": "Update JSON File",
+  "description": "Updates an existing JSON file with new data or modifies the existing values.",
+  "tags": [
+    "json",
+    "update",
+    "file"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "new_data = {'age': 31}",
+      "update_json('data.json', new_data) # Updates `age` in `data.json` without modifying other keys"
+    ]
+  }
+}

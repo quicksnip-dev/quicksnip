@@ -1,0 +1,25 @@
+{
+  "title": "Create SQLite Database Table",
+  "description": "Creates a table in an SQLite database with a dynamic schema.",
+  "tags": [
+    "sqlite",
+    "database",
+    "table"
+  ],
+  "contributors": [
+    "e3nviction"
+  ],
+  "usage": {
+    "py": [
+      "db_name = 'example.db'",
+      "table_name = 'users'",
+      "schema = {",
+      "    'id': 'INTEGER PRIMARY KEY',",
+      "    'name': 'TEXT',",
+      "    'age': 'INTEGER',",
+      "    'email': 'TEXT'",
+      "}",
+      "create_table(db_name, table_name, schema)"
+    ]
+  }
+}

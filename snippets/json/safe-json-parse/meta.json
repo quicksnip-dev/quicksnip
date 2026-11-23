@@ -1,0 +1,20 @@
+{
+  "title": "Safe JSON Parse",
+  "description": "Parses JSON without throwing and returns a typed { ok, value | error } result.",
+  "tags": [
+    "json",
+    "parse",
+    "error-handling",
+    "result"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "const result = safeJsonParse<Config>(text);",
+      "if (result.ok) use(result.value);",
+      "else console.error(result.error);"
+    ]
+  }
+}

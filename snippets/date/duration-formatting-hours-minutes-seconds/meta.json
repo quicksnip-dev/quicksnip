@@ -1,0 +1,20 @@
+{
+  "title": "Duration Formatting Hours Minutes Seconds",
+  "description": "Converts a given time duration to a human-readable string in the format \"hh:mm(:ss)\"",
+  "tags": [
+    "time",
+    "formatting",
+    "hours",
+    "minutes",
+    "seconds"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(formatDurationToHoursMinutesAndSeconds(3810, TimeUnit.SECONDS, true)); // \"01:03:30\"",
+      "System.out.println(formatDurationToHoursMinutesAndSeconds(3810, TimeUnit.SECONDS, false)); // \"01:03\""
+    ]
+  }
+}

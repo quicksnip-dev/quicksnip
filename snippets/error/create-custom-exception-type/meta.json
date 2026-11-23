@@ -1,0 +1,19 @@
+{
+  "title": "Create Custom Exception Type",
+  "description": "Create a Custom Exception Type that can be called with raise.",
+  "tags": [
+    "error-creation",
+    "organisation"
+  ],
+  "contributors": [
+    "mrcool7387"
+  ],
+  "usage": {
+    "py": [
+      "a: int = 1",
+      "",
+      "if a > 0:",
+      "  raise ExceptionName('Error Message')"
+    ]
+  }
+}

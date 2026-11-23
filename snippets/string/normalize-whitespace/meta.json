@@ -1,0 +1,17 @@
+{
+  "title": "Normalize Whitespace",
+  "description": "Replaces consecutive whitespaces with a single space",
+  "tags": [
+    "string",
+    "whitespace",
+    "normalize"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(normalizeWhitespace(\"hello   world\")); // \"hello world\""
+    ]
+  }
+}

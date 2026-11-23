@@ -1,0 +1,16 @@
+{
+  "title": "Get Day of the Year",
+  "description": "Calculates the day of the year (1-365 or 1-366 for leap years) for a given date.",
+  "tags": [
+    "date",
+    "day-of-year"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "getDayOfYear(new Date('2024-12-31')) // Returns: 366 (Leap year)"
+    ]
+  }
+}

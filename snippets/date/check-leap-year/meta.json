@@ -1,0 +1,17 @@
+{
+  "title": "Check Leap Year",
+  "description": "Determines if a given year is a leap year.",
+  "tags": [
+    "date",
+    "leap-year"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "isLeapYear(2024); // Returns: true",
+      "isLeapYear(2023); // Returns: false"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "Check Prime Number",
+  "description": "Check if an integer is a prime number",
+  "tags": [
+    "number",
+    "prime",
+    "math",
+    "check"
+  ],
+  "contributors": [
+    "MihneaMoso",
+    "technoph1le",
+    "ACR1209"
+  ],
+  "usage": {
+    "cpp": [
+      "is_prime(29); // Returns: true"
+    ],
+    "py": [
+      "is_prime(17) # Returns: True"
+    ],
+    "rb": [
+      "puts is_prime?(29) # Output: true",
+      "puts is_prime?(30) # Output: false"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Decode JWT",
+  "description": "Decodes a JWT.",
+  "tags": [
+    "jwt",
+    "decode"
+  ],
+  "contributors": [
+    "chaitanya-jvnm"
+  ],
+  "usage": {
+    "cs": [
+      "string token = \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c\";",
+      "DecodeJwt(token); // Returns: \"{\\\"alg\\\":\\\"HS256\\\",\\\"typ\\\":\\\"JWT\\\"}.{\\\"sub\\\":\\\"1234567890\\\",\\\"name\\\":\\\"John Doe\\\",\\\"iat\\\":1516239022}\""
+    ]
+  }
+}

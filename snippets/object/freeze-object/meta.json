@@ -1,0 +1,20 @@
+{
+  "title": "Freeze Object",
+  "description": "Freezes an object to make it immutable.",
+  "tags": [
+    "object",
+    "freeze",
+    "immutable"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const obj = { a: 1, b: 2 };",
+      "const frozenObj = freezeObject(obj);",
+      "frozenObj.a = 42;         // This will fail silently in strict mode.",
+      "frozenObj.a; // Returns: 1"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Error function",
+  "description": "Computes the error function (erf(x)) for a given input x, which is a mathematical function used frequently in probability, statistics, and partial differential equations.",
+  "tags": [
+    "math"
+  ],
+  "contributors": [
+    "JanluOfficial"
+  ],
+  "usage": {
+    "js": [
+      "erf(-1); // Returns:    -0.8427006897475899",
+      "erf(1);  // Returns:     0.8427006897475899"
+    ]
+  }
+}

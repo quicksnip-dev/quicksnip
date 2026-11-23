@@ -1,0 +1,18 @@
+{
+  "title": "Escape HTML",
+  "description": "Escapes &, <, >, \" and ' so untrusted text can be safely inserted into HTML.",
+  "tags": [
+    "html",
+    "security",
+    "xss",
+    "sanitize"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "escapeHtml('<b>\"Tom\" & Jerry</b>'); // \"&lt;b&gt;&quot;Tom&quot; &amp; Jerry&lt;/b&gt;\""
+    ]
+  }
+}

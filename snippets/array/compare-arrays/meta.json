@@ -1,0 +1,21 @@
+{
+  "title": "Compare Arrays",
+  "description": "Deeply compares two arrays to check if they are equal to each other (supports nested arrays and objects).",
+  "tags": [
+    "array",
+    "object",
+    "compare",
+    "equal"
+  ],
+  "contributors": [
+    "KCSquid"
+  ],
+  "usage": {
+    "js": [
+      "compareArrays([1, 2, 3], [1, 2, 3]); // Returns: true",
+      "compareArrays([1, 2, 3], [3, 2, 1]); // Returns: false",
+      "compareArrays([{a:1}], [{a:1}]);     // Returns: true",
+      "compareArrays([{a:1}], null);        // Returns: false"
+    ]
+  }
+}

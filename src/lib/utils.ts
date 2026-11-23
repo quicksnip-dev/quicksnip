@@ -17,11 +17,13 @@ export function slugify(string: string, separator = "-") {
     .replace(/\-$/g, ""); // Remove trailing -
 }
 
+const ACRONYMS: Record<string, string> = { dom: "DOM", id: "ID", json: "JSON", api: "API", css: "CSS", html: "HTML" };
+
 export function unslugify(string: string) {
   return string
     .trim()
-    .replace(/\-/g, " ")
-    .split(" ")
-    .map((word) => word[0].toUpperCase() + word.slice(1))
-    .join(" "); // Replace - with " "
+    .split("-")
+    .filter(Boolean)
+    .map((word) => ACRONYMS[word] ?? word[0].toUpperCase() + word.slice(1))
+    .join(" ");
 }

@@ -1,0 +1,47 @@
+{
+  "title": "Truncate",
+  "description": "Shortens text to a maximum length with a suffix, optionally on a word boundary.",
+  "tags": [
+    "string",
+    "truncate",
+    "mask",
+    "hide",
+    "text"
+  ],
+  "contributors": [
+    "omegaleo",
+    "ACR1209",
+    "Mcbencrafter",
+    "realvishalrana",
+    "axorax",
+    "MinerMinerMods"
+  ],
+  "usage": {
+    "ts": [
+      "truncate(\"The quick brown fox\", 10);                         // \"The quick…\"",
+      "truncate(\"The quick brown fox\", 12, { wordBoundary: true }); // \"The quick…\""
+    ],
+    "cs": [
+      "\"Quicksnip\".Truncate(5); // Returns: \"Quick...\""
+    ],
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let longString = \"Haskell is a powerful functional programming language.\"",
+      "    print $ truncateString 20 longString -- Output: \"Haskell is a powe...\"",
+      "    print $ truncateString 54 longString -- Output: \"Haskell is a powerful functional programming language.\""
+    ],
+    "rb": [
+      "long_string = \"Ruby is a dynamic, open source programming language.\"",
+      "puts truncate_string(20, long_string) # Output: \"Ruby is a dynamic...\"",
+      "puts truncate_string(54, long_string) # Output: \"Ruby is a dynamic, open source programming language.\""
+    ],
+    "java": [
+      "System.out.println(truncate(\"hello world\", 5, \"...\")); // \"hello...\""
+    ],
+    "py": [
+      "truncate('This is a long string', 10) # Returns: 'This is a ...'",
+      "truncate('This is a long string', 10, False) # Returns: 'This is a '"
+    ]
+  }
+}

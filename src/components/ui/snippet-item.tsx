@@ -1,28 +1,34 @@
-import { Card, CardContent, CardTitle } from "./card";
-import type { SnippetType } from "@/types";
 import Link from "next/link";
+import type { ListSnippet } from "@/types";
 import { languageIcons } from "./language-icons";
+import VerifiedBadge from "./verified-badge";
+import { LANGUAGE_NAMES } from "@/data/meta";
 
-interface SnippetItemProps {
-  snippet: SnippetType;
-}
-
-export default function SnippetItem({ snippet }: SnippetItemProps) {
-  const { title, languages } = snippet;
+export default function SnippetItem({ snippet }: { snippet: ListSnippet }) {
+  const { title, description, languages, verified } = snippet;
 
   return (
-    <Link href={`/snippets/${snippet.category}/${snippet.id}`}>
-      <Card className="py-2 hover:outline-2 hover:outline-border">
-        <CardContent className="space-y-4 px-4">
-          <CardTitle className="text-lg font-bold">{title}</CardTitle>
-          <ul className="flex gap-2 ml-auto w-fit flex-wrap">
-            {languages.map((language) => {
-              const Icon = languageIcons[language.toLowerCase()];
-              return <li key={language}>{Icon ? <Icon size={24} /> : null}</li>;
-            })}
-          </ul>
-        </CardContent>
-      </Card>
-    </Link>
+    <li>
+      <Link
+        href={`/snippets/${snippet.category}/${snippet.slug}`}
+        className="group flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-4 transition-colors hover:border-brand/60"
+      >
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="font-semibold leading-tight group-hover:text-brand transition-colors">{title}</h3>
+          {verified ? <VerifiedBadge compact /> : null}
+        </div>
+        <p className="text-sm text-muted-foreground line-clamp-2 flex-1">{description}</p>
+        <ul className="flex flex-wrap gap-2 text-muted-foreground" aria-label="Languages">
+          {languages.map((language) => {
+            const Icon = languageIcons[language];
+            return (
+              <li key={language} title={LANGUAGE_NAMES[language] ?? language}>
+                {Icon ? <Icon size={16} /> : <span className="text-xs">{language}</span>}
+              </li>
+            );
+          })}
+        </ul>
+      </Link>
+    </li>
   );
 }

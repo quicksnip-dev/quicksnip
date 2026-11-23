@@ -1,0 +1,16 @@
+{
+  "title": "Calculate Factorial",
+  "description": "Computes the factorial of a given integer.",
+  "tags": [
+    "math",
+    "factorial"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "rb": [
+      "puts factorial(5) # Output: 120"
+    ]
+  }
+}

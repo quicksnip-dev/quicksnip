@@ -3,9 +3,9 @@
   "root": true,
   "pages": [
     "---Introduction---",
-    "index.mdx",
-    "installation.mdx",
-    "comparison.mdx",
+    "index",
+    "installation",
+    "for-ai-agents",
     "---Extensions---",
     "...extensions",
     "---Contributing---",

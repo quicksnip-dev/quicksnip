@@ -1,14 +1,38 @@
-import { FaJs, FaPython, FaJava } from "react-icons/fa";
-import { SiTypescript, SiNextdotjs, SiReact } from "react-icons/si";
+import {
+  SiC,
+  SiCplusplus,
+  SiCss3,
+  SiGnubash,
+  SiHaskell,
+  SiHtml5,
+  SiJavascript,
+  SiOpenjdk,
+  SiPython,
+  SiReact,
+  SiRuby,
+  SiRust,
+  SiSass,
+  SiSharp,
+  SiTypescript,
+} from "react-icons/si";
+import { Regex } from "lucide-react";
 
-export const languageIcons: Record<
-  string,
-  React.ComponentType<{ size?: number }>
-> = {
-  js: FaJs,
+export const languageIcons: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   ts: SiTypescript,
-  py: FaPython,
-  java: FaJava,
-  nextjs: SiNextdotjs,
-  react: SiReact,
+  tsx: SiReact,
+  js: SiJavascript,
+  jsx: SiReact,
+  py: SiPython,
+  java: SiOpenjdk,
+  cs: SiSharp,
+  cpp: SiCplusplus,
+  c: SiC,
+  rs: SiRust,
+  rb: SiRuby,
+  hs: SiHaskell,
+  sh: SiGnubash,
+  css: SiCss3,
+  scss: SiSass,
+  html: SiHtml5,
+  regex: Regex,
 };

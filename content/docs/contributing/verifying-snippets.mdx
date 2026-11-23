@@ -1,0 +1,24 @@
+---
+title: Verifying snippets
+description: Turn a community snippet into a typed, tested, verified one.
+---
+
+Most of the collection came from QuickSnip v1, where snippets were reviewed by hand but not tested. Verifying them is the most valuable contribution right now, and a great first pull request.
+
+## Steps
+
+1. Find an unverified snippet. On [/snippets](/snippets), any snippet without the ✓ badge counts. JavaScript ones are the easiest start.
+2. In its folder, add `<name>.ts`: a typed version of the code with `export`. Fix any bugs you find on the way.
+3. Add `<name>.test.ts` with tests that cover normal input **and** edge cases.
+4. If you replaced the `.js` file with an equivalent `.ts`, delete the `.js` file. The shadcn CLI turns TypeScript into JavaScript for JS projects.
+5. Update `meta.json`: move usage examples from `usage.js` to `usage.ts`, and add your username to the end of `contributors`.
+6. Run `npm test` and `npm run snippets:check`, then open a pull request.
+
+## What reviewers look for
+
+- Correct behavior for empty, unicode, negative, huge and invalid inputs.
+- No mutation of inputs unless the name says so (`shuffle` returns a new array).
+- Types that help the caller, not `any`.
+- No new dependencies.
+
+Keep the original contributors in `meta.json`. Verification builds on their work.

@@ -1,62 +1,49 @@
-import {
-  Code,
-  Terminal,
-  Paintbrush,
-  Rocket,
-  Book,
-  PlusCircle,
-} from "lucide-react";
-import { Card, CardContent, CardHeader } from "../ui/card";
+import { BadgeCheck, Bot, Code, Languages, PackageOpen, Users } from "lucide-react";
 
 const features = [
   {
-    icon: <Code className="h-6 w-6" />,
-    title: "Developer-Friendly",
-    desc: "Tailored for developers to create and iterate fast, with minimal overhead and maximum flexibility.",
+    icon: BadgeCheck,
+    title: "Verified by tests",
+    desc: "Verified snippets are typed and run through unit tests in CI, so edge cases are handled before code reaches your project.",
   },
   {
-    icon: <Terminal className="h-6 w-6" />,
-    title: "CLI Support",
-    desc: "Command-line interface support for seamless development and workflow integration.",
+    icon: Bot,
+    title: "Built for AI agents",
+    desc: "llms.txt, a JSON API and stable snippet IDs give AI coding tools a trusted source to install from instead of generating code from scratch.",
   },
   {
-    icon: <Paintbrush className="h-6 w-6" />,
-    title: "Easily Customizable",
-    desc: "Every block is built to be editable. From layout to logic, style to structure—make it your own.",
+    icon: PackageOpen,
+    title: "One-command install",
+    desc: "Every JavaScript and TypeScript snippet is a shadcn registry item. Run one command and the file lands in your lib folder.",
   },
   {
-    icon: <Rocket className="h-6 w-6" />,
-    title: "v0 Support",
-    desc: "Launch fast with confidence. Perfect for MVPs, prototypes, and weekend projects.",
+    icon: Code,
+    title: "You own the code",
+    desc: "No package to update and no runtime dependency. The code is copied into your project for you to read, change and keep.",
   },
   {
-    icon: <Book className="h-6 w-6" />,
-    title: "Full Documentation",
-    desc: "Comprehensive documentation to understand every feature and maximize your development experience.",
+    icon: Languages,
+    title: "Many languages",
+    desc: "One snippet, many implementations: TypeScript, Python, Java, C++, Rust, Ruby, CSS and more, side by side.",
   },
   {
-    icon: <PlusCircle className="h-6 w-6" />,
-    title: "Contribute Yours",
-    desc: "Add your own blocks to the library and become part of the MVPBlocks community.",
+    icon: Users,
+    title: "Made by the community",
+    desc: "Hundreds of snippets written and reviewed by developers around the world. Add yours and get credited on every page.",
   },
 ];
+
 export default function Features() {
   return (
-    <section className="relative py-4 my-6">
+    <section className="py-8">
       <div className="wrapper">
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((item, idx) => (
-            <Card key={idx}>
-              <CardHeader>
-                <div className="text-accent w-fit transform-gpu rounded-full bg-background p-4">
-                  {item.icon}
-                </div>
-              </CardHeader>
-              <CardContent>
-                <h4 className="text-lg font-bold">{item.title}</h4>
-                <p className="text-muted-foreground">{item.desc}</p>
-              </CardContent>
-            </Card>
+        <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          {features.map(({ icon: Icon, title, desc }) => (
+            <li key={title} className="space-y-3 bg-background p-6">
+              <Icon className="size-6 text-brand" aria-hidden="true" />
+              <h3 className="text-lg font-semibold">{title}</h3>
+              <p className="text-muted-foreground">{desc}</p>
+            </li>
           ))}
         </ul>
       </div>

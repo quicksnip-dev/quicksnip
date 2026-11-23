@@ -1,0 +1,18 @@
+{
+  "title": "Checksum",
+  "description": "Calculates the checksum of an int",
+  "tags": [
+    "math",
+    "number",
+    "checksum"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "int number = 12345;",
+      "System.out.println(checksum(number)); // 15 = 1+2+3+4+5"
+    ]
+  }
+}

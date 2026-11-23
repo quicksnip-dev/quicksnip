@@ -1,0 +1,16 @@
+{
+  "title": "Deep Clone",
+  "description": "Deep-clones objects, arrays, Dates, Maps and Sets, including circular references.",
+  "tags": [
+    "object",
+    "clone"
+  ],
+  "contributors": [
+    "jjcantu"
+  ],
+  "usage": {
+    "ts": [
+      "const copy = deepClone({ user: { tags: [\"a\"] }, when: new Date() });"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Get Initials",
+  "description": "Extracts up to N uppercase initials from a name, e.g. for avatar fallbacks.",
+  "tags": [
+    "string",
+    "initials",
+    "name"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "getInitials(\"Ada Lovelace\");     // \"AL\"",
+      "getInitials(\"Mary Jane Watson\"); // \"MJ\""
+    ]
+  }
+}

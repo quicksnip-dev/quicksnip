@@ -1,0 +1,19 @@
+{
+  "title": "Group By",
+  "description": "Groups an array of items into an object keyed by a property or computed value.",
+  "tags": [
+    "array",
+    "group",
+    "aggregate",
+    "object"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "groupBy(users, \"role\");                    // { admin: [...], user: [...] }",
+      "groupBy([1, 2, 3], (n) => (n % 2 ? \"odd\" : \"even\"));"
+    ]
+  }
+}

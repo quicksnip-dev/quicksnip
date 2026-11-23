@@ -1,0 +1,18 @@
+{
+  "title": "Convert Object to Query String",
+  "description": "Converts an object to a query string for use in URLs.",
+  "tags": [
+    "object",
+    "query string",
+    "url"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const params = { search: 'test', page: 1 };",
+      "toQueryString(params); // Returns: 'search=test&page=1'"
+    ]
+  }
+}

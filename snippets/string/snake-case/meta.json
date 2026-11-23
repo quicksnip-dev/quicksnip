@@ -1,0 +1,24 @@
+{
+  "title": "snake_case",
+  "description": "Converts any string (spaces, kebab, camel, Pascal) to snake_case.",
+  "tags": [
+    "string",
+    "conversion",
+    "snake-case",
+    "case",
+    "snake_case"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "snakeCase(\"helloWorld\");  // \"hello_world\"",
+      "snakeCase(\"Hello World\"); // \"hello_world\""
+    ],
+    "java": [
+      "System.out.println(stringToSnakeCase(\"Hello World 123\")); // \"hello_world_123\""
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Format Bytes",
+  "description": "Formats a byte count as a human-readable size (KB, MB, GB…).",
+  "tags": [
+    "format",
+    "size"
+  ],
+  "contributors": [
+    "jjcantu"
+  ],
+  "usage": {
+    "ts": [
+      "formatBytes(1536);                // \"1.5 KB\"",
+      "formatBytes(1500, { si: true });  // \"1.5 kB\""
+    ]
+  }
+}

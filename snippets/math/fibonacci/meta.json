@@ -1,0 +1,18 @@
+{
+  "title": "Fibonacci",
+  "description": "Calculates the nth fibonacci number",
+  "tags": [
+    "math",
+    "number",
+    "fibonacci"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "int number = 5;",
+      "System.out.println(fibonacci(number)) // 3 (0, 1, 1, 2, 3)"
+    ]
+  }
+}

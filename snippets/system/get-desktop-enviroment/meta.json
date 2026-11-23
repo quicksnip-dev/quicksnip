@@ -1,0 +1,16 @@
+{
+  "title": "Get Desktop Enviroment",
+  "description": "Get the Desktop Enviroment that the user is currently using.",
+  "tags": [
+    "linux",
+    "file"
+  ],
+  "contributors": [
+    "sponkurtus2"
+  ],
+  "usage": {
+    "rs": [
+      "get_desktop_env(); // Returns: the desktop enviroment that the user actually has e.g. i3."
+    ]
+  }
+}

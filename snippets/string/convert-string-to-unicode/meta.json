@@ -1,0 +1,18 @@
+{
+  "title": "Convert String to Unicode",
+  "description": "Converts a string into its Unicode representation.",
+  "tags": [
+    "string",
+    "ascii",
+    "unicode",
+    "convert"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "string_to_unicode('hello') # Returns: [104, 101, 108, 108, 111]"
+    ]
+  }
+}

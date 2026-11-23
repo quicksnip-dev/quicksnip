@@ -1,0 +1,16 @@
+{
+  "title": "Format Date",
+  "description": "Formats a date in 'YYYY-MM-DD' format.",
+  "tags": [
+    "date",
+    "format"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "js": [
+      "formatDate(new Date(2024, 11, 10)); // Returns: '2024-12-10'"
+    ]
+  }
+}

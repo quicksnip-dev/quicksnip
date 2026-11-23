@@ -1,0 +1,17 @@
+{
+  "title": "Convert Tabs to Spaces",
+  "description": "Converts all tab characters in a string to spaces.",
+  "tags": [
+    "string",
+    "tabs",
+    "spaces"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "tabsToSpaces('Hello\\tWorld', 2); // Returns: 'Hello  World'"
+    ]
+  }
+}

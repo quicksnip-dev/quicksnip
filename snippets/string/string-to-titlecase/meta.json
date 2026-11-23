@@ -1,0 +1,17 @@
+{
+  "title": "String To Titlecase",
+  "description": "Converts a string into Title Case, where the first letter of each word is capitalized and the remaining letters are lowercase",
+  "tags": [
+    "string",
+    "conversion",
+    "title-case"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(convertToTitleCase(\"heLlo wOrld\")); // \"Hello World\""
+    ]
+  }
+}

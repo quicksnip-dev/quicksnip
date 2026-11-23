@@ -1,0 +1,18 @@
+{
+  "title": "Display a Pillow Image",
+  "description": "Use Pillow to show an image in a Tkinter window.",
+  "tags": [
+    "app",
+    "hello-world",
+    "object-oriented"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = App()",
+      "root.mainloop()"
+    ]
+  }
+}

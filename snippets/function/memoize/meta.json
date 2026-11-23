@@ -1,0 +1,19 @@
+{
+  "title": "Memoize",
+  "description": "Caches a function's results by its arguments, with an optional custom cache key.",
+  "tags": [
+    "memoization",
+    "optimization"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "const slowSquare = (n: number) => n * n;",
+      "const fastSquare = memoize(slowSquare);",
+      "fastSquare(4); // computed",
+      "fastSquare(4); // cached"
+    ]
+  }
+}

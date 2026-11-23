@@ -1,0 +1,22 @@
+{
+  "title": "camelCase",
+  "description": "Converts any string (spaces, kebab, snake, Pascal) to camelCase.",
+  "tags": [
+    "string",
+    "case",
+    "camelcase"
+  ],
+  "contributors": [
+    "aumirza",
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "ts": [
+      "camelCase(\"hello-world\");    // \"helloWorld\"",
+      "camelCase(\"XMLHttpRequest\"); // \"xmlHttpRequest\""
+    ],
+    "java": [
+      "System.out.println(stringToCamelCase(\"Hello world test\")); // \"helloWorldTest\""
+    ]
+  }
+}

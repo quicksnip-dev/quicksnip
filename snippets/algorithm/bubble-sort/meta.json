@@ -1,0 +1,21 @@
+{
+  "title": "Bubble Sort",
+  "description": "Sorts an array of integers using the Bubble Sort algorithm.",
+  "tags": [
+    "sorting",
+    "bubblesort",
+    "array",
+    "algorithm"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "int arr[] = {64, 34, 25, 12, 22, 11, 90};",
+      "int n = sizeof(arr) / sizeof(arr[0]);",
+      "bubbleSort(arr, n);",
+      "// Now arr[] is sorted: {11, 12, 22, 25, 34, 64, 90}"
+    ]
+  }
+}

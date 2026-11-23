@@ -1,0 +1,19 @@
+{
+  "title": "Typed localStorage",
+  "description": "Typed, SSR-safe localStorage wrapper with JSON serialization that never throws.",
+  "tags": [
+    "localstorage",
+    "storage",
+    "memory"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "storage.set(\"theme\", { mode: \"dark\" });",
+      "const theme = storage.get(\"theme\", { mode: \"light\" });",
+      "storage.remove(\"theme\");"
+    ]
+  }
+}

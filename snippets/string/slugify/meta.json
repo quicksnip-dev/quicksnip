@@ -1,0 +1,22 @@
+{
+  "title": "Slugify",
+  "description": "Converts a string into a URL-friendly slug, stripping accents and symbols.",
+  "tags": [
+    "string",
+    "slug",
+    "slugify"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "slugify(\"Crème Brûlée à la mode!\"); // \"creme-brulee-a-la-mode\"",
+      "slugify(\"Hello World\", \"_\");     // \"hello_world\""
+    ],
+    "java": [
+      "System.out.println(slugify(\"Hello World-#123-é\", \"-\")); // \"hello-world-123-e\""
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Split String",
+  "description": "Splits a string by a delimiter",
+  "tags": [
+    "string",
+    "split"
+  ],
+  "contributors": [
+    "saminjay"
+  ],
+  "usage": {
+    "cpp": [
+      "split_string(\"quick_-snip\", \"_-\"); // Returns: std::vector<std::string> { \"quick\", \"snip\" }"
+    ]
+  }
+}

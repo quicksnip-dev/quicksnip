@@ -1,0 +1,17 @@
+{
+  "title": "Title Case",
+  "description": "Converts a sentence to Title Case, keeping minor words like \"of\" and \"the\" lowercase.",
+  "tags": [
+    "string",
+    "case",
+    "titlecase"
+  ],
+  "contributors": [
+    "aumirza"
+  ],
+  "usage": {
+    "ts": [
+      "titleCase(\"the lord of the rings\"); // \"The Lord of the Rings\""
+    ]
+  }
+}

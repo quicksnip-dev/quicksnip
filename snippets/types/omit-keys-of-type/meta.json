@@ -1,0 +1,24 @@
+{
+  "title": "Omit Keys of Type",
+  "description": "Removes keys of a specified type from an object type.",
+  "tags": [
+    "helper-types",
+    "typedefinition",
+    "omit",
+    "keys"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = {",
+      "    id: string;",
+      "    isActive: boolean;",
+      "    data: number[];",
+      "};",
+      "",
+      "type WithoutBoolean = OmitKeysOfType<A, boolean>; // { id: string; data: number[] }"
+    ]
+  }
+}

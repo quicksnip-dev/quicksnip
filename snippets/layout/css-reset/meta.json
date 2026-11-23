@@ -1,0 +1,12 @@
+{
+  "title": "CSS Reset",
+  "description": "Resets some default browser styles, ensuring consistency across browsers.",
+  "tags": [
+    "reset",
+    "browser",
+    "layout"
+  ],
+  "contributors": [
+    "AmeerMoustafa"
+  ]
+}

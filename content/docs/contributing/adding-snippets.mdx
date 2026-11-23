@@ -1,8 +1,79 @@
 ---
 title: Adding snippets
-description: Hello World
+description: The snippet folder format, step by step.
 ---
 
-## This is title
+## Folder structure
 
-This is description
+Every snippet is one folder: `snippets/<category>/<name>/`. The folder name is the snippet's **permanent ID**, so pick a short, obvious one (`slugify`, `group-by`, `format-bytes`). It's what people and AI will type.
+
+```txt
+snippets/
+└── string/
+    └── slugify/
+        ├── meta.json         # title, description, tags, contributors, usage
+        ├── slugify.ts        # TypeScript (required to be "verified")
+        ├── slugify.test.ts   # tests (required to be "verified")
+        ├── slugify.py        # any other languages, one file each
+        └── slugify.java
+```
+
+Supported file extensions: `ts`, `tsx`, `js`, `jsx`, `py`, `java`, `cs`, `cpp`, `c`, `rs`, `rb`, `hs`, `sh`, `css`, `scss`, `html`, `regex`.
+
+## meta.json
+
+```json
+{
+  "title": "Slugify",
+  "description": "Converts a string into a URL-friendly slug, stripping accents and symbols.",
+  "tags": ["url", "seo"],
+  "contributors": ["your-github-username"],
+  "usage": {
+    "ts": ["slugify(\"Hello World!\"); // \"hello-world\""],
+    "py": ["slugify(\"Hello World!\")  # \"hello-world\""]
+  }
+}
+```
+
+- **contributors**: GitHub usernames. Add yours to the end when you improve an existing snippet.
+- **tags**: a few specific words. Don't use the language name or generic words like `utility`.
+- **usage**: short examples per language, one array item per line.
+- **dependencies** (optional): npm packages the TS/JS code needs. Avoid them if you can.
+
+## Code files
+
+- **Only the implementation.** Usage examples go in `meta.json`, not in the code file.
+- **Export** what people should import (`export function slugify…`).
+- **Self-contained.** No imports from other snippets. Copy a tiny helper in if you need one.
+- **No dependencies** unless absolutely necessary.
+
+## Tests
+
+To earn the ✓ Verified badge, add `<name>.ts` and `<name>.test.ts` with [Vitest](https://vitest.dev):
+
+```ts
+import { expect, it } from "vitest";
+import { slugify } from "./slugify";
+
+it("strips accents", () => {
+  expect(slugify("Crème Brûlée")).toBe("creme-brulee");
+});
+```
+
+Test the edge cases: empty input, unicode, negative numbers, invalid input, and so on.
+
+## Is this a good snippet?
+
+Ask yourself:
+
+- Does the standard library already do this easily? Then skip it (for example, `arr.includes`).
+- Is it something people actually rewrite again and again?
+- Is it small enough to read in a minute? If not, split it.
+
+## Check your work
+
+```bash
+npm run snippets:check   # validates folder and meta.json
+npm test                 # runs the tests
+npm run dev              # preview it on /snippets
+```

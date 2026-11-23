@@ -1,0 +1,23 @@
+{
+  "title": "Either Monad for Error Handling",
+  "description": "Using the Either monad to handle errors in a computation.",
+  "tags": [
+    "monads",
+    "either",
+    "error handling"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let result = do",
+      "            a <- safeDiv 10 2",
+      "            b <- safeDiv a 0  -- This will trigger an error",
+      "            return b",
+      "    print result  -- Output: Left \"Division by zero error\""
+    ]
+  }
+}

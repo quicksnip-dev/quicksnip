@@ -1,0 +1,34 @@
+{
+  "title": "Deep Readonly Type",
+  "description": "Converts all properties of a type, including nested objects, into readonly.",
+  "tags": [
+    "helper-types",
+    "typedefinition",
+    "readonly"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = {",
+      "    name: string;",
+      "    details: {",
+      "        age: number;",
+      "        address: { city: string; zip: string };",
+      "    };",
+      "};",
+      "",
+      "type ReadonlyA = DeepReadonly<A>;",
+      "/*",
+      "Type ReadonlyA:",
+      "{",
+      "  readonly name: string;",
+      "  readonly details: {",
+      "    readonly age: number;",
+      "    readonly address: { readonly city: string; readonly zip: string };",
+      "  };",
+      "}"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Hex to RGB",
+  "description": "Parses 3, 4, 6 or 8-digit hex colors into RGB(A), returning null for invalid input.",
+  "tags": [
+    "color",
+    "conversion"
+  ],
+  "contributors": [
+    "pvictordev"
+  ],
+  "usage": {
+    "ts": [
+      "hexToRgb(\"#00b5b8\");   // { r: 0, g: 181, b: 184 }",
+      "hexToRgb(\"#ff000080\"); // { r: 255, g: 0, b: 0, a: 0.502 }"
+    ]
+  }
+}

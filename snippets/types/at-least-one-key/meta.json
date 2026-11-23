@@ -1,0 +1,23 @@
+{
+  "title": "At Least One Key",
+  "description": "Ensures that at least one property of an object is required.",
+  "tags": [
+    "helper-types",
+    "typedefinition"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = {",
+      "    id?: string;",
+      "    name?: string;",
+      "    isActive?: boolean;",
+      "};",
+      "",
+      "type AtLeastOneA = AtLeastOne<A>;",
+      "// Requires at least one of 'id', 'name', or 'isActive' to be defined"
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+@mixin isDark($type: 'module') {
+  $root: &;
+
+  @if $type == 'module' {
+    :global {
+      @at-root body[theme='dark'] #{$root} {
+        @content;
+      }
+    }
+  } @else {
+    &[theme='dark'] {
+      @content;
+    }
+  }
+}

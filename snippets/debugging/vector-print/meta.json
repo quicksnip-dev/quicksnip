@@ -1,0 +1,18 @@
+{
+  "title": "Vector Print",
+  "description": "Overloads the << operator to print the contents of a vector just like in python.",
+  "tags": [
+    "printing",
+    "debuging",
+    "vector"
+  ],
+  "contributors": [
+    "Mohamed-faaris"
+  ],
+  "usage": {
+    "cpp": [
+      "std::vector<int> numbers = {1, 2, 3, 4, 5};",
+      "std::cout << numbers << std::endl; // Outputs: [1, 2, 3, 4, 5]"
+    ]
+  }
+}

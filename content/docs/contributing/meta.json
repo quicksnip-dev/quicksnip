@@ -1,9 +1,4 @@
 {
   "title": "Contributing",
-  "pages": [
-    "how-to-contribute",
-    "adding-snippets",
-    "modifying-snippets",
-    "third-party-apps"
-  ]
+  "pages": ["how-to-contribute", "adding-snippets", "verifying-snippets", "modifying-snippets", "third-party-apps"]
 }

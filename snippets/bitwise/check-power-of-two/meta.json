@@ -1,0 +1,17 @@
+{
+  "title": "Check Power of Two",
+  "description": "Checks if a given number is a power of two using bitwise operations.",
+  "tags": [
+    "bit-manipulation",
+    "power-of-two"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "c": [
+      "is_power_of_two(16); // Returns: true",
+      "is_power_of_two(18); // Returns: false"
+    ]
+  }
+}

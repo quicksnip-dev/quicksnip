@@ -1,0 +1,22 @@
+{
+  "title": "Allow Lowercase",
+  "description": "A validation function to allow only lowercase alphabetic characters.",
+  "tags": [
+    "validation",
+    "lowercase"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_lowercase)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

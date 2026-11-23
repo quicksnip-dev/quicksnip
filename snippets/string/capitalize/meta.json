@@ -1,0 +1,20 @@
+{
+  "title": "Capitalize",
+  "description": "Uppercases the first character of a string.",
+  "tags": [
+    "string",
+    "capitalize"
+  ],
+  "contributors": [
+    "technoph1le",
+    "Mathys-Gasnier"
+  ],
+  "usage": {
+    "ts": [
+      "capitalize(\"hello world\"); // \"Hello world\""
+    ],
+    "rs": [
+      "capitalized(\"lower_case\"); // Returns: Lower_case"
+    ]
+  }
+}

@@ -1,8 +1,54 @@
 ---
 title: Installation
-description: Hello World
+description: Add snippets to your project with the shadcn CLI or by copying them.
 ---
 
-## This is title
+## With the shadcn CLI
 
-This is description
+Every JavaScript and TypeScript snippet is published as a [shadcn registry](https://ui.shadcn.com/docs/registry) item. Pass its URL to `shadcn add`:
+
+```bash
+npx shadcn@latest add https://quicksnip.dev/r/debounce.json
+```
+
+The file is copied into your `lib` folder (for example `lib/debounce.ts` or `src/lib/debounce.ts`), and you import it like any other module:
+
+```ts
+import { debounce } from "@/lib/debounce";
+```
+
+You can install several at once:
+
+```bash
+npx shadcn@latest add https://quicksnip.dev/r/slugify.json https://quicksnip.dev/r/retry.json
+```
+
+> The CLI needs a `components.json` in your project. If you already use shadcn/ui, you have one. If not, run `npx shadcn@latest init` once.
+
+### Shorter names (optional)
+
+Add QuickSnip as a namespaced registry in `components.json`:
+
+```json
+{
+  "registries": {
+    "@quicksnip": "https://quicksnip.dev/r/{name}.json"
+  }
+}
+```
+
+Then install by name:
+
+```bash
+npx shadcn@latest add @quicksnip/debounce
+```
+
+## Copy & paste
+
+Every snippet page on [/snippets](/snippets) has a copy button for each language. Paste the code where you need it. That's it.
+
+## Finding a snippet's name
+
+The name is shown at the bottom of each snippet page (for example `kebab-case`). It's usually the snippet's folder name. If two categories have a snippet with the same name, the category is added in front, like `algorithm-binary-search`.
+
+The full list is in [llms.txt](/llms.txt) and the [registry index](/r/registry.json).

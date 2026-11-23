@@ -1,0 +1,23 @@
+{
+  "title": "Calculate Compound Interest",
+  "description": "Calculates compound interest for a given principal amount, rate, and time period.",
+  "tags": [
+    "math",
+    "compound interest",
+    "finance"
+  ],
+  "contributors": [
+    "axorax",
+    "ACR1209"
+  ],
+  "usage": {
+    "py": [
+      "compound_interest(1000, 0.05, 5) # Returns: 1276.2815625000003",
+      "compound_interest(1000, 0.05, 5, 12) # Returns: 1283.68"
+    ],
+    "rb": [
+      "puts compound_interest(1000, 0.05, 5)   # Output: 1276.2815625000003",
+      "puts compound_interest(1000, 0.05, 5, 12) # Output: 1283.3586785035118"
+    ]
+  }
+}

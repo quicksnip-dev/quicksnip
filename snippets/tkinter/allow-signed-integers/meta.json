@@ -1,0 +1,23 @@
+{
+  "title": "Allow Signed Integers",
+  "description": "A validation function to allow only signed integers.",
+  "tags": [
+    "validation",
+    "signed",
+    "integers"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_signed_integers)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%d\", \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

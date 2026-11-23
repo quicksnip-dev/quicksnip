@@ -1,0 +1,17 @@
+{
+  "title": "Mask Text",
+  "description": "Masks portions of a string, leaving specific parts at the beginning and end visible while replacing the rest with a specified character",
+  "tags": [
+    "string",
+    "mask",
+    "hide"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(partialMask(\"1234567890\", 4, 2, '*')); // \"1234****90\""
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "List Directories",
+  "description": "Lists all the directories in a path.",
+  "tags": [
+    "filesystem",
+    "directories",
+    "c++17"
+  ],
+  "contributors": [
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "auto directories = list_directories(\"Path\");"
+    ]
+  }
+}

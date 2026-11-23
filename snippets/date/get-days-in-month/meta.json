@@ -1,0 +1,17 @@
+{
+  "title": "Get Days in Month",
+  "description": "Calculates the number of days in a specific month of a given year.",
+  "tags": [
+    "date",
+    "days-in-month"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "getDaysInMonth(2024, 1); // Returns: 29 (February in a leap year)",
+      "getDaysInMonth(2023, 1); // Returns: 28"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Factorial",
+  "description": "Computes the factorial of a given number",
+  "tags": [
+    "math",
+    "number",
+    "factorial"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "int number = 6;",
+      "System.out.println(factorial(number)); // 720 = 6*5*4*3*2"
+    ]
+  }
+}

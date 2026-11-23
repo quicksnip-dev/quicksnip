@@ -1,0 +1,18 @@
+{
+  "title": "Debounce",
+  "description": "Delays a function until calls stop for N ms. Includes cancel() and flush().",
+  "tags": [
+    "debounce",
+    "performance"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "const search = debounce((q: string) => fetchResults(q), 300);",
+      "input.addEventListener(\"input\", (e) => search(e.target.value));",
+      "search.cancel(); // drop a pending call"
+    ]
+  }
+}

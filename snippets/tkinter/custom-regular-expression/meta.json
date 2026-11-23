@@ -1,0 +1,23 @@
+{
+  "title": "Custom Regular Expression",
+  "description": "A validation function to match a regular expression pattern.",
+  "tags": [
+    "validation",
+    "pattern"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(custom_regular_expression)",
+      "pattern = r\"^\\d{0,4}$\"  # Allow up to 4 digits",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%d\", \"%P\", pattern)).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

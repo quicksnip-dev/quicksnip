@@ -1,0 +1,17 @@
+{
+  "title": "Read JSON File",
+  "description": "Reads a JSON file and parses its content.",
+  "tags": [
+    "json",
+    "file",
+    "read"
+  ],
+  "contributors": [
+    "e3nviction"
+  ],
+  "usage": {
+    "py": [
+      "read_json('data.json') # Returns: Content of file as dict"
+    ]
+  }
+}

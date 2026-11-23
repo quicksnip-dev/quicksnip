@@ -1,0 +1,20 @@
+{
+  "title": "Password Generator",
+  "description": "Generates a random string with specified length and character set, including options for letters, numbers, and special characters",
+  "tags": [
+    "string",
+    "password",
+    "generator",
+    "security",
+    "random",
+    "token"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(randomString(10, true, true, false)); // Random string containing letters, numbers but no special characters with 10 characters"
+    ]
+  }
+}

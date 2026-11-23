@@ -1,0 +1,18 @@
+{
+  "title": "System Resource Monitor",
+  "description": "Monitors system resources (CPU, RAM, disk, users)",
+  "tags": [
+    "file",
+    "system"
+  ],
+  "contributors": [
+    "sponkurtus2"
+  ],
+  "usage": {
+    "sh": [
+      "chmod a+x system-resource-monitor.sh # First make it executable for all the users",
+      "",
+      "./system-resource-monitor.sh  # It will print the following system resources (CPU, RAM, disk, and active users)"
+    ]
+  }
+}

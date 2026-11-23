@@ -1,120 +1,84 @@
-"use client";
-
-import { AspectRatio } from "@/components/ui/aspect-ratio";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
-import Image from "next/image";
+import type { Metadata } from "next";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { DISCORD_URL, GITHUB_URL } from "@/data/meta";
-import { YOUTUBE_VIDEOS } from "@/data/yt-videos";
 
-export default function Communitypage() {
+import CommunityLinks from "@/components/layouts/community-links";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { HISTORY } from "@/data/history";
+import { getSnippetIndex } from "@/lib/snippets";
+
+export const metadata: Metadata = {
+  title: "Community",
+  description: "The people and the history behind QuickSnip.",
+  alternates: { canonical: "/community" },
+};
+
+function getContributors() {
+  const counts = new Map<string, number>();
+  for (const s of getSnippetIndex()) for (const c of s.contributors) counts.set(c, (counts.get(c) ?? 0) + 1);
+  return [...counts.entries()]
+    .sort(([a, x], [b, y]) => y - x || a.localeCompare(b))
+    .map(([name, count]) => ({ name, count }));
+}
+
+export default function CommunityPage() {
+  const contributors = getContributors();
+
   return (
     <>
+      <CommunityLinks />
+
       <section>
-        <div className="wrapper grid py-20 gap-8 lg:grid-cols-2">
-          <div className="space-y-8 grid justify-items-center">
-            <motion.div
-              whileHover={{ rotate: "10deg", scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring" }}
-            >
-              <Image
-                src="/assets/icons/github.svg"
-                alt="GitHub"
-                width={150}
-                height={150}
-                className="shadow-[0_0_5rem_1rem_hsl(225,22%,15%)] rounded-[3rem]"
-              />
-            </motion.div>
-            <h2 className="text-3xl font-bold text-center">
-              QuickSnip is Open-Source
-            </h2>
-            <Button size="lg" asChild>
-              <Link href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
-                See the code <ExternalLink />
-              </Link>
-            </Button>
-          </div>
-          <div className="space-y-8 grid justify-items-center">
-            <motion.div
-              whileHover={{ rotate: "-10deg", scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              transition={{ type: "spring" }}
-            >
-              <Image
-                src="/assets/icons/discord.svg"
-                alt="Discord"
-                width={150}
-                height={150}
-                className="shadow-[0_0_5rem_1rem_hsl(235,86%,65%,0.5)] rounded-[3rem]"
-              />
-            </motion.div>
-            <h2 className="text-3xl font-bold text-center">
-              Join our Discord Community
-            </h2>
-            <Button size="lg" asChild>
-              <Link
-                href={DISCORD_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Take me there <ExternalLink />
-              </Link>
-            </Button>
-          </div>
+        <div className="wrapper-xs py-12 space-y-8">
+          <h2 className="text-3xl font-bold text-center">History</h2>
+          <ol className="relative space-y-8 border-l border-border pl-6">
+            {HISTORY.map((item) => (
+              <li key={item.version} className="relative">
+                <span className="absolute -left-[1.85rem] top-1.5 size-3 rounded-full border-2 border-background bg-brand" />
+                <p className="text-sm text-muted-foreground">
+                  {item.date} · <span className="font-mono">{item.version}</span>
+                </p>
+                <h3 className="text-lg font-semibold">{item.title}</h3>
+                <p className="text-muted-foreground">{item.body}</p>
+              </li>
+            ))}
+          </ol>
         </div>
       </section>
 
       <section>
-        <div className="wrapper pt-8 pb-16 space-y-8">
-          <h2 className="text-xl text-muted-foreground font-bold text-center">
-            Videos from Technophile
-          </h2>
-          <ul className="grid gap-4 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3">
-            {YOUTUBE_VIDEOS.map((video) => (
-              <li key={video.id}>
+        <div className="wrapper py-12 space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-bold">Contributors</h2>
+            <p className="text-muted-foreground">
+              {contributors.length} people wrote the snippets in this collection. Thank you.
+            </p>
+          </div>
+          <ul className="flex flex-wrap justify-center gap-2">
+            {contributors.map(({ name, count }) => (
+              <li key={name}>
                 <Link
-                  href={`https://www.youtube.com/watch?v=${video.id}`}
-                  className="block space-y-2"
+                  href={`https://github.com/${name}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  title={`@${name} · ${count} ${count === 1 ? "snippet" : "snippets"}`}
                 >
-                  <AspectRatio
-                    ratio={16 / 9}
-                    className="bg-muted rounded-lg border-4 border-secondary overflow-hidden"
-                  >
-                    <Image
-                      src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
-                      alt={video.title}
-                      fill
-                      className="h-full w-full object-cover"
-                    />
-                  </AspectRatio>
-                  <h3 className="text-lg font-semibold">{video.title}</h3>
+                  <Avatar className="size-12 ring-2 ring-transparent transition hover:ring-brand">
+                    <AvatarImage src={`https://github.com/${name}.png?size=96`} alt={`@${name}`} loading="lazy" />
+                    <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
+                  </Avatar>
                 </Link>
               </li>
             ))}
           </ul>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="flex w-fit mx-auto"
-            asChild
-          >
-            <Link
-              href="https://www.youtube.com/@technoph1le"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Let me subscribe <ExternalLink />
+          <p className="text-center text-sm text-muted-foreground">
+            Plus everyone who improved the website, docs and tooling.{" "}
+            <Link className="text-brand hover:underline" href="https://github.com/quicksnip-dev/quicksnip/graphs/contributors">
+              See all code contributors
             </Link>
-          </Button>
+            .
+          </p>
         </div>
       </section>
     </>
   );
 }
-
-/**
- * Fetch `CONTRIBUTING.md`
- */

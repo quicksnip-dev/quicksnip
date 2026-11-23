@@ -1,0 +1,27 @@
+{
+  "title": "Deep Required Type",
+  "description": "Converts all properties of a type, including nested objects, into required.",
+  "tags": [
+    "helper-types",
+    "typedefinition",
+    "required"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = {",
+      "    id?: string;",
+      "    name?: string;",
+      "    details?: {",
+      "        age?: number;",
+      "        address?: { city?: string; zip?: string };",
+      "    };",
+      "};",
+      "",
+      "type RequiredA = DeepRequired<A>;",
+      "// Result: { id: string; name: string; details: { age: number; address: { city: string; zip: string }; }; }"
+    ]
+  }
+}

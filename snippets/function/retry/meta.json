@@ -1,0 +1,22 @@
+{
+  "title": "Retry with Backoff",
+  "description": "Retries an async function with exponential backoff and jitter, with an optional stop condition and AbortSignal.",
+  "tags": [
+    "async",
+    "promise",
+    "network",
+    "backoff",
+    "resilience"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "const data = await retry(() => fetch(url).then((r) => r.json()), {",
+      "  attempts: 5,",
+      "  shouldRetry: (err) => !(err instanceof TypeError),",
+      "});"
+    ]
+  }
+}

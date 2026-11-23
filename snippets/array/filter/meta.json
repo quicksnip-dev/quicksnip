@@ -1,0 +1,19 @@
+{
+  "title": "Filter",
+  "description": "Filters a vector using a predicate function.",
+  "tags": [
+    "array",
+    "filter",
+    "c++23"
+  ],
+  "contributors": [
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "std::vector<int> vec = {1, 2, 3, 4, 5};",
+      "std::vector<int> filtered = filter(vec, [](int i){ return i % 2 == 0; });",
+      "// filtered contains 2 and 4"
+    ]
+  }
+}

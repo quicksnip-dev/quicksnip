@@ -1,0 +1,19 @@
+{
+  "title": "Transform from Snake Case to Pascal Case",
+  "description": "Converts a Snake Case string to Pascal Case.",
+  "tags": [
+    "string",
+    "convert",
+    "snake-case",
+    "pascal-case"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "rb": [
+      "snake_case = \"snake_case_to_pascal_case\"",
+      "puts snake_to_pascal(snake_case) # Output: \"SnakeCaseToPascalCase\""
+    ]
+  }
+}

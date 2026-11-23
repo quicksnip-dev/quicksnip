@@ -1,0 +1,16 @@
+{
+  "title": "Dot Product",
+  "description": "Computes the dot product of two vectors, which is the sum of the products of corresponding elements.",
+  "tags": [
+    "math",
+    "vector-algebra"
+  ],
+  "contributors": [
+    "JanluOfficial"
+  ],
+  "usage": {
+    "js": [
+      "dotProduct([1, 2, 3], [4, 5, 6]); // Returns: 32"
+    ]
+  }
+}

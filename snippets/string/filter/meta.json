@@ -1,0 +1,19 @@
+{
+  "title": "Filter",
+  "description": "Filter a string with a predicate function",
+  "tags": [
+    "string",
+    "filtering",
+    "c++23"
+  ],
+  "contributors": [
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "std::string str = \"Hello, World!\";",
+      "std::string filtered = filter(str, [](char c){ return std::isalpha(c); });",
+      "std::cout << filtered << std::endl; // HelloWorld"
+    ]
+  }
+}

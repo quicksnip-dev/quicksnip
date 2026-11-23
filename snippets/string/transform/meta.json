@@ -1,0 +1,19 @@
+{
+  "title": "Transform",
+  "description": "Transform a string with a function",
+  "tags": [
+    "string",
+    "transform",
+    "c++23"
+  ],
+  "contributors": [
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "std::string str = \"Hello, World!\";",
+      "std::string transformed = transform(str, [](char c){ return std::toupper(c); });",
+      "std::cout << transformed << std::endl; // HELLO, WORLD!"
+    ]
+  }
+}

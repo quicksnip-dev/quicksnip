@@ -1,0 +1,22 @@
+{
+  "title": "Check Palindrome",
+  "description": "Checks if a string reads the same backward as forward, ignoring whitespaces and case sensitivity",
+  "tags": [
+    "string",
+    "palindrome",
+    "compare",
+    "reverse"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "technoph1le"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(isPalindrome(\"A man a plan a canal Panama\")); // true"
+    ],
+    "py": [
+      "is_palindrome('A man a plan a canal Panama') # Returns: True"
+    ]
+  }
+}

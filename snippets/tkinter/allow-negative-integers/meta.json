@@ -1,0 +1,23 @@
+{
+  "title": "Allow Negative Integers",
+  "description": "A validation function to allow only negative integers.",
+  "tags": [
+    "validation",
+    "negative",
+    "integers"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_negative_integers)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

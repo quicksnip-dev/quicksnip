@@ -1,0 +1,22 @@
+{
+  "title": "Allow Alphanumeric",
+  "description": "A validation function to allow alphanumeric characters.",
+  "tags": [
+    "validation",
+    "alphanumeric"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_alphanumeric)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

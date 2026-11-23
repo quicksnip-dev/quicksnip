@@ -1,0 +1,18 @@
+{
+  "title": "Remove Special Characters",
+  "description": "Removes any character which is not alphabetic (A-Z, a-z) or numeric (0-9)",
+  "tags": [
+    "string",
+    "special-characters",
+    "clean",
+    "normalization"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(removeSpecialCharacters(\"hello, world!#%\")); // \"hello world\""
+    ]
+  }
+}

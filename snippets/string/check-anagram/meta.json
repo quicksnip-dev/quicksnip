@@ -1,0 +1,24 @@
+{
+  "title": "Check Anagram",
+  "description": "Checks if two strings are anagrams, meaning they contain the same characters ignoring order, spaces and case sensitivity",
+  "tags": [
+    "string",
+    "anagram",
+    "compare",
+    "arrays",
+    "check"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "SteliosGee"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(isAnagram(\"listen\", \"silent\")); // true",
+      "System.out.println(isAnagram(\"hello\", \"world\"));   // false"
+    ],
+    "py": [
+      "is_anagram('listen', 'silent') # Returns: True"
+    ]
+  }
+}

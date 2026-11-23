@@ -1,0 +1,13 @@
+{
+  "title": "Grid Layout with Navigation",
+  "description": "Full-height grid layout with header navigation using nesting syntax.",
+  "tags": [
+    "layout",
+    "sticky",
+    "grid",
+    "full-height"
+  ],
+  "contributors": [
+    "GreenMan36"
+  ]
+}

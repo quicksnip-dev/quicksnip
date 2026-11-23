@@ -1,18 +1,16 @@
 import SnippetHeader from "@/components/layouts/snippet-header";
 import SnippetSidebar from "@/components/layouts/snippet-sidebar";
-
 import { SidebarProvider } from "@/components/ui/sidebar";
+import { getSnippetSummary } from "@/lib/snippets";
 
-export default function SnippetsLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function SnippetsLayout({ children }: { children: React.ReactNode }) {
+  const summary = getSnippetSummary();
+
   return (
     <SidebarProvider>
-      <SnippetSidebar />
-      <main className="py-4 pl-4 space-y-4 w-full">
-        <SnippetHeader />
+      <SnippetSidebar summary={summary} />
+      <main id="main" className="p-4 space-y-6 w-full min-w-0">
+        <SnippetHeader summary={summary} />
         {children}
       </main>
     </SidebarProvider>

@@ -1,0 +1,21 @@
+{
+  "title": "Get Contrast Color",
+  "description": "Returns either black or white text color based on the brightness of the provided hex color.",
+  "tags": [
+    "color",
+    "hex",
+    "contrast",
+    "brightness"
+  ],
+  "contributors": [
+    "yaya12085"
+  ],
+  "usage": {
+    "js": [
+      "getContrastColor('#fff'); // Returns: #000000 (black)",
+      "getContrastColor('#123456'); // Returns: #FFFFFF (white)",
+      "getContrastColor('#ff6347'); // Returns: #000000 (black)",
+      "getContrastColor('#f4f'); // Returns: #000000 (black)"
+    ]
+  }
+}

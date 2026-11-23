@@ -1,0 +1,22 @@
+{
+  "title": "Allow Decimal",
+  "description": "A validation function to allow only decimal numbers.",
+  "tags": [
+    "validation",
+    "decimals"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_decimal)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%d\", \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Split Camel Case",
+  "description": "Splits a camel case string into separate words.",
+  "tags": [
+    "string",
+    "camel-case",
+    "split"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "split_camel_case('camelCaseString') # Returns: 'camel Case String'"
+    ]
+  }
+}

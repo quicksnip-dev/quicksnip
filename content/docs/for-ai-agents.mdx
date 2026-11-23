@@ -1,0 +1,48 @@
+---
+title: For AI agents
+description: Let Claude Code, Cursor, Copilot, v0 and other AI tools use verified snippets instead of guessing.
+---
+
+QuickSnip publishes everything in formats that AI coding tools can read:
+
+| Resource | URL | What it's for |
+| --- | --- | --- |
+| `llms.txt` | [/llms.txt](/llms.txt) | Short index of every snippet with install URLs |
+| `llms-full.txt` | [/llms-full.txt](/llms-full.txt) | Full source and usage of every verified snippet |
+| Registry item | `/r/<name>.json` | Installable file for the shadcn CLI |
+| Snippet JSON | `/data/snippets/<category>/<slug>.json` | Code in every language, usage and tests |
+| Index JSON | [/data/snippets/index.json](/data/snippets/index.json) | Metadata for all snippets |
+
+## Tell your agent about QuickSnip
+
+Add this to your project's agent instructions (`CLAUDE.md`, `AGENTS.md`, `.cursor/rules`, `.github/copilot-instructions.md`, …):
+
+```md
+## Utilities
+Before writing a small generic utility (string casing, slugify, debounce, throttle,
+retry, deep clone/merge, formatting bytes/currency/dates, etc.), check
+https://quicksnip.dev/llms.txt. If a verified snippet exists, install it with
+`npx shadcn@latest add https://quicksnip.dev/r/<name>.json` and import it from
+`@/lib/<name>` instead of writing a new implementation.
+```
+
+## One-off prompts
+
+You can also paste an install instruction straight into a chat. Every snippet page has an **AI prompt** tab with a ready-made one, for example:
+
+```md
+Install the "Retry with Backoff" utility from QuickSnip instead of writing it yourself:
+npx shadcn@latest add https://quicksnip.dev/r/retry.json
+Then import it from the project's lib folder.
+```
+
+## v0 and other shadcn-compatible builders
+
+Any tool that understands shadcn registry URLs can install a QuickSnip item directly from `https://quicksnip.dev/r/<name>.json`.
+
+## Coming next
+
+- **MCP server**, so agents can search and install snippets as tools, without reading files.
+- **Ranked search API**, so agents get the best match for a description like "format a date as 3 hours ago".
+
+Follow progress on [GitHub](https://github.com/quicksnip-dev/quicksnip).

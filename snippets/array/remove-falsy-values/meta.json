@@ -1,0 +1,18 @@
+{
+  "title": "Remove Falsy Values",
+  "description": "Removes falsy values from an array.",
+  "tags": [
+    "array",
+    "falsy",
+    "filter"
+  ],
+  "contributors": [
+    "mubasshir"
+  ],
+  "usage": {
+    "js": [
+      "const array = [0, 1, false, 2, \"\", 3, null];",
+      "removeFalsy(array); // Returns: [1, 2, 3]"
+    ]
+  }
+}

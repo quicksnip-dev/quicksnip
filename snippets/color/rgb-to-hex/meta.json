@@ -1,0 +1,17 @@
+{
+  "title": "RGB to Hex",
+  "description": "Converts RGB(A) channels to a hex color string, clamping out-of-range values.",
+  "tags": [
+    "color",
+    "conversion"
+  ],
+  "contributors": [
+    "jjcantu"
+  ],
+  "usage": {
+    "ts": [
+      "rgbToHex(0, 181, 184);      // \"#00b5b8\"",
+      "rgbToHex(255, 0, 0, 0.5);   // \"#ff000080\""
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "title": "Change Element Style",
+  "description": "Changes the inline style of an element.",
+  "tags": [
+    "dom",
+    "style"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const element = document.querySelector('.my-element');",
+      "changeElementStyle(element, { color: 'red', backgroundColor: 'yellow' });"
+    ]
+  }
+}

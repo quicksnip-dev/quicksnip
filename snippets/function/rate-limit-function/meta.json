@@ -1,0 +1,18 @@
+{
+  "title": "Rate Limit Function",
+  "description": "Limits how often a function can be executed within a given time window.",
+  "tags": [
+    "function",
+    "rate-limiting"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const fetchData = () => console.log('Fetching data...');",
+      "const rateLimitedFetch = rateLimit(fetchData, 2, 1000);",
+      "setInterval(() => rateLimitedFetch(), 200); // Limits fetchData calls to twice a seconds"
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Is Power Of Two",
+  "description": "Checks if a number is a power of two",
+  "tags": [
+    "math",
+    "number",
+    "bit",
+    "power-of-two"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "int number = 16;",
+      "System.out.println(isPowerOfTwo(number)); // true (2^4)"
+    ]
+  }
+}

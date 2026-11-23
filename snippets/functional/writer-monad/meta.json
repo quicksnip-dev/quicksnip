@@ -1,0 +1,23 @@
+{
+  "title": "Writer Monad",
+  "description": "Using the Writer monad to accumulate logs or other outputs alongside a computation.",
+  "tags": [
+    "monads",
+    "writer",
+    "logs"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let (result, logs) = runWriter $ do",
+      "            res1 <- addAndLog 3 5",
+      "            addAndLog res1 1",
+      "    print result  -- Output: 9",
+      "    print logs  -- Output: [\"Adding 3 and 5\", \"Adding 8 and 1\"]"
+    ]
+  }
+}

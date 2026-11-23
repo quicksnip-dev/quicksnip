@@ -1,0 +1,18 @@
+{
+  "title": "Count Character Occurrences",
+  "description": "Counts the occurrences of the specified characters in a given string",
+  "tags": [
+    "string",
+    "characters",
+    "counter",
+    "occurence"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(countCharacterOccurrences(\"hello world\", List.of('l', 'o'))); // 5"
+    ]
+  }
+}

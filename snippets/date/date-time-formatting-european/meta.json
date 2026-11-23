@@ -1,0 +1,20 @@
+{
+  "title": "Date Time Formatting European",
+  "description": "Formats a timestamp to a human-readable date-time string in the format \"dd.MM.yyyy HH:mm:ss\"",
+  "tags": [
+    "date",
+    "time",
+    "date-time",
+    "formatting",
+    "european"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(formatDateTimeEuropean(1735689599, TimeUnit.SECONDS)); // \"31.12.2024 | 23:59:59\" for GMT+0000",
+      "System.out.println(formatDateTimeEuropean(1735689599, TimeUnit.SECONDS, ZoneId.of(\"GMT+0000\"))); // \"31.12.2024 | 23:59:59\""
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Kill Previous Instances",
+  "description": "Kill all previous instances of a script",
+  "tags": [
+    "kill",
+    "process",
+    "background"
+  ],
+  "contributors": [
+    "saminjay"
+  ],
+  "usage": {
+    "sh": [
+      "# Add this function to your background running script",
+      "# It will make sure that only one instance of your script is running at a time",
+      "kill_prev"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Responsive Breakpoints",
+  "description": "Generates media queries for responsive design.",
+  "tags": [
+    "responsive",
+    "media-queries"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

@@ -1,0 +1,9 @@
+^\s+|\s+$
+
+
+-> Usage:
+(don't account for the quotation marks, it just to visualize whitespace)
+"Hello World" ✗
+" Hello World" ✓
+"Hello World " ✓
+" Hello World " ✓

@@ -1,0 +1,18 @@
+{
+  "title": "Format Number with Commas",
+  "description": "Formats a number with commas for better readability (e.g., 1000 -> 1,000).",
+  "tags": [
+    "number",
+    "format"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "formatNumberWithCommas(1000); // Returns: '1,000'",
+      "formatNumberWithCommas(1234567); // Returns: '1,234,567'",
+      "formatNumberWithCommas(987654321); // Returns: '987,654,321'"
+    ]
+  }
+}

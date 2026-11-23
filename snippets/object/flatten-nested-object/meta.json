@@ -1,0 +1,17 @@
+{
+  "title": "Flatten Nested Object",
+  "description": "Flattens a nested object into a single-level object with dot notation for keys.",
+  "tags": [
+    "object",
+    "flatten"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const nestedObj = { a: { b: { c: 1 }, d: 2 }, e: 3 };",
+      "flattenObject(nestedObj); // Returns: { 'a.b.c': 1, 'a.d': 2, e: 3 }"
+    ]
+  }
+}

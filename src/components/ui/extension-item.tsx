@@ -1,6 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import type { ExtensionType } from "@/types";
+import type { ExtensionStatus, ExtensionType } from "@/types";
+
+const STATUS_LABEL: Record<ExtensionStatus, string> = {
+  available: "Available",
+  community: "Community-built",
+  planned: "Planned",
+};
 import {
   Card,
   CardAction,
@@ -22,7 +28,7 @@ export default function ExtensionItem({
   return (
     <Card className="justify-start gap-4">
       <CardHeader className="grid grid-cols-[auto_1fr] items-center gap-4">
-        <div className="bg-primary p-4 rounded-lg">
+        <div className="bg-secondary p-4 rounded-lg">
           <Image
             src={extension.icon}
             alt=""
@@ -33,9 +39,12 @@ export default function ExtensionItem({
         </div>
         <div className="space-y-1">
           <CardTitle className="text-2xl font-bold">{extension.name}</CardTitle>
-          <p className="text-muted-foreground">
-            <strong>Downloads: </strong>
-            {new Intl.NumberFormat().format(extension.downloads)}
+          <p
+            className={
+              extension.status === "planned" ? "text-sm text-muted-foreground" : "text-sm font-medium text-brand"
+            }
+          >
+            {STATUS_LABEL[extension.status]}
           </p>
         </div>
       </CardHeader>
@@ -49,15 +58,13 @@ export default function ExtensionItem({
           <Button asChild>
             <Link href={extension.guide_url}>Guide</Link>
           </Button>
-          <Button asChild variant="outline">
-            <Link
-              href={extension.source_url}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Source
-            </Link>
-          </Button>
+          {extension.source_url ? (
+            <Button asChild variant="outline">
+              <Link href={extension.source_url} target="_blank" rel="noopener noreferrer">
+                Source
+              </Link>
+            </Button>
+          ) : null}
         </CardAction>
       </CardFooter>
     </Card>

@@ -1,0 +1,17 @@
+{
+  "title": "Convert Number to Roman Numerals",
+  "description": "Converts a number to Roman numeral representation.",
+  "tags": [
+    "number",
+    "roman"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "numberToRoman(1994); // Returns: 'MCMXCIV'",
+      "numberToRoman(58); // Returns: 'LVIII'"
+    ]
+  }
+}
