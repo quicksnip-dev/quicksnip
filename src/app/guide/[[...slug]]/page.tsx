@@ -1,37 +1,25 @@
 import { source } from "@/lib/source";
-import {
-  DocsBody,
-  DocsDescription,
-  DocsPage,
-  DocsTitle,
-} from "fumadocs-ui/page";
-import { getGithubLastEdit } from "fumadocs-core/server";
+import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { getMDXComponents } from "../../../../mdx-components";
 
-export default async function Page(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
+export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params;
 
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
   const MDX = page.data.body;
-  const time = await getGithubLastEdit({
-    owner: "fuma-nama",
-    repo: "fumadocs",
-    path: `content/guide/${page.path}`,
-  });
 
   return (
     <DocsPage
+      toc={page.data.toc}
       editOnGithub={{
         owner: "quicksnip-dev",
         repo: "quicksnip",
-        path: `content/guide/${page.path}`,
+        sha: "main",
+        path: `content/docs/${page.path}`,
       }}
-      lastUpdate={time ? new Date(time) : undefined}
       full={page.data.full}
     >
       <DocsTitle>{page.data.title}</DocsTitle>
@@ -47,9 +35,7 @@ export async function generateStaticParams() {
   return source.generateParams();
 }
 
-export async function generateMetadata(props: {
-  params: Promise<{ slug?: string[] }>;
-}) {
+export async function generateMetadata(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params;
   const page = source.getPage(params.slug);
   if (!page) notFound();

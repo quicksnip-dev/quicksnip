@@ -1,8 +1,34 @@
 ---
-title: Get Started
-description: Hello World
+title: Introduction
+description: Verified code snippets for humans and AI.
 ---
 
-## This is title
+QuickSnip is an open-source collection of small, reusable code snippets: `slugify`, `debounce`, `retry`, `deepMerge`, and hundreds more in many languages. The community writes them, and you own them once they're in your project.
 
-This is description
+AI tools can write a `debounce` in a second. But every time they write it a little differently, and sometimes with an edge-case bug. QuickSnip gives you, and your AI, **one trusted version** to reuse.
+
+## What makes a snippet "verified"?
+
+A snippet with the <span className="text-accent">✓ Verified</span> badge:
+
+- is written in **TypeScript** with proper types
+- has **unit tests** that run on every pull request
+- has **no runtime dependencies**
+- is **installable** with one command
+
+Other snippets come from the community collection that started in 2024. They're still useful, but review them before you use them. Verifying them is one of the best ways to [contribute](/guide/contributing/verifying-snippets).
+
+## Three ways to use QuickSnip
+
+| Way | Best for | How |
+| --- | --- | --- |
+| Copy & paste | Everyone | Open a snippet on [/snippets](/snippets) and click copy |
+| shadcn CLI | Web developers | `npx shadcn@latest add https://quicksnip.dev/r/slugify.json` ([guide](/guide/installation)) |
+| AI agents | Vibe coders and AI-assisted teams | Point your agent at `https://quicksnip.dev/llms.txt` ([guide](/guide/for-ai-agents)) |
+
+## Principles
+
+- **You own the code.** Snippets are copied into your project, not installed as a package.
+- **Small and focused.** If the standard library already does it well, it doesn't belong here.
+- **Stable names.** A snippet's ID (`debounce`, `kebab-case`) never changes, so humans and AI can rely on it.
+- **Community first.** Every snippet credits its contributors, including everyone who wrote the original v1 collection.

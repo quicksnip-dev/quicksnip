@@ -1,8 +1,22 @@
 ---
 title: Modifying snippets
-description: Hello World
+description: Fix bugs, add languages, or improve an existing snippet.
 ---
 
-## This is title
+Each snippet page has an **Edit on GitHub** link that opens its folder.
 
-This is description
+## Common changes
+
+- **Fix a bug.** Edit the code file. If the snippet is verified, add a test that would have caught the bug.
+- **Add a language.** Add `<name>.<ext>` to the folder and a matching `usage.<ext>` entry in `meta.json`.
+- **Improve the description or tags.** Edit `meta.json`.
+
+Always add your GitHub username to the end of `contributors`. Never remove existing contributors.
+
+## Renaming
+
+A snippet's folder name is its public ID. It's used in install URLs (`/r/<name>.json`) and AI tools may have learned it. **Don't rename snippets.** If a name is really wrong, open an issue first.
+
+## Removing
+
+Snippets are only removed if they're broken beyond repair or duplicated. Removing one needs an issue and maintainer approval.

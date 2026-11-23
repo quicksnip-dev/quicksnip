@@ -189,14 +189,16 @@ export default function Header() {
                   variants={mobileItemVariants}
                 >
                   <Link
-                    href="/login"
+                    href={GITHUB_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-foreground hover:bg-muted block w-full rounded-lg py-3 text-center font-medium transition-colors duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    Sign In
+                    GitHub
                   </Link>
                   <Link
-                    href="/signup"
+                    href="/guide"
                     className="bg-foreground text-background hover:bg-foreground/90 block w-full rounded-lg py-3 text-center font-medium transition-all duration-200"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >

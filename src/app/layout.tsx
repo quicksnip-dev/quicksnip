@@ -4,6 +4,7 @@ import { RootProvider } from "fumadocs-ui/provider";
 import "./globals.css";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
+import { SITE_URL } from "@/data/meta";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "QuickSnip",
-  description: "Find code snippets in seconds.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "QuickSnip — Verified code snippets for humans and AI",
+    template: "%s · QuickSnip",
+  },
+  description:
+    "Community-made, tested code snippets. Copy them, install them with the shadcn CLI, or let your AI coding agent use them.",
+  alternates: { types: { "text/plain": "/llms.txt" } },
 };
 
 export default function RootLayout({

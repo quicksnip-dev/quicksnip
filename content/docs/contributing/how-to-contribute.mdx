@@ -1,8 +1,33 @@
 ---
 title: How to contribute
-description: Hello World
+description: Ways to help QuickSnip grow, from a one-line fix to a brand-new snippet.
 ---
 
-## This is title
+QuickSnip exists because of its contributors. More than a hundred people wrote the original collection, and every one of them is still credited on their snippets.
 
-This is description
+## Ways to help
+
+| Contribution | Effort | Guide |
+| --- | --- | --- |
+| Verify an existing snippet (add TypeScript + tests) | Small | [Verifying snippets](/guide/contributing/verifying-snippets) |
+| Fix a bug or improve a snippet | Small | [Modifying snippets](/guide/contributing/modifying-snippets) |
+| Add a new snippet | Medium | [Adding snippets](/guide/contributing/adding-snippets) |
+| Improve the website or docs | Any | Open an issue first |
+| Build an extension or integration | Large | [Third-party apps](/guide/contributing/third-party-apps) |
+
+## Ground rules
+
+- **Open an issue or discussion before big changes.** New features without prior discussion may be closed.
+- **One snippet per pull request**, unless the changes are trivial.
+- **Be kind.** We follow the [Code of Conduct](https://github.com/quicksnip-dev/quicksnip/blob/main/CODE_OF_CONDUCT.md).
+
+## Local setup
+
+```bash
+git clone https://github.com/quicksnip-dev/quicksnip.git
+cd quicksnip
+npm install
+npm run dev        # builds snippet data, then starts the site on http://localhost:3000
+npm test           # runs the tests of verified snippets
+npm run snippets:check  # validates every snippet folder
+```

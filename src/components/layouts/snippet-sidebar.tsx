@@ -1,88 +1,28 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import { BadgeCheck, LayoutGrid } from "lucide-react";
+
 import {
   Sidebar,
   SidebarContent,
   SidebarGroup,
+  SidebarGroupLabel,
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarMenuSub,
-  SidebarMenuSubButton,
-  SidebarMenuSubItem,
   SidebarRail,
 } from "@/components/ui/sidebar";
 import { unslugify } from "@/lib/utils";
-import { useSnippetsStore } from "@/store/useSnippetsStore";
-import Link from "next/link";
-
-// const categories = [
-//   {
-//     title: "Routing",
-//     url: "/routing",
-//     count: 23,
-//   },
-//   {
-//     title: "Data Fetching",
-//     url: "#",
-//     isActive: true,
-//     count: 86,
-//   },
-//   {
-//     title: "Rendering",
-//     url: "#",
-//     count: 34,
-//   },
-//   {
-//     title: "Caching",
-//     url: "#",
-//     count: 64,
-//   },
-//   {
-//     title: "Styling",
-//     url: "#",
-//     count: 98,
-//   },
-//   {
-//     title: "Optimizing",
-//     url: "#",
-//     count: 45,
-//   },
-//   {
-//     title: "Configuring",
-//     url: "#",
-//     count: 123,
-//   },
-//   {
-//     title: "Testing",
-//     url: "#",
-//     count: 56,
-//   },
-//   {
-//     title: "Authentication",
-//     url: "#",
-//     count: 87,
-//   },
-//   {
-//     title: "Deploying",
-//     url: "#",
-//     count: 234,
-//   },
-//   {
-//     title: "Upgrading",
-//     url: "#",
-//     count: 12,
-//   },
-//   {
-//     title: "Examples",
-//     url: "#",
-//     count: 56,
-//   },
-// ];
+import { countCategories, useSnippetsStore } from "@/store/useSnippetsStore";
 
 export default function SnippetSidebar() {
-  const { setCategory, categories } = useSnippetsStore();
-  const cats = categories();
+  const pathname = usePathname();
+  const { snippets, verifiedOnly, setVerifiedOnly } = useSnippetsStore();
+  const categories = countCategories(snippets);
+  const activeCategory = pathname.split("/")[2];
+  const verifiedCount = snippets.filter((s) => s.verified).length;
 
   return (
     <Sidebar className="z-40 border-r border-border">
@@ -90,41 +30,40 @@ export default function SnippetSidebar() {
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <Link href="/snippets" onClick={() => setCategory("All")}>
-                  All
+              <SidebarMenuButton asChild isActive={pathname === "/snippets" && !verifiedOnly}>
+                <Link href="/snippets" onClick={() => setVerifiedOnly(false)} className="flex justify-between">
+                  <span className="flex items-center gap-2">
+                    <LayoutGrid size={16} /> All
+                  </span>
+                  <span className="text-muted-foreground">{snippets.length || ""}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
-              <SidebarMenuButton asChild>
-                <Link href="/snippets/categories">Categories</Link>
+              <SidebarMenuButton asChild isActive={pathname === "/snippets" && verifiedOnly}>
+                <Link href="/snippets" onClick={() => setVerifiedOnly(true)} className="flex justify-between">
+                  <span className="flex items-center gap-2">
+                    <BadgeCheck size={16} className="text-accent" /> Verified
+                  </span>
+                  <span className="text-muted-foreground">{verifiedCount || ""}</span>
+                </Link>
               </SidebarMenuButton>
-              {cats.length ? (
-                <SidebarMenuSub>
-                  {cats.map((item) => (
-                    <SidebarMenuSubItem key={item.name}>
-                      <SidebarMenuSubButton
-                        className="py-4"
-                        asChild
-                        isActive={item.name === "current"}
-                      >
-                        <Link
-                          href={`/snippets/${item.name}`}
-                          onClick={() => setCategory(item.name)}
-                          className="flex items-center justify-between"
-                        >
-                          <span>{unslugify(item.name)}</span>
-                          <span className="text-muted-foreground">
-                            {item.count}
-                          </span>
-                        </Link>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
-                </SidebarMenuSub>
-              ) : null}
             </SidebarMenuItem>
+          </SidebarMenu>
+        </SidebarGroup>
+        <SidebarGroup>
+          <SidebarGroupLabel>Categories</SidebarGroupLabel>
+          <SidebarMenu>
+            {categories.map((item) => (
+              <SidebarMenuItem key={item.name}>
+                <SidebarMenuButton asChild isActive={item.name === activeCategory}>
+                  <Link href={`/snippets/${item.name}`} className="flex items-center justify-between">
+                    <span>{unslugify(item.name)}</span>
+                    <span className="text-muted-foreground">{item.count}</span>
+                  </Link>
+                </SidebarMenuButton>
+              </SidebarMenuItem>
+            ))}
           </SidebarMenu>
         </SidebarGroup>
       </SidebarContent>

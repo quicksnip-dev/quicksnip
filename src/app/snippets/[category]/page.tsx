@@ -1,26 +1,36 @@
-"use client";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 
 import SnippetList from "@/components/layouts/snippet-list";
+import { getSnippetIndex } from "@/lib/snippets";
 import { unslugify } from "@/lib/utils";
-import { useSnippetsStore } from "@/store/useSnippetsStore";
-import { use } from "react";
 
 interface Props {
   params: Promise<{ category: string }>;
 }
 
-export default function Categories({ params }: Props) {
-  const { snippets } = useSnippetsStore();
-  const { category } = use(params);
+export const dynamicParams = false;
 
-  const filteredSnippets = snippets.filter(
-    (snippet) => snippet.category === category
-  );
+export function generateStaticParams() {
+  return [...new Set(getSnippetIndex().map((s) => s.category))].map((category) => ({ category }));
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category } = await params;
+  return {
+    title: `${unslugify(category)} snippets`,
+    description: `Community-made ${unslugify(category).toLowerCase()} code snippets.`,
+  };
+}
+
+export default async function CategoryPage({ params }: Props) {
+  const { category } = await params;
+  if (!getSnippetIndex().some((s) => s.category === category)) notFound();
 
   return (
     <section className="space-y-4">
-      <h2 className="text-2xl font-bold">{unslugify(category)}</h2>
-      <SnippetList snippets={filteredSnippets} />
+      <h1 className="text-2xl font-bold">{unslugify(category)}</h1>
+      <SnippetList category={category} />
     </section>
   );
 }
