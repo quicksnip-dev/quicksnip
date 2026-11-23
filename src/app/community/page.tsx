@@ -9,6 +9,7 @@ import { getSnippetIndex } from "@/lib/snippets";
 export const metadata: Metadata = {
   title: "Community",
   description: "The people and the history behind QuickSnip.",
+  alternates: { canonical: "/community" },
 };
 
 function getContributors() {
@@ -32,7 +33,7 @@ export default function CommunityPage() {
           <ol className="relative space-y-8 border-l border-border pl-6">
             {HISTORY.map((item) => (
               <li key={item.version} className="relative">
-                <span className="absolute -left-[1.85rem] top-1.5 size-3 rounded-full border-2 border-background bg-accent" />
+                <span className="absolute -left-[1.85rem] top-1.5 size-3 rounded-full border-2 border-background bg-brand" />
                 <p className="text-sm text-muted-foreground">
                   {item.date} · <span className="font-mono">{item.version}</span>
                 </p>
@@ -61,7 +62,7 @@ export default function CommunityPage() {
                   rel="noopener noreferrer"
                   title={`@${name} · ${count} ${count === 1 ? "snippet" : "snippets"}`}
                 >
-                  <Avatar className="size-12 ring-2 ring-transparent transition hover:ring-accent">
+                  <Avatar className="size-12 ring-2 ring-transparent transition hover:ring-brand">
                     <AvatarImage src={`https://github.com/${name}.png?size=96`} alt={`@${name}`} loading="lazy" />
                     <AvatarFallback>{name.slice(0, 2)}</AvatarFallback>
                   </Avatar>
@@ -71,7 +72,7 @@ export default function CommunityPage() {
           </ul>
           <p className="text-center text-sm text-muted-foreground">
             Plus everyone who improved the website, docs and tooling.{" "}
-            <Link className="text-accent hover:underline" href="https://github.com/quicksnip-dev/quicksnip/graphs/contributors">
+            <Link className="text-brand hover:underline" href="https://github.com/quicksnip-dev/quicksnip/graphs/contributors">
               See all code contributors
             </Link>
             .

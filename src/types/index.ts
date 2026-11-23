@@ -25,6 +25,12 @@ export type SnippetType = {
   installable: boolean;
 };
 
+/** Slim snippet used by list pages (sent to the browser). */
+export type ListSnippet = Pick<
+  SnippetType,
+  "id" | "category" | "slug" | "title" | "description" | "tags" | "languages" | "verified"
+>;
+
 /** Full snippet from `public/data/snippets/<category>/<slug>.json`. */
 export type FullSnippet = SnippetType & {
   code: Record<string, string>;

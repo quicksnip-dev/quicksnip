@@ -10,14 +10,15 @@ import { InputGroup, InputGroupAddon, InputGroupInput } from "@/components/ui/in
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { LANGUAGE_NAMES } from "@/data/meta";
-import { countLanguages, useSnippetsStore } from "@/store/useSnippetsStore";
+import { useSnippetsStore } from "@/store/useSnippetsStore";
+import type { SnippetSummary } from "@/lib/snippets";
 
-export default function SnippetHeader() {
+export default function SnippetHeader({ summary }: { summary: SnippetSummary }) {
   const router = useRouter();
   const pathname = usePathname();
   const inputRef = useRef<HTMLInputElement>(null);
-  const { snippets, query, setQuery, language, setLanguage, verifiedOnly, setVerifiedOnly } = useSnippetsStore();
-  const languages = countLanguages(snippets);
+  const { query, setQuery, language, setLanguage, verifiedOnly, setVerifiedOnly } = useSnippetsStore();
+  const languages = summary.languages;
 
   // On a detail page, typing a search takes you back to the list.
   const isDetail = pathname.split("/").filter(Boolean).length > 2;
@@ -25,6 +26,12 @@ export default function SnippetHeader() {
     setQuery(value);
     if (isDetail) router.push("/snippets");
   };
+
+  // Support deep links like /snippets?q=debounce (also used by the WebSite SearchAction).
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search).get("q");
+    if (q) setQuery(q);
+  }, [setQuery]);
 
   // "/" focuses search, like on most docs and icon sites.
   useEffect(() => {
@@ -47,11 +54,14 @@ export default function SnippetHeader() {
           ref={inputRef}
           value={query}
           onChange={(e) => onQuery(e.target.value)}
-          placeholder={snippets.length ? `Search ${snippets.length} snippets...` : "Search snippets..."}
+          placeholder={`Search ${summary.total} snippets...`}
           aria-label="Search snippets"
         />
         <InputGroupAddon>
           <Search size={16} />
+        </InputGroupAddon>
+        <InputGroupAddon align="inline-end" className="hidden sm:flex">
+          <kbd className="rounded border border-border bg-secondary px-1.5 font-mono text-xs text-muted-foreground">/</kbd>
         </InputGroupAddon>
       </InputGroup>
       <Select value={language} onValueChange={setLanguage}>

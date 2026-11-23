@@ -7,6 +7,7 @@ import CodePreview, { CodeBlock, type CodeTab } from "@/components/layouts/code-
 import CopyButton from "@/components/ui/copy-button";
 import VerifiedBadge from "@/components/ui/verified-badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import JsonLd from "@/components/ui/json-ld";
 import { getSnippet, getSnippetIndex } from "@/lib/snippets";
 import { unslugify } from "@/lib/utils";
 import { GITHUB_URL, LANGUAGE_NAMES, SITE_URL, installCommand } from "@/data/meta";
@@ -26,11 +27,48 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category, snippet } = await params;
   const data = getSnippet(category, snippet);
   if (!data) return {};
-  const langs = data.languages.map((l) => LANGUAGE_NAMES[l] ?? l).join(", ");
+  const langs = data.languages.map((l) => LANGUAGE_NAMES[l] ?? l);
+  const title = `${data.title} — ${langs.slice(0, 3).join(", ")}${langs.length > 3 ? " +" + (langs.length - 3) : ""}`;
+  const description = `${data.description}${data.verified ? " Typed, tested and" : ""}${
+    data.installable ? `${data.verified ? "" : " Also"} installable with one command.` : ""
+  }`.trim();
+  const url = `/snippets/${data.category}/${data.slug}`;
   return {
-    title: `${data.title} — ${langs}`,
-    description: data.description,
+    title,
+    description,
+    keywords: [data.title, data.slug, ...data.tags, ...langs.map((l) => `${l} ${data.title}`)],
+    alternates: { canonical: url },
+    openGraph: { type: "article", url, title: `${title} · QuickSnip`, description },
+    twitter: { card: "summary_large_image", title: `${title} · QuickSnip`, description },
   };
+}
+
+function jsonLd(data: FullSnippet) {
+  const url = `${SITE_URL}/snippets/${data.category}/${data.slug}`;
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareSourceCode",
+      name: data.title,
+      description: data.description,
+      url,
+      codeRepository: `${GITHUB_URL}/tree/main/snippets/${data.category}/${data.slug}`,
+      programmingLanguage: data.languages.map((l) => LANGUAGE_NAMES[l] ?? l),
+      license: "https://opensource.org/licenses/MIT",
+      keywords: data.tags.join(", "),
+      author: data.contributors.map((c) => ({ "@type": "Person", name: c, url: `https://github.com/${c}` })),
+      isAccessibleForFree: true,
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Snippets", item: `${SITE_URL}/snippets` },
+        { "@type": "ListItem", position: 2, name: unslugify(data.category), item: `${SITE_URL}/snippets/${data.category}` },
+        { "@type": "ListItem", position: 3, name: data.title, item: url },
+      ],
+    },
+  ];
 }
 
 function installTabs(data: FullSnippet): CodeTab[] {
@@ -77,6 +115,7 @@ export default async function SnippetPage({ params }: Props) {
 
   return (
     <article className="max-w-4xl space-y-8 pb-12">
+      <JsonLd data={jsonLd(data)} />
       <nav aria-label="Breadcrumb" className="flex items-center gap-1 text-sm text-muted-foreground">
         <Link href="/snippets" className="hover:text-foreground">
           Snippets
@@ -111,7 +150,7 @@ export default async function SnippetPage({ params }: Props) {
           {!data.verified ? (
             <p className="text-sm text-muted-foreground">
               This snippet is not verified yet. Review it before use, or{" "}
-              <Link className="text-accent hover:underline" href="/guide/contributing/verifying-snippets">
+              <Link className="text-brand hover:underline" href="/guide/contributing/verifying-snippets">
                 help verify it
               </Link>
               .

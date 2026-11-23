@@ -49,7 +49,7 @@ const style = {
 
 export function CodeBlock({ code, language }: { code: string; language: string }) {
   return (
-    <div className="relative rounded-lg border border-border bg-[#1e1e1e] dark:bg-card">
+    <div className="dark relative rounded-lg border border-border bg-card text-card-foreground">
       <CopyButton value={code} className="absolute right-2 top-2 z-10" />
       <SyntaxHighlighter
         language={PRISM_LANGUAGE[language] ?? language}

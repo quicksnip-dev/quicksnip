@@ -30,7 +30,7 @@ const Footer = () => {
                 href={item.url}
                 target={item.external ? "_blank" : "_self"}
                 rel={item.external ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-1 font-semibold hover:text-accent transition-colors"
+                className="flex items-center gap-1 font-semibold hover:text-brand transition-colors"
               >
                 {item.name}
                 {item.external ? <ExternalLink size={14} /> : null}

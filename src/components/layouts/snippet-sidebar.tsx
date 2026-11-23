@@ -13,39 +13,59 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   SidebarRail,
+  useSidebar,
 } from "@/components/ui/sidebar";
 import { unslugify } from "@/lib/utils";
-import { countCategories, useSnippetsStore } from "@/store/useSnippetsStore";
+import { useSnippetsStore } from "@/store/useSnippetsStore";
+import type { SnippetSummary } from "@/lib/snippets";
 
-export default function SnippetSidebar() {
+export default function SnippetSidebar({ summary }: { summary: SnippetSummary }) {
   const pathname = usePathname();
-  const { snippets, verifiedOnly, setVerifiedOnly } = useSnippetsStore();
-  const categories = countCategories(snippets);
+  const { isMobile, setOpenMobile } = useSidebar();
+  const verifiedOnly = useSnippetsStore((s) => s.verifiedOnly);
+  const setVerifiedOnly = useSnippetsStore((s) => s.setVerifiedOnly);
   const activeCategory = pathname.split("/")[2];
-  const verifiedCount = snippets.filter((s) => s.verified).length;
+
+  const close = () => {
+    if (isMobile) setOpenMobile(false);
+  };
 
   return (
-    <Sidebar className="z-40 border-r border-border">
+    <Sidebar className="z-40 border-r border-border" aria-label="Snippet categories">
       <SidebarContent>
         <SidebarGroup>
           <SidebarMenu>
             <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={pathname === "/snippets" && !verifiedOnly}>
-                <Link href="/snippets" onClick={() => setVerifiedOnly(false)} className="flex justify-between">
+                <Link
+                  href="/snippets"
+                  onClick={() => {
+                    setVerifiedOnly(false);
+                    close();
+                  }}
+                  className="flex justify-between"
+                >
                   <span className="flex items-center gap-2">
                     <LayoutGrid size={16} /> All
                   </span>
-                  <span className="text-muted-foreground">{snippets.length || ""}</span>
+                  <span className="text-muted-foreground">{summary.total}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
             <SidebarMenuItem>
               <SidebarMenuButton asChild isActive={pathname === "/snippets" && verifiedOnly}>
-                <Link href="/snippets" onClick={() => setVerifiedOnly(true)} className="flex justify-between">
+                <Link
+                  href="/snippets"
+                  onClick={() => {
+                    setVerifiedOnly(true);
+                    close();
+                  }}
+                  className="flex justify-between"
+                >
                   <span className="flex items-center gap-2">
-                    <BadgeCheck size={16} className="text-accent" /> Verified
+                    <BadgeCheck size={16} className="text-brand" /> Verified
                   </span>
-                  <span className="text-muted-foreground">{verifiedCount || ""}</span>
+                  <span className="text-muted-foreground">{summary.verified}</span>
                 </Link>
               </SidebarMenuButton>
             </SidebarMenuItem>
@@ -54,10 +74,14 @@ export default function SnippetSidebar() {
         <SidebarGroup>
           <SidebarGroupLabel>Categories</SidebarGroupLabel>
           <SidebarMenu>
-            {categories.map((item) => (
+            {summary.categories.map((item) => (
               <SidebarMenuItem key={item.name}>
                 <SidebarMenuButton asChild isActive={item.name === activeCategory}>
-                  <Link href={`/snippets/${item.name}`} className="flex items-center justify-between">
+                  <Link
+                    href={`/snippets/${item.name}`}
+                    onClick={close}
+                    className="flex items-center justify-between"
+                  >
                     <span>{unslugify(item.name)}</span>
                     <span className="text-muted-foreground">{item.count}</span>
                   </Link>

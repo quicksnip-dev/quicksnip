@@ -37,10 +37,10 @@ export default function Features() {
   return (
     <section className="py-8">
       <div className="wrapper">
-        <ul className="grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
           {features.map(({ icon: Icon, title, desc }) => (
             <li key={title} className="space-y-3 bg-background p-6">
-              <Icon className="size-6 text-accent" aria-hidden="true" />
+              <Icon className="size-6 text-brand" aria-hidden="true" />
               <h3 className="text-lg font-semibold">{title}</h3>
               <p className="text-muted-foreground">{desc}</p>
             </li>

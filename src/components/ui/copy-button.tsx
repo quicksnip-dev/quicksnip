@@ -32,7 +32,7 @@ export default function CopyButton({
         className,
       )}
     >
-      {copied ? <Check size={16} className="text-accent" /> : <Copy size={16} />}
+      {copied ? <Check size={16} className="text-brand" /> : <Copy size={16} />}
     </button>
   );
 }

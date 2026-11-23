@@ -28,7 +28,7 @@ export default function ExtensionItem({
   return (
     <Card className="justify-start gap-4">
       <CardHeader className="grid grid-cols-[auto_1fr] items-center gap-4">
-        <div className="bg-primary p-4 rounded-lg">
+        <div className="bg-secondary p-4 rounded-lg">
           <Image
             src={extension.icon}
             alt=""
@@ -41,7 +41,7 @@ export default function ExtensionItem({
           <CardTitle className="text-2xl font-bold">{extension.name}</CardTitle>
           <p
             className={
-              extension.status === "planned" ? "text-sm text-muted-foreground" : "text-sm font-medium text-accent"
+              extension.status === "planned" ? "text-sm text-muted-foreground" : "text-sm font-medium text-brand"
             }
           >
             {STATUS_LABEL[extension.status]}

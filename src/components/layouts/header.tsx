@@ -1,15 +1,15 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence, easeInOut } from "framer-motion";
-import { Menu, X } from "lucide-react";
-
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { AnimatePresence, motion } from "framer-motion";
+import { Menu, X } from "lucide-react";
+import { SiDiscord, SiGithub } from "react-icons/si";
 
 import Logo from "@/components/ui/logo";
 import DarkModeSwitch from "@/components/ui/dark-mode-switch";
-
+import { cn } from "@/lib/utils";
 import { DISCORD_URL, GITHUB_URL } from "@/data/meta";
 
 const NAV_ITEMS = [
@@ -21,192 +21,137 @@ const NAV_ITEMS = [
 ];
 
 const SOCIAL_ITEMS = [
-  {
-    icon: "/assets/icons/github.svg",
-    name: "GitHub",
-    url: GITHUB_URL,
-  },
-  {
-    icon: "/assets/icons/discord.svg",
-    name: "Discord",
-    url: DISCORD_URL,
-  },
+  { icon: SiGithub, name: "GitHub", url: GITHUB_URL },
+  { icon: SiDiscord, name: "Discord", url: DISCORD_URL },
 ];
 
 export default function Header() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    const onScroll = () => setIsScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: -10 },
-    visible: { opacity: 1, y: 0 },
-  };
+  // Close the mobile menu on navigation.
+  useEffect(() => setIsMobileMenuOpen(false), [pathname]);
 
-  const mobileMenuVariants = {
-    closed: {
-      opacity: 0,
-      x: "100%",
-      transition: {
-        duration: 0.3,
-        ease: easeInOut,
-      },
-    },
-    open: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.3,
-        ease: easeInOut,
-        staggerChildren: 0.1,
-      },
-    },
-  };
-
-  const mobileItemVariants = {
-    closed: { opacity: 0, x: 20 },
-    open: { opacity: 1, x: 0 },
-  };
+  const isActive = (url: string) => pathname === url || pathname.startsWith(`${url}/`);
 
   return (
     <>
-      <div className="h-16 w-screen" />
-      <motion.header
-        className={`fixed top-0 right-0 left-0 z-50 transition-all border-b border-border/50 duration-500 ${
-          isScrolled
-            ? "bg-background/80 shadow-sm backdrop-blur-md"
-            : "bg-transparent"
-        }`}
+      <div className="h-(--header-height) w-full" aria-hidden="true" />
+      <header
+        className={cn(
+          "fixed inset-x-0 top-0 z-50 border-b border-border bg-background/95 backdrop-blur-md transition-shadow",
+          isScrolled && "shadow-sm",
+        )}
       >
-        <div className="wrapper-lg">
-          <div className="flex h-16 items-center justify-between">
-            <Logo />
+        <div className="wrapper-lg flex h-(--header-height) items-center justify-between gap-4">
+          <Logo />
 
-            <div className="flex gap-4 items-center justify-between">
-              <nav className="hidden items-center gap-8 space-x-1 lg:flex">
-                {NAV_ITEMS.map((item) => (
-                  <motion.div
-                    key={item.name}
-                    variants={itemVariants}
-                    className="relative"
-                  >
-                    <Link
-                      href={item.url}
-                      className="text-foreground/80 hover:text-accent font-medium transition-colors duration-200"
-                    >
-                      <span>{item.name}</span>
-                    </Link>
-                  </motion.div>
-                ))}
-              </nav>
+          <div className="flex items-center gap-4">
+            <nav aria-label="Main" className="hidden items-center gap-7 lg:flex">
+              {NAV_ITEMS.map((item) => (
+                <Link
+                  key={item.name}
+                  href={item.url}
+                  aria-current={isActive(item.url) ? "page" : undefined}
+                  className={cn(
+                    "font-medium transition-colors hover:text-brand",
+                    isActive(item.url) ? "text-foreground" : "text-muted-foreground",
+                  )}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
 
-              <hr className="border-0 w-0.5 h-8 bg-secondary" />
+            <span className="hidden h-6 w-px bg-border lg:block" aria-hidden="true" />
+            <DarkModeSwitch />
+            <span className="hidden h-6 w-px bg-border lg:block" aria-hidden="true" />
 
-              <DarkModeSwitch />
-
-              <hr className="border-0 w-0.5 h-8 bg-secondary" />
-
-              <motion.div
-                className="hidden items-center space-x-3 lg:flex"
-                variants={itemVariants}
-              >
-                {SOCIAL_ITEMS.map((item) => (
-                  <Link
-                    key={item.name}
-                    href={item.url}
-                    title={item.name}
-                    className=""
-                  >
-                    <Image
-                      src={item.icon}
-                      alt={item.name}
-                      width={24}
-                      height={24}
-                    />
-                  </Link>
-                ))}
-              </motion.div>
-
-              <motion.button
-                className="text-foreground hover:bg-muted rounded-lg p-2 transition-colors duration-200 lg:hidden"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                variants={itemVariants}
-                whileTap={{ scale: 0.95 }}
-              >
-                {isMobileMenuOpen ? (
-                  <X className="h-6 w-6" />
-                ) : (
-                  <Menu className="h-6 w-6" />
-                )}
-              </motion.button>
+            <div className="hidden items-center gap-3 lg:flex">
+              {SOCIAL_ITEMS.map(({ icon: Icon, name, url }) => (
+                <Link
+                  key={name}
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={name}
+                  title={name}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
+                  <Icon size={20} />
+                </Link>
+              ))}
             </div>
+
+            <button
+              type="button"
+              className="rounded-lg p-2 text-foreground transition-colors hover:bg-accent lg:hidden"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMobileMenuOpen}
+            >
+              {isMobileMenuOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+            </button>
           </div>
         </div>
-      </motion.header>
+      </header>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <>
             <motion.div
-              className="fixed inset-0 z-40 bg-black/20 backdrop-blur-sm lg:hidden"
+              className="fixed inset-0 z-40 bg-black/30 backdrop-blur-sm lg:hidden"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsMobileMenuOpen(false)}
             />
-            <motion.div
-              className="border-border bg-background fixed top-16 right-4 z-50 w-80 overflow-hidden rounded-2xl border shadow-2xl lg:hidden"
-              variants={mobileMenuVariants}
-              initial="closed"
-              animate="open"
-              exit="closed"
+            <motion.nav
+              aria-label="Mobile"
+              className="fixed top-(--header-height) right-4 z-50 mt-2 w-72 overflow-hidden rounded-2xl border border-border bg-popover p-4 shadow-2xl lg:hidden"
+              initial={{ opacity: 0, y: -8 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -8 }}
+              transition={{ duration: 0.15 }}
             >
-              <div className="space-y-6 p-6">
-                <div className="space-y-1">
-                  {NAV_ITEMS.map((item) => (
-                    <motion.div key={item.name} variants={mobileItemVariants}>
-                      <Link
-                        href={item.url}
-                        className="text-foreground hover:bg-muted block rounded-lg px-4 py-3 font-medium transition-colors duration-200"
-                        onClick={() => setIsMobileMenuOpen(false)}
-                      >
-                        {item.name}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-
-                <motion.div
-                  className="border-border space-y-3 border-t pt-6"
-                  variants={mobileItemVariants}
-                >
+              <ul className="space-y-1">
+                {NAV_ITEMS.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.url}
+                      aria-current={isActive(item.url) ? "page" : undefined}
+                      className={cn(
+                        "block rounded-lg px-3 py-2.5 font-medium transition-colors hover:bg-accent hover:text-accent-foreground",
+                        isActive(item.url) && "bg-accent text-accent-foreground",
+                      )}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4 flex gap-2 border-t border-border pt-4">
+                {SOCIAL_ITEMS.map(({ icon: Icon, name, url }) => (
                   <Link
-                    href={GITHUB_URL}
+                    key={name}
+                    href={url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-foreground hover:bg-muted block w-full rounded-lg py-3 text-center font-medium transition-colors duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-border py-2.5 font-medium transition-colors hover:bg-accent"
                   >
-                    GitHub
+                    <Icon size={18} /> {name}
                   </Link>
-                  <Link
-                    href="/guide"
-                    className="bg-foreground text-background hover:bg-foreground/90 block w-full rounded-lg py-3 text-center font-medium transition-all duration-200"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    Get Started
-                  </Link>
-                </motion.div>
+                ))}
               </div>
-            </motion.div>
+            </motion.nav>
           </>
         )}
       </AnimatePresence>

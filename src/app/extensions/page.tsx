@@ -1,13 +1,20 @@
+import type { Metadata } from "next";
 import ExtensionItem, {
   NewExtensionItem,
 } from "@/components/ui/extension-item";
 import { EXTENSIONS } from "@/data/extensions";
 
+export const metadata: Metadata = {
+  title: "Extensions",
+  description: "Use QuickSnip from the shadcn CLI, Raycast, AI agents and more.",
+  alternates: { canonical: "/extensions" },
+};
+
 export default function ExtensionsPage() {
   return (
     <section>
       <div className="wrapper py-8 space-y-8">
-        <h2 className="text-3xl font-bold text-center">Extensions</h2>
+        <h1 className="text-3xl font-bold text-center">Extensions</h1>
         <ul className="grid gap-4 sm:grid-cols-2 auto-rows-fr lg:grid-cols-3">
           {EXTENSIONS.map((extension) => (
             <ExtensionItem key={extension.name} extension={extension} />

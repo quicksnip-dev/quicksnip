@@ -34,7 +34,7 @@ export default function AvailableFor() {
           <h2 className="text-3xl font-bold">Use it your way</h2>
           <p className="text-muted-foreground">The same snippets, three ways in.</p>
         </div>
-        <ul className="grid gap-4 md:grid-cols-3">
+        <ul className="grid grid-cols-1 gap-4 md:grid-cols-3">
           {WAYS.map((way) => (
             <li key={way.title} className="flex flex-col gap-4 rounded-2xl border border-border p-6">
               <div>
@@ -44,7 +44,7 @@ export default function AvailableFor() {
               <code className="block rounded-lg bg-secondary px-3 py-2 font-mono text-sm overflow-x-auto whitespace-nowrap">
                 {way.code}
               </code>
-              <Link href={way.href} className="mt-auto inline-flex items-center gap-1 text-accent hover:underline">
+              <Link href={way.href} className="mt-auto inline-flex items-center gap-1 text-brand hover:underline">
                 {way.cta} <ArrowRight size={14} />
               </Link>
             </li>
