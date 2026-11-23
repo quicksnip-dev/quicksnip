@@ -1,0 +1,19 @@
+{
+  "title": "Solve Quadratic Equation",
+  "description": "Solves a quadratic equation ax^2 + bx + c = 0 and returns the roots.",
+  "tags": [
+    "math",
+    "quadratic",
+    "equation",
+    "solver"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "solve_quadratic(1, -3, 2) # Returns: ((2+0j), (1+0j))",
+      "solve_quadratic(1, 2, 5) # Returns: ((-1+2j), (-1-2j))"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Throttle",
+  "description": "Runs a function at most once per N ms, with a trailing call so the last update is never lost.",
+  "tags": [
+    "throttle",
+    "performance",
+    "optimization"
+  ],
+  "contributors": [
+    "WizardOfDigits"
+  ],
+  "usage": {
+    "ts": [
+      "const onScroll = throttle(() => updateHeader(window.scrollY), 100);",
+      "window.addEventListener(\"scroll\", onScroll);"
+    ]
+  }
+}

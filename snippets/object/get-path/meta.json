@@ -1,0 +1,17 @@
+{
+  "title": "Get Path",
+  "description": "Safely reads a nested value by a dot/bracket path with a fallback.",
+  "tags": [
+    "object",
+    "nested"
+  ],
+  "contributors": [
+    "realvishalrana"
+  ],
+  "usage": {
+    "ts": [
+      "getPath(data, \"user.addresses[0].city\");    // \"London\"",
+      "getPath(data, \"user.phone.number\", \"n/a\"); // \"n/a\""
+    ]
+  }
+}

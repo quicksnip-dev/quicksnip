@@ -1,0 +1,19 @@
+{
+  "title": "Ascii To String",
+  "description": "Converts a list of ascii numbers into a string",
+  "tags": [
+    "string",
+    "ascii",
+    "encoding",
+    "decode",
+    "conversion"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(asciiToString(List.of(104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100))); // \"hello world\""
+    ]
+  }
+}

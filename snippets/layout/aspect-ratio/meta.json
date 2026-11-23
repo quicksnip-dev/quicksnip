@@ -1,0 +1,11 @@
+{
+  "title": "Aspect Ratio",
+  "description": "Ensures that elements maintain a specific aspect ratio.",
+  "tags": [
+    "aspect-ratio",
+    "layout"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

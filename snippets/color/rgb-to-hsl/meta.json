@@ -1,0 +1,17 @@
+{
+  "title": "RGB to HSL Color",
+  "description": "Converts RGB color values to HSL color values.",
+  "tags": [
+    "color",
+    "conversion"
+  ],
+  "contributors": [
+    "pvictordev"
+  ],
+  "usage": {
+    "js": [
+      "console.log(rgbToHsl(255, 87, 51)); // { h: 14, s: 100, l: 60 }",
+      "console.log(rgbToHsl(255, 255, 255)); // { h: 0, s: 0, l: 100 }"
+    ]
+  }
+}

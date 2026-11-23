@@ -1,0 +1,17 @@
+{
+  "title": "Remove Element",
+  "description": "Removes a specified element from the DOM.",
+  "tags": [
+    "dom",
+    "remove"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const element = document.querySelector('.my-element');",
+      "removeElement(element);"
+    ]
+  }
+}

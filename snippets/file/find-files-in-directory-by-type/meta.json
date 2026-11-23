@@ -1,0 +1,23 @@
+{
+  "title": "Find Files in Directory by Type",
+  "description": "Finds all files in a directory with a specific extension.",
+  "tags": [
+    "file",
+    "search",
+    "extension",
+    "filesystem"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let directory = \".\"",
+      "    let ext = \".txt\"",
+      "    files <- findFilesByExtension directory ext",
+      "    mapM_ putStrLn files -- Output: list of txt files on the current directory"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Once",
+  "description": "Creates a function that runs only once and returns the first result on later calls.",
+  "tags": [
+    "function",
+    "once"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "const init = once(() => connectToDatabase());",
+      "init(); // connects",
+      "init(); // returns the same connection"
+    ]
+  }
+}

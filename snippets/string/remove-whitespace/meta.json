@@ -1,0 +1,17 @@
+{
+  "title": "Remove Whitespace",
+  "description": "Removes all whitespace from a string.",
+  "tags": [
+    "string",
+    "whitespace",
+    "remove"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "remove_whitespace('hello world') # Returns: 'helloworld'"
+    ]
+  }
+}

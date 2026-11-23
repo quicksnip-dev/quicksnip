@@ -1,0 +1,19 @@
+{
+  "title": "Convert to Unix Timestamp",
+  "description": "Converts a date to a Unix timestamp in seconds.",
+  "tags": [
+    "date",
+    "unix",
+    "timestamp"
+  ],
+  "contributors": [
+    "Yugveer06"
+  ],
+  "usage": {
+    "js": [
+      "convertToUnixSeconds('2025-01-01T12:00:00Z'); // Returns: 1735732800",
+      "convertToUnixSeconds(new Date('2025-01-01T12:00:00Z')); // Returns: 1735732800",
+      "convertToUnixSeconds(new Date()); // Returns: Current Unix timestamp in seconds"
+    ]
+  }
+}

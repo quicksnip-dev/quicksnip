@@ -1,0 +1,16 @@
+{
+  "title": "Number Formatter",
+  "description": "Formats a number with suffixes (K, M, B, etc.).",
+  "tags": [
+    "number",
+    "format"
+  ],
+  "contributors": [
+    "realvishalrana"
+  ],
+  "usage": {
+    "js": [
+      "nFormatter(1234567); // Returns: '1.23M'"
+    ]
+  }
+}

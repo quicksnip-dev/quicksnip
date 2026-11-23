@@ -1,0 +1,19 @@
+{
+  "title": "Transform",
+  "description": "Transforms a vector using a function.",
+  "tags": [
+    "array",
+    "transform",
+    "c++23"
+  ],
+  "contributors": [
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "std::vector<int> vec = {1, 2, 3, 4, 5};",
+      "std::vector<int> transformed = transform(vec, [](int i){ return i * 2; });",
+      "// transformed contains 2, 4, 6, 8, 10"
+    ]
+  }
+}

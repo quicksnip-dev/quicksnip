@@ -1,0 +1,20 @@
+{
+  "title": "Relative Time",
+  "description": "Formats a date relative to now (\"3 hours ago\", \"in 2 days\"), localized via Intl.",
+  "tags": [
+    "date",
+    "time",
+    "relative",
+    "future",
+    "past"
+  ],
+  "contributors": [
+    "Yugveer06"
+  ],
+  "usage": {
+    "ts": [
+      "relativeTime(Date.now() - 3 * 3600_000); // \"3 hours ago\"",
+      "relativeTime(\"2030-01-01\", { locale: \"fr\" });"
+    ]
+  }
+}

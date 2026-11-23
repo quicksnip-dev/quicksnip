@@ -1,0 +1,16 @@
+{
+  "title": "Find all primes up to integer (Sieve of Sundaram)",
+  "description": "Finds all the prime numbers up to a specific integer.",
+  "tags": [
+    "math",
+    "prime numbers"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "rb": [
+      "print sieve_of_sundaram(30) # Output: [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]"
+    ]
+  }
+}

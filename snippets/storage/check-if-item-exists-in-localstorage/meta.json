@@ -1,0 +1,16 @@
+{
+  "title": "Check if Item Exists in localStorage",
+  "description": "Checks if a specific item exists in localStorage.",
+  "tags": [
+    "localstorage",
+    "storage"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "console.log(isItemInLocalStorage('user')); // Output: true or false"
+    ]
+  }
+}

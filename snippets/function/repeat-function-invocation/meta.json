@@ -1,0 +1,17 @@
+{
+  "title": "Repeat Function Invocation",
+  "description": "Invokes a function a specified number of times.",
+  "tags": [
+    "function",
+    "repeat"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "js": [
+      "const randomFunction = () => console.log('Function called!');",
+      "times(randomFunction, 3); // Logs 'Function called!' three times"
+    ]
+  }
+}

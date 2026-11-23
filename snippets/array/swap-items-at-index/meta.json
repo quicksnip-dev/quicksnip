@@ -1,0 +1,11 @@
+{
+  "title": "Swap items at index",
+  "description": "Swaps two items at determined indexes",
+  "tags": [
+    "list",
+    "swapping"
+  ],
+  "contributors": [
+    "omegaleo"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "title": "Sum of Digits",
+  "description": "Calculates the sum of the digits of an integer.",
+  "tags": [
+    "math",
+    "digits"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "c": [
+      "sum_of_digits(123); // Returns: 6"
+    ]
+  }
+}

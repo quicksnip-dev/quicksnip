@@ -1,0 +1,23 @@
+{
+  "title": "Union to Intersection",
+  "description": "Converts a union type into an intersection type.",
+  "tags": [
+    "helper-types",
+    "typedefinition",
+    "intersection",
+    "union"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = { id: string };",
+      "type B = { name: string };",
+      "type C = { age: number };",
+      "",
+      "type Intersected = UnionToIntersection<A | B | C>;",
+      "// { id: string } & { name: string } & { age: number }"
+    ]
+  }
+}

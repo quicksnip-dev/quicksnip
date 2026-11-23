@@ -1,0 +1,22 @@
+{
+  "title": "Find Longest Word",
+  "description": "Returns the longest word in a string",
+  "tags": [
+    "string",
+    "length",
+    "words",
+    "longest-word"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "axorax"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(findLongestWord(\"hello world123\")); // \"world123\""
+    ],
+    "py": [
+      "find_longest_word('The quick brown fox') # Returns: 'quick'"
+    ]
+  }
+}

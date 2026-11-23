@@ -1,0 +1,12 @@
+{
+  "title": "Sticky Footer",
+  "description": "Ensures the footer always stays at the bottom of the page.",
+  "tags": [
+    "layout",
+    "footer",
+    "sticky"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

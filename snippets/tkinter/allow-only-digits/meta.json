@@ -1,0 +1,22 @@
+{
+  "title": "Allow Only Digits",
+  "description": "A validation function to allow only digits.",
+  "tags": [
+    "validation",
+    "digits"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_only_digits)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Font Import Helper",
+  "description": "Simplifies importing custom fonts in Sass.",
+  "tags": [
+    "mixin",
+    "fonts"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

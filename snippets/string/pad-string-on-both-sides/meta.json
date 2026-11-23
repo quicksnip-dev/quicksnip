@@ -1,0 +1,17 @@
+{
+  "title": "Pad String on Both Sides",
+  "description": "Pads a string on both sides with a specified character until it reaches the desired length.",
+  "tags": [
+    "string",
+    "pad",
+    "manipulation"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "padString('hello', 10, '*'); // Returns: '**hello***'"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Deep Merge",
+  "description": "Deeply merges objects into a new object without mutation and without prototype pollution.",
+  "tags": [
+    "object",
+    "merge",
+    "deep"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "const config = deepMerge(defaults, { theme: { color: \"red\" } });",
+      "// { theme: { color: \"red\", size: \"md\" }, debug: false }"
+    ]
+  }
+}

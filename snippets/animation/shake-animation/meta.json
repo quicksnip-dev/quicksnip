@@ -1,0 +1,11 @@
+{
+  "title": "Shake Animation",
+  "description": "Adds a shake animation ( commonly used to mark invalid fields )",
+  "tags": [
+    "shake",
+    "shake-horizontal"
+  ],
+  "contributors": [
+    "AlsoKnownAs-Ax"
+  ]
+}

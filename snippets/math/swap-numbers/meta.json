@@ -1,0 +1,17 @@
+{
+  "title": "Swap numbers",
+  "description": "Swaps two numbers without using third variable",
+  "tags": [
+    "swap",
+    "numbers"
+  ],
+  "contributors": [
+    "Emosans"
+  ],
+  "usage": {
+    "c": [
+      "int a = 3,b = 4;",
+      "swap(&a,&b); // swaps the values of the a and b variables"
+    ]
+  }
+}

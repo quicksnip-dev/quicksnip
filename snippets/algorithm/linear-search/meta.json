@@ -1,0 +1,22 @@
+{
+  "title": "Linear Search",
+  "description": "Searches for an element in an array using the Linear Search algorithm.",
+  "tags": [
+    "search",
+    "linearsearch",
+    "array",
+    "algorithm"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "int arr[] = {10, 20, 30, 40, 50};",
+      "int n = sizeof(arr) / sizeof(arr[0]);",
+      "int x = 30;",
+      "int result = linearSearch(arr, n, x);",
+      "// result = 2 (index of the element 30)"
+    ]
+  }
+}

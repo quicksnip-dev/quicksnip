@@ -1,0 +1,20 @@
+{
+  "title": "Date Time Formatting American",
+  "description": "Formats a timestamp to a human-readable date-time string in the format \"MM/dd/yyyy hh:mm:ss a\"",
+  "tags": [
+    "date",
+    "time",
+    "date-time",
+    "formatting",
+    "american"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(formatDateTimeAmerican(1735689599, TimeUnit.SECONDS)); // \"12/31/2024 | 11:59:59 PM\" for GMT+0000",
+      "System.out.println(formatDateTimeAmerican(1735689599, TimeUnit.SECONDS, ZoneId.of(\"GMT+0000\"))); // \"12/31/2024 | 11:59:59 PM\""
+    ]
+  }
+}

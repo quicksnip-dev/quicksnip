@@ -1,0 +1,19 @@
+{
+  "title": "Convert Binary to Decimal",
+  "description": "Converts a binary string to its decimal equivalent.",
+  "tags": [
+    "math",
+    "binary",
+    "decimal",
+    "conversion"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "binary_to_decimal('1010') # Returns: 10",
+      "binary_to_decimal('1101') # Returns: 13"
+    ]
+  }
+}

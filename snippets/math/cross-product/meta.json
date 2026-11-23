@@ -1,0 +1,16 @@
+{
+  "title": "Cross Product",
+  "description": "Computes the cross product of two 3D vectors, which results in a vector perpendicular to both.",
+  "tags": [
+    "math",
+    "vector-algebra"
+  ],
+  "contributors": [
+    "JanluOfficial"
+  ],
+  "usage": {
+    "js": [
+      "crossProduct([1, 2, 3], [4, 5, 6]); // Returns: [-3, 6, -3]"
+    ]
+  }
+}

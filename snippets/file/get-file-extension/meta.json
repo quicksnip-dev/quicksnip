@@ -1,0 +1,16 @@
+{
+  "title": "Get File Extension",
+  "description": "Gets the extension of a file.",
+  "tags": [
+    "file",
+    "extension"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "get_file_extension('example.txt') # Returns: '.txt'"
+    ]
+  }
+}

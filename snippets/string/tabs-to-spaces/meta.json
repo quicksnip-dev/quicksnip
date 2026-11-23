@@ -1,0 +1,18 @@
+{
+  "title": "tabs-to-spaces",
+  "description": "Converts tabs into spaces",
+  "tags": [
+    "string",
+    "tab",
+    "space",
+    "conversion"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(convertTabToSpace(\"hello\\tworld\", 2)); // \"hello  world\""
+    ]
+  }
+}

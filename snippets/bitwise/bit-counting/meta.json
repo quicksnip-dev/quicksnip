@@ -1,0 +1,19 @@
+{
+  "title": "Bit Counting",
+  "description": "Counts the set bits in the binary representation of an integer",
+  "tags": [
+    "math",
+    "number",
+    "bits",
+    "bit-counting"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "int number = 5;",
+      "System.out.println(countBits(5)); // 2 (101)"
+    ]
+  }
+}

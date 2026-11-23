@@ -1,0 +1,17 @@
+{
+  "title": "Number to Words Converter",
+  "description": "Converts a number to its word representation in English.",
+  "tags": [
+    "number",
+    "words"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "numberToWords(123); // Returns: 'One Hundred Twenty Three'",
+      "numberToWords(2045); // Returns: 'Two Thousand Forty Five'"
+    ]
+  }
+}

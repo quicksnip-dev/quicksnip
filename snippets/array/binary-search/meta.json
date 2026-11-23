@@ -1,0 +1,27 @@
+{
+  "title": "Binary Search",
+  "description": "Searches for an element in a sorted array using binary search.",
+  "tags": [
+    "array",
+    "binary-search",
+    "search"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let array = [1, 2, 3, 4, 5]",
+      "    print $ binarySearch 3 array -- Output: Just 2",
+      "    print $ binarySearch 6 array -- Output: Nothing"
+    ],
+    "rb": [
+      "array = [1, 3, 5, 7, 9]",
+      "target = 5",
+      "result = binary_search(array, target)",
+      "puts result # Output: 2"
+    ]
+  }
+}

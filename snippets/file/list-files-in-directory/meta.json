@@ -1,0 +1,17 @@
+{
+  "title": "List Files in Directory",
+  "description": "Lists all files in a specified directory.",
+  "tags": [
+    "file",
+    "list",
+    "directory"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "list_files('/path/to/directory') # Returns: List of file in the directory"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Allow Only Alphabets",
+  "description": "A validation function to allow only alphabetic characters.",
+  "tags": [
+    "validation",
+    "alphabets"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_only_alphabets)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

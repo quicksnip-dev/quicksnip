@@ -1,0 +1,18 @@
+{
+  "title": "Flatten Nested JSON",
+  "description": "Flattens a nested JSON object into a flat dictionary.",
+  "tags": [
+    "json",
+    "flatten",
+    "nested"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "nested_json = {'name': 'John', 'address': {'city': 'New York', 'zip': '10001'}}",
+      "flatten_json(nested_json) # Returns: {'name': 'John', 'address.city': 'New York', 'address.zip': '10001'}"
+    ]
+  }
+}

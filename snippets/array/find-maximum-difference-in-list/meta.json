@@ -1,0 +1,17 @@
+{
+  "title": "Find Maximum Difference in List",
+  "description": "Finds the maximum difference between any two elements in a list.",
+  "tags": [
+    "list",
+    "difference"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "data = [10, 3, 5, 20, 7]",
+      "max_difference(data) # Returns: 17"
+    ]
+  }
+}

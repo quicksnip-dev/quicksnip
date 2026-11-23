@@ -1,0 +1,22 @@
+{
+  "title": "Query Data from Sqlite Table",
+  "description": "Fetches data from a specified SQLite table, with options for selecting specific columns and applying a WHERE clause.",
+  "tags": [
+    "sqlite",
+    "database"
+  ],
+  "contributors": [
+    "pl44t"
+  ],
+  "usage": {
+    "py": [
+      "db_path = 'example.db'",
+      "table_name = 'users'",
+      "columns = 'id, name, email'",
+      "where_clause = 'age > 25'",
+      "result = query_table(db_path, table_name, columns, where_clause)",
+      "for row in result:",
+      "    print(row)"
+    ]
+  }
+}

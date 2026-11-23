@@ -1,0 +1,32 @@
+{
+  "title": "Capitalize Words",
+  "description": "Capitalizes the first letter of each word in a string.",
+  "tags": [
+    "string",
+    "capitalize",
+    "words"
+  ],
+  "contributors": [
+    "ACR1209",
+    "Mcbencrafter",
+    "axorax"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let sentence = \"haskell is awesome\"",
+      "    print $ capitalizeWords sentence -- Output: \"Haskell Is Awesome\""
+    ],
+    "java": [
+      "System.out.println(capitalizeWords(\"hello  world\")); // \"Hello  World\""
+    ],
+    "py": [
+      "capitalize_words('hello world') # Returns: 'Hello World'"
+    ],
+    "rb": [
+      "sentence = \"ruby is awesome\"",
+      "puts capitalize_words(sentence) # Output: \"Ruby Is Awesome\""
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Data with Prefix",
+  "description": "Adds a prefix and postfix to data, with a fallback value.",
+  "tags": [
+    "data",
+    "prefix",
+    "postfix",
+    "format"
+  ],
+  "contributors": [
+    "realvishalrana"
+  ],
+  "usage": {
+    "js": [
+      "dataWithPrefix('123', '-', '(', ')'); // Returns: '(123)'",
+      "dataWithPrefix('', '-', '(', ')'); // Returns: '-'",
+      "dataWithPrefix('Hello', 'N/A', 'Mr. ', ''); // Returns: 'Mr. Hello'",
+      "dataWithPrefix(null, 'N/A', 'Mr. ', ''); // Returns: 'N/A'"
+    ]
+  }
+}

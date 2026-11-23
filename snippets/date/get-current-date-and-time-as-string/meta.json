@@ -1,0 +1,17 @@
+{
+  "title": "Get Current Date and Time as String",
+  "description": "Fetches the current date and time as a formatted string.",
+  "tags": [
+    "datetime",
+    "current",
+    "string"
+  ],
+  "contributors": [
+    "e3nviction"
+  ],
+  "usage": {
+    "py": [
+      "get_current_datetime_string() # Returns: '2023-01-01 12:00:00'"
+    ]
+  }
+}

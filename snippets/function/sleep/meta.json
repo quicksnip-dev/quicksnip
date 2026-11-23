@@ -1,0 +1,18 @@
+{
+  "title": "Sleep",
+  "description": "Promise-based delay with optional AbortSignal cancellation.",
+  "tags": [
+    "sleep",
+    "delay",
+    "promises"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "ts": [
+      "await sleep(500);",
+      "await sleep(5000, controller.signal); // rejects if aborted"
+    ]
+  }
+}

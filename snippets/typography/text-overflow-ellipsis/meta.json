@@ -1,0 +1,11 @@
+{
+  "title": "Text Overflow Ellipsis",
+  "description": "Ensures long text is truncated with an ellipsis.",
+  "tags": [
+    "mixin",
+    "text"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

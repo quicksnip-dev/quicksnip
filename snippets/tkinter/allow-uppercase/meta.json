@@ -1,0 +1,22 @@
+{
+  "title": "Allow Uppercase",
+  "description": "A validation function to allow uppercase letters.",
+  "tags": [
+    "validation",
+    "uppercase"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_uppercase)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

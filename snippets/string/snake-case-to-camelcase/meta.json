@@ -1,0 +1,27 @@
+{
+  "title": "Snake_Case to CamelCase",
+  "description": "Converts a Snake Case string to Camel Case.",
+  "tags": [
+    "string",
+    "convert",
+    "snake-case",
+    "camel-case",
+    "utilty",
+    "conversion"
+  ],
+  "contributors": [
+    "ACR1209",
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let snakeCase = \"snake_case_to_camel_case\"",
+      "    print $ snakeToCamel snakeCase -- Output: \"snakeCaseToCamelCase\""
+    ],
+    "java": [
+      "System.out.println(snakeToCamel(\"hello_world\")); // \"helloWorld\""
+    ]
+  }
+}

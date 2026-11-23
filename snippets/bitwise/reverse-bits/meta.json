@@ -1,0 +1,16 @@
+{
+  "title": "Reverse Bits",
+  "description": "Reverses the bits of a given unsigned integer.",
+  "tags": [
+    "bit-manipulation",
+    "reverse-bits"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "c": [
+      "reverse_bits(43261596); // Returns: 964176192 (Binary: 00000010100101000001111010011100 -> 00111001011110000010100101000000)"
+    ]
+  }
+}

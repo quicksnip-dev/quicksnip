@@ -1,0 +1,23 @@
+{
+  "title": "Retry Function Execution on Exception",
+  "description": "Retries a function execution a specified number of times if it raises an exception.",
+  "tags": [
+    "error-handling",
+    "retry"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "def unstable_function():",
+      "    raise ValueError(\"Simulated failure\")",
+      "",
+      "# Retry 3 times with 2 seconds delay:",
+      "try:",
+      "    retry(unstable_function, retries=3, delay=2)",
+      "except Exception as e:",
+      "    print(e)  # Output: All retry attempts failed"
+    ]
+  }
+}

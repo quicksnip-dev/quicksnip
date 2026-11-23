@@ -1,0 +1,11 @@
+{
+  "title": "Line Clamp Mixin",
+  "description": "A Sass mixin to clamp text to a specific number of lines.",
+  "tags": [
+    "mixin",
+    "typography"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

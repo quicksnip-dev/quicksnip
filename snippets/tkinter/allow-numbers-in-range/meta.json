@@ -1,0 +1,25 @@
+{
+  "title": "Allow Numbers in Range",
+  "description": "A validation function to allow only numbers within a specified range.",
+  "tags": [
+    "validation",
+    "number",
+    "range"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_numbers_in_range)",
+      "# 0 is the minimum value",
+      "# 10 is the maximum value",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%d\", \"%P\", 0, 10)).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

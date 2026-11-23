@@ -1,0 +1,19 @@
+{
+  "title": "Modular Inverse",
+  "description": "Computes the modular multiplicative inverse of a number a under modulo m, which is the integer x such that (a*x) mod m=1.",
+  "tags": [
+    "math",
+    "number-theory",
+    "algebra"
+  ],
+  "contributors": [
+    "JanluOfficial"
+  ],
+  "usage": {
+    "js": [
+      "modInverse(3, 26);  // Returns: 9",
+      "modInverse(10, 17); // Returns: 12",
+      "modInverse(6, 9);   // Returns: null"
+    ]
+  }
+}

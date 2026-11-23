@@ -1,0 +1,11 @@
+{
+  "title": "Primary Button",
+  "description": "Generates a styled primary button.",
+  "tags": [
+    "button",
+    "primary"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Hexadecimal Color",
+  "description": "Matches hex color codes",
+  "tags": [
+    "color",
+    "hexadecimal"
+  ],
+  "contributors": [
+    "majvax"
+  ]
+}

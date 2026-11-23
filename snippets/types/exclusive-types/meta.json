@@ -1,0 +1,24 @@
+{
+  "title": "Exclusive Types",
+  "description": "Allows to have a type which conforms to either/or.",
+  "tags": [
+    "helper-types",
+    "typedefinition"
+  ],
+  "contributors": [
+    "px-d"
+  ],
+  "usage": {
+    "ts": [
+      "type A = { name: string; email?: string; provider?: string };",
+      "type B = { name: string; phone?: string; country?: string };",
+      "",
+      "type EitherOr = Exclusive<A, B>;",
+      "",
+      "const w: EitherOr = { name: \"John\", email: \"j@d.c\" }; // ✅",
+      "const x: EitherOr = { name: \"John\", phone: \"+123 456\" }; // ✅",
+      "const y: EitherOr = { name: \"John\", email: \"\", phone: \"\" }; // ⛔️",
+      "const z: EitherOr = { name: \"John\", phne: \"\", provider: \"\" }; // ⛔️"
+    ]
+  }
+}

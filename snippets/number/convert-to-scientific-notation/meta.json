@@ -1,0 +1,20 @@
+{
+  "title": "Convert to Scientific Notation",
+  "description": "Converts a number to scientific notation.",
+  "tags": [
+    "number",
+    "scientific"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "toScientificNotation(12345); // Returns: '1.23e+4'",
+      "toScientificNotation(0.0005678); // Returns: '5.68e-4'",
+      "toScientificNotation(1000); // Returns: '1.00e+3'",
+      "toScientificNotation(0); // Returns: '0e+0'",
+      "toScientificNotation(-54321); // Returns: '-5.43e+4'"
+    ]
+  }
+}

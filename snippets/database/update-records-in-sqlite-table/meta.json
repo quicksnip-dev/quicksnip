@@ -1,0 +1,20 @@
+{
+  "title": "Update Records in Sqlite Table",
+  "description": "Updates records in a specified SQLite table, allowing dynamic column updates and an optional WHERE clause.",
+  "tags": [
+    "sqlite",
+    "database"
+  ],
+  "contributors": [
+    "pl44t"
+  ],
+  "usage": {
+    "py": [
+      "db_path = 'example.db'",
+      "table_name = 'users'",
+      "updates = {'name': 'Jane Doe', 'age': 28}",
+      "where_clause = \"id = 1\"",
+      "update_table(db_path, table_name, updates, where_clause)"
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "title": "Compare Two Objects Shallowly",
+  "description": "Compares two objects shallowly and returns whether they are equal.",
+  "tags": [
+    "object",
+    "compare",
+    "shallow"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "const obj1 = { a: 1, b: 2 };",
+      "const obj2 = { a: 1, b: 2 };",
+      "const obj3 = { a: 1, b: 3 };",
+      "shallowEqual(obj1, obj2); // Returns: true",
+      "shallowEqual(obj1, obj3); // Returns: false"
+    ]
+  }
+}

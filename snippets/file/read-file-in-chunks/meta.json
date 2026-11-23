@@ -1,0 +1,27 @@
+{
+  "title": "Read File in Chunks",
+  "description": "Reads a file in chunks grouped by lines.",
+  "tags": [
+    "file",
+    "read",
+    "chunks"
+  ],
+  "contributors": [
+    "ACR1209",
+    "axorax"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let file = \"example.txt\"",
+      "    let chunkSize = 3 -- Number of lines per chunk",
+      "    chunks <- readFileInChunks file chunkSize",
+      "    mapM_ (putStrLn . unlines) chunks"
+    ],
+    "py": [
+      "for chunk in read_file_in_chunks('example.txt', 1024):",
+      "    print(chunk) # Outputs: Chucks of 1024 bytes"
+    ]
+  }
+}

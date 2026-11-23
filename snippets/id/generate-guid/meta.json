@@ -1,0 +1,16 @@
+{
+  "title": "Generate GUID",
+  "description": "Generates a new GUID",
+  "tags": [
+    "guid",
+    "generate"
+  ],
+  "contributors": [
+    "chaitanya-jvnm"
+  ],
+  "usage": {
+    "cs": [
+      "GenerateGuid(); // Returns: 1c4c38d8-64e4-431b-884a-c6eec2ab02cd (Uuid is random)"
+    ]
+  }
+}

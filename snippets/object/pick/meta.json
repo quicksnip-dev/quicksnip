@@ -1,0 +1,16 @@
+{
+  "title": "Pick",
+  "description": "Returns a new object with only the given keys, fully typed.",
+  "tags": [
+    "object",
+    "pick"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "pick({ id: 1, name: \"Ada\", password: \"x\" }, [\"id\", \"name\"]); // { id: 1, name: \"Ada\" }"
+    ]
+  }
+}

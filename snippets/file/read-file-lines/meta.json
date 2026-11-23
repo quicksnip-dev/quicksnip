@@ -1,0 +1,16 @@
+{
+  "title": "Read File Lines",
+  "description": "Reads all lines from a file and returns them as a vector of strings.",
+  "tags": [
+    "file",
+    "read"
+  ],
+  "contributors": [
+    "Mathys-Gasnier"
+  ],
+  "usage": {
+    "rs": [
+      "read_lines(\"path/to/file.txt\"); // Returns: If Ok(), a Vec of the lines of the file"
+    ]
+  }
+}

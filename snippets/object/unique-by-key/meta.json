@@ -1,0 +1,21 @@
+{
+  "title": "Unique By Key",
+  "description": "Filters an array of objects to only include unique objects by a specified key.",
+  "tags": [
+    "array",
+    "unique"
+  ],
+  "contributors": [
+    "realvishalrana"
+  ],
+  "usage": {
+    "js": [
+      "const arr = [",
+      "  { id: 1, name: 'John' },",
+      "  { id: 2, name: 'Jane' },",
+      "  { id: 1, name: 'John' }",
+      "];",
+      "uniqueByKey('id', arr); // Returns: [{ id: 1, name: 'John' }, { id: 2, name: 'Jane' }]"
+    ]
+  }
+}

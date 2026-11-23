@@ -1,0 +1,16 @@
+{
+  "title": "Context Menu",
+  "description": "Opens a menu when you right click a widget.",
+  "tags": [
+    "menu"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = App()",
+      "root.mainloop()"
+    ]
+  }
+}

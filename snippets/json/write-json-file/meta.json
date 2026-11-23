@@ -1,0 +1,18 @@
+{
+  "title": "Write JSON File",
+  "description": "Writes a dictionary to a JSON file.",
+  "tags": [
+    "json",
+    "file",
+    "write"
+  ],
+  "contributors": [
+    "e3nviction"
+  ],
+  "usage": {
+    "py": [
+      "data = {'name': 'John', 'age': 30}",
+      "write_json('data.json', data)"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Chunk Array",
+  "description": "Splits an array into groups of a given size, e.g. for batching API requests or building grids.",
+  "tags": [
+    "array",
+    "batch",
+    "split",
+    "pagination"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "ts": [
+      "chunk([1, 2, 3, 4, 5], 2); // [[1, 2], [3, 4], [5]]"
+    ]
+  }
+}

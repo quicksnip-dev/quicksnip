@@ -1,0 +1,17 @@
+{
+  "title": "Remove Duplicate Characters",
+  "description": "Removes duplicate characters from a string while maintaining the order.",
+  "tags": [
+    "string",
+    "duplicates",
+    "remove"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "remove_duplicate_chars('programming') # Returns: 'progamin'"
+    ]
+  }
+}

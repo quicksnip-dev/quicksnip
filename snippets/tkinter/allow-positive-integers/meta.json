@@ -1,0 +1,23 @@
+{
+  "title": "Allow Positive Integers",
+  "description": "A validation function to allow only positive integers.",
+  "tags": [
+    "validation",
+    "positive",
+    "integers"
+  ],
+  "contributors": [
+    "Legopitstop"
+  ],
+  "usage": {
+    "py": [
+      "root = Tk()",
+      "root.geometry(\"200x200\")",
+      "",
+      "reg = root.register(allow_positive_integers)",
+      "Entry(root, validate=\"key\", validatecommand=(reg, \"%P\")).pack()",
+      "",
+      "root.mainloop()"
+    ]
+  }
+}

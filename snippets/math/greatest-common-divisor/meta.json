@@ -1,0 +1,30 @@
+{
+  "title": "Greatest Common Divisor",
+  "description": "Calculates the greatest common divisor (gcd) of two numbers",
+  "tags": [
+    "math",
+    "number",
+    "greatest-common-devisor",
+    "gcd",
+    "euclidean-algorithm",
+    "division",
+    "number-theory",
+    "algebra"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "JanluOfficial"
+  ],
+  "usage": {
+    "java": [
+      "int a = 16;",
+      "int b = 12;",
+      "System.out.println(gcd(a, b)); // 4"
+    ],
+    "js": [
+      "gcd(1920, 1080); // Returns:    120",
+      "gcd(1920, 1200); // Returns:    240",
+      "gcd(5,12);       // Returns:      1"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Clear ith bit",
+  "description": "Clear the ith bit of a number and returns the resulting number",
+  "tags": [
+    "bit-manipulation",
+    "number",
+    "clear"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "c": [
+      "clear_ith_bit(10, 1); // Returns: 8",
+      "clear_ith_bit(10, 3); // Returns: 2"
+    ]
+  }
+}

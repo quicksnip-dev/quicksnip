@@ -1,0 +1,29 @@
+{
+  "title": "Least Common Multiple",
+  "description": "Calculates the least common multiple (lcm) of two numbers",
+  "tags": [
+    "math",
+    "number",
+    "least-common-multiple",
+    "lcm",
+    "euclidean-algorithm",
+    "number-theory",
+    "algebra"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "JanluOfficial"
+  ],
+  "usage": {
+    "java": [
+      "int a = 16;",
+      "int b = 12;",
+      "System.out.println(lcm(a, b)); // 48"
+    ],
+    "js": [
+      "lcm(12,16); // Returns:    48",
+      "lcm(8,20);  // Returns:    40",
+      "lcm(16,17); // Returns:   272"
+    ]
+  }
+}

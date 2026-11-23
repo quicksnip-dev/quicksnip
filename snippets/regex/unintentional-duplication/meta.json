@@ -1,0 +1,10 @@
+{
+  "title": "Unintentional Duplication",
+  "description": "Matches duplicated word in a text.",
+  "tags": [
+    "duplication"
+  ],
+  "contributors": [
+    "majvax"
+  ]
+}

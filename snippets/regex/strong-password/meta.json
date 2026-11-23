@@ -1,0 +1,10 @@
+{
+  "title": "Strong Password",
+  "description": "Match password with at least 12 characters, one uppercased letter, one number, and one special character.",
+  "tags": [
+    "password"
+  ],
+  "contributors": [
+    "majvax"
+  ]
+}

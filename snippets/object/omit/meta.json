@@ -1,0 +1,16 @@
+{
+  "title": "Omit",
+  "description": "Returns a new object without the given keys, fully typed.",
+  "tags": [
+    "object",
+    "omit"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "omit({ id: 1, name: \"Ada\", password: \"x\" }, [\"password\"]); // { id: 1, name: \"Ada\" }"
+    ]
+  }
+}

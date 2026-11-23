@@ -1,0 +1,17 @@
+{
+  "title": "Count Vowels",
+  "description": "Counts the number of vowels in a string.",
+  "tags": [
+    "string",
+    "vowels",
+    "count"
+  ],
+  "contributors": [
+    "SteliosGee"
+  ],
+  "usage": {
+    "py": [
+      "count_vowels('hello') # Returns: 2"
+    ]
+  }
+}

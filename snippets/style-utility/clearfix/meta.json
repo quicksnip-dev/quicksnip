@@ -1,0 +1,10 @@
+{
+  "title": "Clearfix",
+  "description": "Provides a clearfix utility for floating elements.",
+  "tags": [
+    "clearfix"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

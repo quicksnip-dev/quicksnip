@@ -1,0 +1,12 @@
+{
+  "title": "Equal-Width Columns",
+  "description": "Creates columns with equal widths using flexbox.",
+  "tags": [
+    "flexbox",
+    "columns",
+    "layout"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

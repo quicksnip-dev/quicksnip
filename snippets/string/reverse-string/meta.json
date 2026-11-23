@@ -1,0 +1,25 @@
+{
+  "title": "Reverse String",
+  "description": "Reverses the characters in a string.",
+  "tags": [
+    "array",
+    "reverse",
+    "c++23",
+    "string"
+  ],
+  "contributors": [
+    "Vaibhav-kesarwani",
+    "technoph1le"
+  ],
+  "usage": {
+    "js": [
+      "reverseString('hello'); // Returns: 'olleh'"
+    ],
+    "cpp": [
+      "reverseString(\"quicksnip\"); // Returns: \"pinskciuq\""
+    ],
+    "py": [
+      "reverse_string('hello') # Returns: 'olleh'"
+    ]
+  }
+}

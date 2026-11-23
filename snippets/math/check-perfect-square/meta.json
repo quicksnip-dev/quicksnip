@@ -1,0 +1,18 @@
+{
+  "title": "Check Perfect Square",
+  "description": "Checks if a number is a perfect square.",
+  "tags": [
+    "math",
+    "perfect square",
+    "check"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "is_perfect_square(16) # Returns: True",
+      "is_perfect_square(20) # Returns: False"
+    ]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "title": "Flex Center",
+  "description": "A mixin to center content using flexbox.",
+  "tags": [
+    "flex",
+    "center"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "title": "Find Unique Characters",
+  "description": "Returns a set of unique characters from a string, with options to include spaces and control case sensitivity",
+  "tags": [
+    "string",
+    "unique",
+    "characters",
+    "case-sensitive"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "axorax"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(findUniqueCharacters(\"hello world\", false, true)); // Output: [d, e, h, l, o, r, w]"
+    ],
+    "py": [
+      "find_unique_chars('banana') # Results: 'abn'"
+    ]
+  }
+}

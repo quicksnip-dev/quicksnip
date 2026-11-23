@@ -1,0 +1,19 @@
+{
+  "title": "Measure Execution Time",
+  "description": "Measures the execution time of a code block.",
+  "tags": [
+    "time",
+    "execution"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "py": [
+      "def slow_function():",
+      "    time.sleep(2)",
+      "",
+      "measure_time(slow_function) # Outputs an execution time of ~2s"
+    ]
+  }
+}

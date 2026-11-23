@@ -1,0 +1,19 @@
+{
+  "title": "Vector to Queue",
+  "description": "Convert vector into queue quickly",
+  "tags": [
+    "data structures",
+    "queue",
+    "vector"
+  ],
+  "contributors": [
+    "mrityunjay2003",
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "std::vector<int> vec = { 1, 2, 3, 4, 5 };",
+      "vectorToQueue(vec); // Returns: std::queue<int> { 1, 2, 3, 4, 5 }"
+    ]
+  }
+}

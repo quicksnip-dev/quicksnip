@@ -1,0 +1,21 @@
+{
+  "title": "Selection Sort",
+  "description": "Sorts an array of integers using the Selection Sort algorithm.",
+  "tags": [
+    "sorting",
+    "selectionsort",
+    "array",
+    "algorithm"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "int arr[] = {64, 25, 12, 22, 11};",
+      "int n = sizeof(arr) / sizeof(arr[0]);",
+      "selectionSort(arr, n);",
+      "// Now arr[] is sorted: {11, 12, 22, 25, 64}"
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "title": "Mask Sensitive Information",
+  "description": "Masks parts of a sensitive string, like a credit card or email address.",
+  "tags": [
+    "string",
+    "mask",
+    "sensitive"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "maskSensitiveInfo('123456789', 4); // Returns: '1234*****'",
+      "maskSensitiveInfo('example@mail.com', 2, '#'); // Returns: 'ex#############'"
+    ]
+  }
+}

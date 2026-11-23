@@ -1,0 +1,16 @@
+{
+  "title": "Palindrome",
+  "description": "Check if a string is a palindrome or not.",
+  "tags": [
+    "string",
+    "c++23"
+  ],
+  "contributors": [
+    "majvax"
+  ],
+  "usage": {
+    "cpp": [
+      "bool pal = is_palindrome(\"A man, a plan, a canal, Panama\"); // true"
+    ]
+  }
+}

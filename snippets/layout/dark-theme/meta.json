@@ -1,0 +1,23 @@
+{
+  "title": "Dark Theme",
+  "description": "SCSS mixin to change styles for dark themes.",
+  "tags": [
+    "mixin",
+    "snippet",
+    "dark-theme",
+    "layout"
+  ],
+  "contributors": [
+    "gihanrangana"
+  ],
+  "usage": {
+    "scss": [
+      ".container{",
+      "\tbackground: #f0f0f0;",
+      "\t@include isDark {",
+      "\t\tbackground: #222;",
+      "\t}",
+      "}"
+    ]
+  }
+}

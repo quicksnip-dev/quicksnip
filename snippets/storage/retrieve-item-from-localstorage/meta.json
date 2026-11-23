@@ -1,0 +1,16 @@
+{
+  "title": "Retrieve Item from localStorage",
+  "description": "Retrieves a value from localStorage by key and parses it.",
+  "tags": [
+    "localstorage",
+    "storage"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "js": [
+      "getFromLocalStorage('user'); // Returns: { name: 'John', age: 30 }"
+    ]
+  }
+}

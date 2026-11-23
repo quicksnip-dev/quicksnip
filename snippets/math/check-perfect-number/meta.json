@@ -1,0 +1,17 @@
+{
+  "title": "Check Perfect Number",
+  "description": "Checks if a number is a perfect number. A perfect number is a positive integer that is equal to the sum of its proper divisors (excluding itself).",
+  "tags": [
+    "math",
+    "perfect-number"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "c": [
+      "is_perfect(28); // Returns: true",
+      "is_perfect(12); // Returns: false"
+    ]
+  }
+}

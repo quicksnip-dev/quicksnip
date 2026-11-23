@@ -1,0 +1,21 @@
+{
+  "title": "Merge Sort",
+  "description": "Sorts an array of integers using the Merge Sort algorithm.",
+  "tags": [
+    "sorting",
+    "mergesort",
+    "array",
+    "algorithm"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "int arr[] = {38, 27, 43, 3, 9, 82, 10};",
+      "int n = sizeof(arr) / sizeof(arr[0]);",
+      "mergeSort(arr, 0, n - 1);",
+      "// Now arr[] is sorted: {3, 9, 10, 27, 38, 43, 82}"
+    ]
+  }
+}

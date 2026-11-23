@@ -1,0 +1,16 @@
+{
+  "title": "Factorial Function",
+  "description": "Calculates the factorial of a number.",
+  "tags": [
+    "math",
+    "factorial"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "factorial(4); // Returns: 24"
+    ]
+  }
+}

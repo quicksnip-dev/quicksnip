@@ -1,0 +1,18 @@
+{
+  "title": "Check if Object is Empty",
+  "description": "Checks whether an object has no own enumerable properties.",
+  "tags": [
+    "object",
+    "check",
+    "empty"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "js": [
+      "isEmptyObject({}); // Returns: true",
+      "isEmptyObject({ a: 1 }); // Returns: false"
+    ]
+  }
+}

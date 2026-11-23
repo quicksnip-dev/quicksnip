@@ -1,28 +1,30 @@
+# Snippets
 
+One folder per snippet: `snippets/<category>/<name>/`.
 
-## Markdown Format
-
-````
-```js
-// code here
+```txt
+<name>/
+├── meta.json        # required
+├── <name>.ts        # TypeScript implementation
+├── <name>.test.ts   # Vitest tests → ✓ verified (requires <name>.ts)
+└── <name>.<ext>     # any other language: js, jsx, tsx, py, java, cs, cpp, c, rs, rb, hs, sh, css, scss, html, regex
 ```
 
----
-
-```py
-# code here
-```
-````
-
-
-## JSON Format
+## meta.json
 
 ```json
 {
-  "title": "",
-  "description": "",
-  "languages": [""],
-  "contributors": [""],
-  "tags": ["", ""]
+  "title": "Slugify",
+  "description": "Converts a string into a URL-friendly slug, stripping accents and symbols.",
+  "tags": ["url", "seo"],
+  "contributors": ["github-username"],
+  "usage": {
+    "ts": ["slugify(\"Hello World!\"); // \"hello-world\""]
+  },
+  "dependencies": []
 }
 ```
+
+`npm run snippets:check` validates every folder. `npm run snippets` builds the website data, the shadcn registry (`public/r`) and `llms.txt`.
+
+See [CONTRIBUTING.md](../CONTRIBUTING.md) for the full guidelines.

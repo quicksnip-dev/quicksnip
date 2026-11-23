@@ -1,0 +1,17 @@
+{
+  "title": "Find Non-Repeating Number",
+  "description": "Finds the number that appears only once in an array where every other number appears twice.",
+  "tags": [
+    "bit-manipulation",
+    "xor"
+  ],
+  "contributors": [
+    "ashukr07"
+  ],
+  "usage": {
+    "cpp": [
+      "std::vector<int> nums = {4, 1, 2, 1, 2};",
+      "find_non_repeating(nums); // Returns: 4"
+    ]
+  }
+}

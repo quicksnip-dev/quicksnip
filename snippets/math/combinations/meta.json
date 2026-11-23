@@ -1,0 +1,18 @@
+{
+  "title": "Combinations",
+  "description": "Calculates the number of combinations (denoted as C(n,r) or \"n choose r\"), which determines how many ways you can select r items from n items without considering the order.",
+  "tags": [
+    "math",
+    "number-theory",
+    "algebra"
+  ],
+  "contributors": [
+    "JanluOfficial"
+  ],
+  "usage": {
+    "js": [
+      "combinations(24,22); // Returns:    276",
+      "combinations(5,3);   // Returns:     10"
+    ]
+  }
+}

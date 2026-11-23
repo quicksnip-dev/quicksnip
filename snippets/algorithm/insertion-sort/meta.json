@@ -1,0 +1,21 @@
+{
+  "title": "Insertion Sort",
+  "description": "Sorts an array of integers using the Insertion Sort algorithm.",
+  "tags": [
+    "sorting",
+    "insertionsort",
+    "array",
+    "algorithm"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "int arr[] = {12, 11, 13, 5, 6};",
+      "int n = sizeof(arr) / sizeof(arr[0]);",
+      "insertionSort(arr, n);",
+      "// Now arr[] is sorted: {5, 6, 11, 12, 13}"
+    ]
+  }
+}

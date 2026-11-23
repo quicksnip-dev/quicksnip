@@ -1,0 +1,21 @@
+{
+  "title": "Quick Sort",
+  "description": "Sorts an array of integers using the Quick Sort algorithm.",
+  "tags": [
+    "sorting",
+    "quicksort",
+    "array",
+    "algorithm"
+  ],
+  "contributors": [
+    "0xHouss"
+  ],
+  "usage": {
+    "c": [
+      "int arr[] = {10, 7, 8, 9, 1, 5};",
+      "int n = sizeof(arr) / sizeof(arr[0]);",
+      "quickSort(arr, 0, n - 1);",
+      "// Now arr[] is sorted: {1, 5, 7, 8, 9, 10}"
+    ]
+  }
+}

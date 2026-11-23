@@ -1,0 +1,34 @@
+{
+  "title": "Remove Punctuation",
+  "description": "Removes all punctuation from a given string.",
+  "tags": [
+    "string",
+    "punctuation",
+    "remove",
+    "clean",
+    "normalization"
+  ],
+  "contributors": [
+    "ACR1209",
+    "Mcbencrafter",
+    "SteliosGee"
+  ],
+  "usage": {
+    "hs": [
+      "main :: IO ()",
+      "main = do",
+      "    let text = \"Hello, Haskell! How's it going?\"",
+      "    print $ removePunctuation text -- Output: \"Hello Haskell Hows it going\""
+    ],
+    "java": [
+      "System.out.println(removePunctuation(\"hello, world!\")); // \"hello world\""
+    ],
+    "py": [
+      "remove_punctuation('Hello, World!') # Returns: 'Hello World'"
+    ],
+    "rb": [
+      "text = \"Hello, Ruby! How's it going?\"",
+      "puts remove_punctuation(text) # Output: \"Hello Ruby Hows it going\""
+    ]
+  }
+}

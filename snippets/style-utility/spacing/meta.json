@@ -1,0 +1,11 @@
+{
+  "title": "Spacing",
+  "description": "This SCSS snippet dynamically generates utility classes for managing spacing in a consistent and efficient manner. The classes are built using a loop, ensuring scalability and flexibility. use .mt-* for margin-top, and .pb-* for padding bottom",
+  "tags": [
+    "clearfix",
+    "spacing"
+  ],
+  "contributors": [
+    "dinesh-here"
+  ]
+}

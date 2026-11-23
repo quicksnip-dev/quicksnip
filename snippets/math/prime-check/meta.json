@@ -1,0 +1,18 @@
+{
+  "title": "Prime Check",
+  "description": "Checks if a number is a prime",
+  "tags": [
+    "math",
+    "number",
+    "prime"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "int number = 31;",
+      "System.out.println(isPrime(number)); // true"
+    ]
+  }
+}

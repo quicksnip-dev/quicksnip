@@ -1,0 +1,22 @@
+{
+  "title": "Transform Camel Case to Snake Case",
+  "description": "Converts a Camel or Pascal Case string to Snake case.",
+  "tags": [
+    "string",
+    "convert",
+    "camel-case",
+    "snake-case",
+    "pascal-case"
+  ],
+  "contributors": [
+    "ACR1209"
+  ],
+  "usage": {
+    "rb": [
+      "camel_case = \"camelCaseToSnakeCase\"",
+      "pascal_case = \"PascalCaseToSnakeCase\"",
+      "puts camel_to_snake(camel_case) # Output: \"camel_case_to_snake_case\"",
+      "puts camel_to_snake(pascal_case) # Output: \"pascal_case_to_snake_case\""
+    ]
+  }
+}

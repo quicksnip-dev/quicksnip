@@ -1,0 +1,18 @@
+{
+  "title": "Filter JSON Data",
+  "description": "Filters a JSON object based on a condition and returns the filtered data.",
+  "tags": [
+    "json",
+    "filter",
+    "data"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "condition = lambda x: x['age'] > 25",
+      "filter_json_data('data.json', condition) # Returns: `data.json` filtered with `condition`"
+    ]
+  }
+}

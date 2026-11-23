@@ -1,0 +1,18 @@
+{
+  "title": "Get Time Difference",
+  "description": "Calculates the time difference in days between two dates.",
+  "tags": [
+    "date",
+    "time-difference"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "js": [
+      "const date1 = new Date('2024-01-01');",
+      "const date2 = new Date('2024-12-31');",
+      "getTimeDifference(date1, date2); // Returns: 365"
+    ]
+  }
+}

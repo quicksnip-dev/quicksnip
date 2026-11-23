@@ -1,0 +1,18 @@
+{
+  "title": "Keys of Type",
+  "description": "Extracts keys from an object type that match a specified value type.",
+  "tags": [
+    "helper-types",
+    "typedefinition"
+  ],
+  "contributors": [
+    "aelshinawy"
+  ],
+  "usage": {
+    "ts": [
+      "type A = { name: string; age: number; isActive: boolean, isDeleted: boolean };",
+      "type StringKeys = KeysOfType<A, string>; // \"name\"",
+      "type BooleanKeys = KeysOfType<A, boolean>; // \"isActive\" | \"isDeleted\""
+    ]
+  }
+}

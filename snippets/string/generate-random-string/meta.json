@@ -1,0 +1,16 @@
+{
+  "title": "Generate Random String",
+  "description": "Generates a random alphanumeric string.",
+  "tags": [
+    "random",
+    "string"
+  ],
+  "contributors": [
+    "technoph1le"
+  ],
+  "usage": {
+    "py": [
+      "random_string(10) # Results: Random 10-character string"
+    ]
+  }
+}

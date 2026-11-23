@@ -1,0 +1,19 @@
+{
+  "title": "Reverse Word Order",
+  "description": "Reverses the order of words in a sentence while preserving the content of each word",
+  "tags": [
+    "string",
+    "reverse",
+    "words",
+    "transformation",
+    "sentence"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(reverseWords(\"hello world\")); // Output: world hello"
+    ]
+  }
+}

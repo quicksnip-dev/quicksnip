@@ -1,0 +1,17 @@
+{
+  "title": "Remove Characters",
+  "description": "Removes specific characters from a string.",
+  "tags": [
+    "string",
+    "remove",
+    "characters"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "py": [
+      "remove_chars('hello world', 'eo') # Returns: 'hll wrld'"
+    ]
+  }
+}

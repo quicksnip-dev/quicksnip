@@ -1,0 +1,12 @@
+{
+  "title": "Blur Background",
+  "description": "Applies a blur effect to the background of an element.",
+  "tags": [
+    "blur",
+    "background",
+    "effects"
+  ],
+  "contributors": [
+    "technoph1le"
+  ]
+}

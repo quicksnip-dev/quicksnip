@@ -1,0 +1,24 @@
+{
+  "title": "kebab-case",
+  "description": "Converts any string (spaces, snake, camel, Pascal) to kebab-case.",
+  "tags": [
+    "string",
+    "conversion",
+    "param-case",
+    "case",
+    "paramcase"
+  ],
+  "contributors": [
+    "Mcbencrafter",
+    "aumirza"
+  ],
+  "usage": {
+    "ts": [
+      "kebabCase(\"helloWorld\");     // \"hello-world\"",
+      "kebabCase(\"XMLHttpRequest\"); // \"xml-http-request\""
+    ],
+    "java": [
+      "System.out.println(stringToParamCase(\"Hello World 123\")); // \"hello-world-123\""
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "title": "Reverse Word Contents",
+  "description": "Reverses the characters of each word in a string while preserving word order",
+  "tags": [
+    "string",
+    "reverse",
+    "words",
+    "transformation",
+    "order"
+  ],
+  "contributors": [
+    "Mcbencrafter"
+  ],
+  "usage": {
+    "java": [
+      "System.out.println(reverseWordContents(\"hello world\")); // \"olleh dlrow\""
+    ]
+  }
+}

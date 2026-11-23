@@ -1,7 +1,0 @@
-{
-  "title": "Convert String to Snake Case",
-  "description": "Converts a given string into snake_case.",
-  "languages": ["js", "java"],
-  "contributors": ["axorax", "Mcbencrafter"],
-  "tags": ["string", "case"]
-}

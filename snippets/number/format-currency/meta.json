@@ -1,0 +1,17 @@
+{
+  "title": "Format Currency",
+  "description": "Formats a number as localized currency using Intl.NumberFormat.",
+  "tags": [
+    "number",
+    "currency"
+  ],
+  "contributors": [
+    "axorax"
+  ],
+  "usage": {
+    "ts": [
+      "formatCurrency(1234.5, \"USD\", \"en-US\"); // \"$1,234.50\"",
+      "formatCurrency(1234.5, \"EUR\", \"de-DE\"); // \"1.234,50 €\""
+    ]
+  }
+}
