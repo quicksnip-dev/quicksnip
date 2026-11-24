@@ -23,7 +23,7 @@ export default async function Image({ params }: { params: Promise<{ category: st
         eyebrow={`${unslugify(data.category)}${data.verified ? "  ·  Verified" : ""}`}
         title={data.title}
         description={data.description}
-        footer={[data.languages.map((l) => LANGUAGE_NAMES[l] ?? l).join(" · "), "quicksnip.dev"]}
+        footer={[data.languages.map((l) => LANGUAGE_NAMES[l] ?? l).join(" · "), "quicksnip.app"]}
       />
     ),
     size,

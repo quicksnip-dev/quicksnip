@@ -3,12 +3,13 @@ import ExtensionItem, {
   NewExtensionItem,
 } from "@/components/ui/extension-item";
 import { EXTENSIONS } from "@/data/extensions";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Extensions",
   description: "Use QuickSnip from the shadcn CLI, Raycast, AI agents and more.",
-  alternates: { canonical: "/extensions" },
-};
+  path: "/extensions",
+});
 
 export default function ExtensionsPage() {
   return (

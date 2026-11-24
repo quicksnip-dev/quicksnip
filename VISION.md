@@ -47,7 +47,7 @@ We do **NOT** aim to be a UI component library or general documentation.
 - [x] Restore the full v1 collection with every contributor credited
 - [x] Folder-per-snippet format with tests
 - [x] Verified core of TypeScript utilities
-- [x] shadcn registry (`npx shadcn add quicksnip.dev/r/<name>.json`)
+- [x] shadcn registry (`npx shadcn add www.quicksnip.app/r/<name>.json`)
 - [x] `llms.txt`, `llms-full.txt` and a static JSON API
 - [x] Static, SEO-friendly snippet pages
 - [ ] MCP server (search and install from Claude Code, Cursor, …)

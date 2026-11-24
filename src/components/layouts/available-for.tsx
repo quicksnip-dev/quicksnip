@@ -13,7 +13,7 @@ const WAYS = [
   {
     title: "shadcn CLI",
     who: "For web developers",
-    code: "npx shadcn add quicksnip.dev/r/slugify.json",
+    code: "npx shadcn add www.quicksnip.app/r/slugify.json",
     href: "/guide/installation",
     cta: "Installation guide",
   },

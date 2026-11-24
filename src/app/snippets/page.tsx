@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import SnippetList from "@/components/layouts/snippet-list";
 import { getListSnippets, getSnippetSummary } from "@/lib/snippets";
+import { pageMetadata } from "@/lib/seo";
 
 export function generateMetadata(): Metadata {
   const { total, verified } = getSnippetSummary();
-  return {
+  return pageMetadata({
     title: "All snippets",
     description: `Browse ${total} community-made code snippets in many languages. ${verified} verified TypeScript utilities install with one command.`,
-    alternates: { canonical: "/snippets" },
-  };
+    path: "/snippets",
+  });
 }
 
 export default function SnippetsPage() {

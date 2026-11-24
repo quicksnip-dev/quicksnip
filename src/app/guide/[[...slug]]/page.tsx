@@ -2,6 +2,7 @@ import { source } from "@/lib/source";
 import { DocsBody, DocsDescription, DocsPage, DocsTitle } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { getMDXComponents } from "../../../../mdx-components";
+import { pageMetadata } from "@/lib/seo";
 
 export default async function Page(props: { params: Promise<{ slug?: string[] }> }) {
   const params = await props.params;
@@ -40,10 +41,10 @@ export async function generateMetadata(props: { params: Promise<{ slug?: string[
   const page = source.getPage(params.slug);
   if (!page) notFound();
 
-  return {
+  return pageMetadata({
     title: page.data.title,
-    description: page.data.description,
-    alternates: { canonical: page.url },
-    openGraph: { type: "article", url: page.url, title: `${page.data.title} · QuickSnip`, description: page.data.description },
-  };
+    description: page.data.description ?? `${page.data.title} — QuickSnip guide.`,
+    path: page.url,
+    type: "article",
+  });
 }

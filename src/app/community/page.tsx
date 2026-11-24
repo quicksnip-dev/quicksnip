@@ -5,12 +5,13 @@ import CommunityLinks from "@/components/layouts/community-links";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { HISTORY } from "@/data/history";
 import { getSnippetIndex } from "@/lib/snippets";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Community",
-  description: "The people and the history behind QuickSnip.",
-  alternates: { canonical: "/community" },
-};
+  description: "The people and the history behind QuickSnip: contributors, videos and where to talk with us.",
+  path: "/community",
+});
 
 function getContributors() {
   const counts = new Map<string, number>();
