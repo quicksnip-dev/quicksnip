@@ -22,6 +22,14 @@ const Footer = () => {
           </Link>
           <br />
           Copyright © 2024–{new Date().getFullYear()} QuickSnip contributors
+          <br />
+          <Link href="/privacy" className="hover:text-brand transition-colors">
+            Privacy
+          </Link>
+          {" · "}
+          <Link href="/terms" className="hover:text-brand transition-colors">
+            Terms
+          </Link>
         </p>
         <ul className="flex md:items-center gap-4 md:gap-8 flex-col md:flex-row flex-wrap">
           {NAV_ITEMS.map((item) => (

@@ -16,7 +16,7 @@ const ROOT = process.cwd();
 const SNIPPETS_DIR = path.join(ROOT, "snippets");
 const DATA_DIR = path.join(ROOT, "public", "data", "snippets");
 const REGISTRY_DIR = path.join(ROOT, "public", "r");
-const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://quicksnip.dev").replace(/\/$/, "");
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.quicksnip.app").replace(/\/$/, "");
 const CHECK_ONLY = process.argv.includes("--check");
 
 /** File extension → language id shown in the UI. Order defines display order. */

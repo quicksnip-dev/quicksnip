@@ -13,7 +13,7 @@ export default function Image() {
       <OgFrame
         title="Verified code snippets for humans and AI"
         description="Tested, typed utilities you can copy — or let your AI coding tool install in one command. Made by the community."
-        footer={["quicksnip.dev", `${total} snippets · ${verified} verified · MIT`]}
+        footer={["quicksnip.app", `${total} snippets · ${verified} verified · MIT`]}
       />
     ),
     size,

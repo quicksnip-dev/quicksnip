@@ -27,7 +27,7 @@ export default function Home() {
             "@type": "Organization",
             name: "QuickSnip",
             url: SITE_URL,
-            logo: `${SITE_URL}/icon.svg`,
+            logo: `${SITE_URL}/icon-512.png`,
             sameAs: [GITHUB_URL, DISCORD_URL, YOUTUBE_URL],
           },
         ]}

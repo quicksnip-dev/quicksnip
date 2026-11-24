@@ -12,6 +12,7 @@ import { getSnippet, getSnippetIndex } from "@/lib/snippets";
 import { unslugify } from "@/lib/utils";
 import { GITHUB_URL, LANGUAGE_NAMES, SITE_URL, installCommand } from "@/data/meta";
 import type { FullSnippet } from "@/types";
+import { pageMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ category: string; snippet: string }>;
@@ -33,14 +34,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     data.installable ? `${data.verified ? "" : " Also"} installable with one command.` : ""
   }`.trim();
   const url = `/snippets/${data.category}/${data.slug}`;
-  return {
+  return pageMetadata({
     title,
     description,
+    path: url,
+    type: "article",
+    hasOwnImage: true,
     keywords: [data.title, data.slug, ...data.tags, ...langs.map((l) => `${l} ${data.title}`)],
-    alternates: { canonical: url },
-    openGraph: { type: "article", url, title: `${title} · QuickSnip`, description },
-    twitter: { card: "summary_large_image", title: `${title} · QuickSnip`, description },
-  };
+  });
 }
 
 function jsonLd(data: FullSnippet) {

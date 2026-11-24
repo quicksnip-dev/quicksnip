@@ -1,10 +1,13 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { RootProvider } from "fumadocs-ui/provider";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import Header from "@/components/layouts/header";
 import Footer from "@/components/layouts/footer";
 import { GITHUB_URL, SITE_URL } from "@/data/meta";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,17 +19,24 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const DESCRIPTION =
-  "Community-made, tested code snippets. Copy them, install them with the shadcn CLI, or let your AI coding agent use them.";
+const TITLE = `${SITE_NAME} — ${SITE_TAGLINE}`;
+
+const verification: Metadata["verification"] = {
+  google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION,
+  other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+    ? { "msvalidate.01": process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+    : undefined,
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "QuickSnip — Verified code snippets for humans and AI",
-    template: "%s · QuickSnip",
+    default: TITLE,
+    template: `%s · ${SITE_NAME}`,
   },
-  description: DESCRIPTION,
-  applicationName: "QuickSnip",
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
   keywords: [
     "code snippets",
     "typescript utilities",
@@ -39,21 +49,30 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Technophile and QuickSnip contributors", url: GITHUB_URL }],
   creator: "Technophile",
+  publisher: SITE_NAME,
+  category: "technology",
   alternates: { canonical: "/", types: { "text/plain": "/llms.txt" } },
   openGraph: {
     type: "website",
-    siteName: "QuickSnip",
-    url: SITE_URL,
-    title: "QuickSnip — Verified code snippets for humans and AI",
-    description: DESCRIPTION,
+    siteName: SITE_NAME,
+    url: "/",
+    title: TITLE,
+    description: SITE_DESCRIPTION,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "QuickSnip — Verified code snippets for humans and AI",
-    description: DESCRIPTION,
+    title: TITLE,
+    description: SITE_DESCRIPTION,
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+  },
+  appleWebApp: { title: SITE_NAME, capable: true, statusBarStyle: "black-translucent" },
+  formatDetection: { telephone: false, email: false, address: false },
+  verification,
 };
 
 export const viewport: Viewport = {
@@ -78,6 +97,8 @@ export default function RootLayout({
           <div className="min-w-0">{children}</div>
           <Footer />
         </RootProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

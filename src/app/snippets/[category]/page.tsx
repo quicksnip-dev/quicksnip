@@ -5,6 +5,7 @@ import SnippetList from "@/components/layouts/snippet-list";
 import { getListSnippets, getSnippetIndex } from "@/lib/snippets";
 import { unslugify } from "@/lib/utils";
 import { LANGUAGE_NAMES } from "@/data/meta";
+import { pageMetadata } from "@/lib/seo";
 
 interface Props {
   params: Promise<{ category: string }>;
@@ -21,13 +22,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const snippets = getListSnippets(category);
   const languages = [...new Set(snippets.flatMap((s) => s.languages))].map((l) => LANGUAGE_NAMES[l] ?? l);
   const name = unslugify(category);
-  return {
+  return pageMetadata({
     title: `${name} snippets`,
     description: `${snippets.length} ${name.toLowerCase()} code snippets in ${languages.slice(0, 5).join(", ")}${
       languages.length > 5 ? " and more" : ""
     }. Copy them or install with one command.`,
-    alternates: { canonical: `/snippets/${category}` },
-  };
+    path: `/snippets/${category}`,
+    hasOwnImage: true,
+  });
 }
 
 export default async function CategoryPage({ params }: Props) {

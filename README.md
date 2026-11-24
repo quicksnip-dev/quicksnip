@@ -12,21 +12,21 @@ AI can write a `debounce` in a second, but it writes a slightly different one ev
 
 - ✅ **Verified**: typed TypeScript with unit tests that run in CI
 - 📦 **One-command install** through the [shadcn registry](https://ui.shadcn.com/docs/registry): the code is copied into your project, no dependency added
-- 🤖 **AI-readable** through [`llms.txt`](https://quicksnip.dev/llms.txt) and a static JSON API
+- 🤖 **AI-readable** through [`llms.txt`](https://www.quicksnip.app/llms.txt) and a static JSON API
 - 🌍 **Many languages** for the same snippet: TypeScript, Python, Java, C++, Rust, Ruby, CSS and more
 
 ## Use it
 
 ```bash
 # Install a snippet into your project's lib folder
-npx shadcn@latest add https://quicksnip.dev/r/debounce.json
+npx shadcn@latest add https://www.quicksnip.app/r/debounce.json
 ```
 
 ```ts
 import { debounce } from "@/lib/debounce";
 ```
 
-Or browse and copy on [quicksnip.dev/snippets](https://quicksnip.dev/snippets). For AI agents, see the [For AI agents guide](https://quicksnip.dev/guide/for-ai-agents).
+Or browse and copy on [quicksnip.app/snippets](https://www.quicksnip.app/snippets). For AI agents, see the [For AI agents guide](https://www.quicksnip.app/guide/for-ai-agents).
 
 ## Repository layout
 

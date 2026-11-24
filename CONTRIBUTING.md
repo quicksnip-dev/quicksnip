@@ -2,7 +2,7 @@
 
 Hey there! 👋 Thanks for taking the time to contribute. QuickSnip exists because of people like you.
 
-The full guide lives at [quicksnip.dev/guide/contributing/how-to-contribute](https://quicksnip.dev/guide/contributing/how-to-contribute). This page is the short version.
+The full guide lives at [quicksnip.app/guide/contributing/how-to-contribute](https://www.quicksnip.app/guide/contributing/how-to-contribute). This page is the short version.
 
 ## Ways to help
 

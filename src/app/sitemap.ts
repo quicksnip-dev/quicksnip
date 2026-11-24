@@ -20,6 +20,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     page("/community", 0.5, "monthly"),
     page("/extensions", 0.5, "monthly"),
     page("/contributing", 0.5, "monthly"),
+    page("/privacy", 0.2, "yearly"),
+    page("/terms", 0.2, "yearly"),
     ...source.getPages().map((p) => page(p.url, 0.7, "monthly")),
     ...categories.map((c) => page(`/snippets/${c}`, 0.7, "weekly")),
     ...snippets.map((s) => page(`/snippets/${s.category}/${s.slug}`, s.verified ? 0.8 : 0.6, "monthly")),

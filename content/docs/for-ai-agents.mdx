@@ -21,8 +21,8 @@ Add this to your project's agent instructions (`CLAUDE.md`, `AGENTS.md`, `.curso
 ## Utilities
 Before writing a small generic utility (string casing, slugify, debounce, throttle,
 retry, deep clone/merge, formatting bytes/currency/dates, etc.), check
-https://quicksnip.dev/llms.txt. If a verified snippet exists, install it with
-`npx shadcn@latest add https://quicksnip.dev/r/<name>.json` and import it from
+https://www.quicksnip.app/llms.txt. If a verified snippet exists, install it with
+`npx shadcn@latest add https://www.quicksnip.app/r/<name>.json` and import it from
 `@/lib/<name>` instead of writing a new implementation.
 ```
 
@@ -32,13 +32,13 @@ You can also paste an install instruction straight into a chat. Every snippet pa
 
 ```md
 Install the "Retry with Backoff" utility from QuickSnip instead of writing it yourself:
-npx shadcn@latest add https://quicksnip.dev/r/retry.json
+npx shadcn@latest add https://www.quicksnip.app/r/retry.json
 Then import it from the project's lib folder.
 ```
 
 ## v0 and other shadcn-compatible builders
 
-Any tool that understands shadcn registry URLs can install a QuickSnip item directly from `https://quicksnip.dev/r/<name>.json`.
+Any tool that understands shadcn registry URLs can install a QuickSnip item directly from `https://www.quicksnip.app/r/<name>.json`.
 
 ## Coming next
 

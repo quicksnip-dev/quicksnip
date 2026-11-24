@@ -8,7 +8,7 @@ description: Add snippets to your project with the shadcn CLI or by copying them
 Every JavaScript and TypeScript snippet is published as a [shadcn registry](https://ui.shadcn.com/docs/registry) item. Pass its URL to `shadcn add`:
 
 ```bash
-npx shadcn@latest add https://quicksnip.dev/r/debounce.json
+npx shadcn@latest add https://www.quicksnip.app/r/debounce.json
 ```
 
 The file is copied into your `lib` folder (for example `lib/debounce.ts` or `src/lib/debounce.ts`), and you import it like any other module:
@@ -20,7 +20,7 @@ import { debounce } from "@/lib/debounce";
 You can install several at once:
 
 ```bash
-npx shadcn@latest add https://quicksnip.dev/r/slugify.json https://quicksnip.dev/r/retry.json
+npx shadcn@latest add https://www.quicksnip.app/r/slugify.json https://www.quicksnip.app/r/retry.json
 ```
 
 > The CLI needs a `components.json` in your project. If you already use shadcn/ui, you have one. If not, run `npx shadcn@latest init` once.
@@ -32,7 +32,7 @@ Add QuickSnip as a namespaced registry in `components.json`:
 ```json
 {
   "registries": {
-    "@quicksnip": "https://quicksnip.dev/r/{name}.json"
+    "@quicksnip": "https://www.quicksnip.app/r/{name}.json"
   }
 }
 ```

@@ -52,7 +52,7 @@ export function OgFrame({
         ) : null}
       </div>
       <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", fontSize: 28, color: "#a8a8a8" }}>
-        <span>{footer?.[0] ?? "quicksnip.dev"}</span>
+        <span>{footer?.[0] ?? "quicksnip.app"}</span>
         <span>{footer?.[1] ?? ""}</span>
       </div>
     </div>
