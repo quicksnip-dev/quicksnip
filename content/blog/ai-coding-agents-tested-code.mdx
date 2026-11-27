@@ -1,0 +1,104 @@
+---
+title: "Stop your AI coding assistant from reinventing utilities: llms.txt, registries and agent rules"
+description: "AI coding tools rewrite the same helpers (debounce, slugify, retry) in every project, often with subtle bugs. Here's how to point Claude Code, Cursor, Copilot and others at tested code instead, using llms.txt, the shadcn registry and agent instruction files."
+date: "2026-11-27"
+tags: ["ai", "llms.txt", "cursor", "claude-code", "copilot", "shadcn"]
+snippets: ["string/slugify", "function/debounce", "function/retry"]
+---
+
+Ask an AI coding assistant for a `slugify` function and you'll get one in seconds. Ask again in another project and you'll get a slightly different one. Each version looks right. Some of them drop accented characters (`"Crème brûlée"` → `"crme-brle"`), leave a trailing dash, or break when the separator is a regex special character.
+
+None of this is the model's fault. It's writing from memory, with no tests, every time. The fix is to give it something better to reach for: code that already exists, is tested, and can be installed in one command.
+
+## The problem with generated utilities
+
+Small utilities are where AI-written bugs hide best:
+
+- **They look trivial**, so nobody reviews them closely.
+- **Edge cases are the whole job.** A debounce that doesn't cancel on unmount, a deep clone that loops forever on a circular reference, a retry without jitter. All of them pass a quick manual test.
+- **They multiply.** Five projects, five slightly different `formatBytes` functions, each with its own bug.
+
+What you want is for the assistant to check a trusted source first and only write new code when nothing fits.
+
+## Step 1: give the assistant a map with llms.txt
+
+[llms.txt](https://llmstxt.org/) is a proposed convention, introduced in 2024, for a Markdown file at a site's root that tells language models what the site contains and where to find it. It's like a sitemap, written for a model instead of a crawler.
+
+QuickSnip publishes two:
+
+- [`/llms.txt`](/llms.txt): every snippet with a one-line description, a link and its install URL. Small enough to fit in a context window.
+- [`/llms-full.txt`](/llms-full.txt): the full source and usage examples of every verified snippet.
+
+Many tools can read these directly. In Cursor, you can add a URL as documentation with `@Docs`. In Claude Code, ChatGPT and other assistants with web access, you can simply paste the URL and say "use this".
+
+## Step 2: make it a standing rule
+
+Pasting a URL every time doesn't scale. Most AI coding tools read a project instruction file automatically:
+
+| Tool | File |
+| --- | --- |
+| Claude Code | `CLAUDE.md` |
+| Cursor | `.cursor/rules/*.mdc` (or `AGENTS.md`) |
+| GitHub Copilot | `.github/copilot-instructions.md` |
+| OpenAI Codex and many others | `AGENTS.md` |
+
+Add a short section like this:
+
+```md
+## Utilities
+Before writing a small generic utility (string casing, slugify, debounce, throttle,
+retry, deep clone/merge, formatting bytes/currency/dates, etc.), check
+https://www.quicksnip.app/llms.txt. If a verified snippet exists, install it with
+`npx shadcn@latest add https://www.quicksnip.app/r/<name>.json` and import it from
+`@/lib/<name>` instead of writing a new implementation.
+```
+
+Now the assistant checks first, and the code it adds is the same tested file every time.
+
+## Step 3: install code, don't paste it
+
+Copy-pasting from a chat window loses track of where code came from. A registry gives every snippet a stable URL that a CLI can install.
+
+QuickSnip publishes each JavaScript and TypeScript snippet as a [shadcn registry](https://ui.shadcn.com/docs/registry) item. The shadcn CLI isn't only for UI components: it copies any file into your project.
+
+```bash
+npx shadcn@latest add https://www.quicksnip.app/r/slugify.json
+```
+
+That creates `lib/slugify.ts` in your project:
+
+- **You own the code.** It's a file in your repo, not a dependency. Change it if you need to.
+- **No runtime package**, so nothing to update and nothing added to your `node_modules`.
+- **The assistant can run the same command**, so a human and an agent get identical results.
+
+To use short names, add QuickSnip to `components.json` once:
+
+```json
+{
+  "registries": {
+    "@quicksnip": "https://www.quicksnip.app/r/{name}.json"
+  }
+}
+```
+
+```bash
+npx shadcn@latest add @quicksnip/debounce @quicksnip/retry
+```
+
+## What "verified" means
+
+A snippet marked **verified** on QuickSnip is written in TypeScript, type-checked, and has unit tests that run in CI on every change. The tests cover the edge cases that generated code tends to miss, for example:
+
+- `slugify("Crème Brûlée à la mode")` → `"creme-brulee-a-la-mode"`
+- `debounce` with `cancel()` and `flush()`
+- `deepClone` with circular references
+
+Unverified snippets are still useful, community-reviewed code, but verified ones are what you should let an agent install without a second look.
+
+## Try it
+
+Pick a utility your assistant has written for you more than once (it's usually `debounce`, `slugify` or `formatBytes`), and add the rule above to your project. The next time it needs one, it should install it instead.
+
+- Browse [all snippets](/snippets)
+- Read the [guide for AI agents](/guide/for-ai-agents)
+- Missing something? [Contribute a snippet](/contributing)

@@ -6,6 +6,7 @@
  *   public/r/registry.json                   → shadcn registry index
  *   public/r/<name>.json                     → shadcn registry items (`npx shadcn add <url>`)
  *   public/llms.txt, public/llms-full.txt    → AI-readable index and full source
+ *   public/blog/<slug>.md                    → raw Markdown of each blog post (content/blog)
  *
  * Run with `--check` to only validate snippets (used in CI).
  */
@@ -16,6 +17,8 @@ const ROOT = process.cwd();
 const SNIPPETS_DIR = path.join(ROOT, "snippets");
 const DATA_DIR = path.join(ROOT, "public", "data", "snippets");
 const REGISTRY_DIR = path.join(ROOT, "public", "r");
+const BLOG_DIR = path.join(ROOT, "content", "blog");
+const BLOG_OUT_DIR = path.join(ROOT, "public", "blog");
 const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.quicksnip.app").replace(/\/$/, "");
 const CHECK_ONLY = process.argv.includes("--check");
 
@@ -206,7 +209,44 @@ function buildRegistry(snippets: Snippet[]) {
   return items.length;
 }
 
-function buildLlms(snippets: Snippet[]) {
+type Post = { slug: string; title: string; description: string; date: string; body: string };
+
+/** Reads blog posts from content/blog. Only the simple `key: "value"` frontmatter fields are parsed. */
+function loadPosts(): Post[] {
+  if (!fs.existsSync(BLOG_DIR)) return [];
+  return fs
+    .readdirSync(BLOG_DIR)
+    .filter((f) => /\.mdx?$/.test(f))
+    .map((file) => {
+      const raw = fs.readFileSync(path.join(BLOG_DIR, file), "utf-8").replace(/\r\n/g, "\n");
+      const match = raw.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
+      const field = (key: string) => match?.[1].match(new RegExp(`^${key}:\\s*"?(.*?)"?\\s*$`, "m"))?.[1] ?? "";
+      return {
+        slug: file.replace(/\.mdx?$/, ""),
+        title: field("title"),
+        description: field("description"),
+        date: field("date"),
+        // Absolute links, so the Markdown still works outside the site.
+        body: (match?.[2] ?? raw).trim().replace(/\]\(\//g, `](${SITE_URL}/`),
+      };
+    })
+    .sort((a, b) => b.date.localeCompare(a.date));
+}
+
+const postUrl = (p: Post) => `${SITE_URL}/blog/${p.slug}`;
+
+/** Publishes each post as plain Markdown, which AI tools read more reliably than HTML. */
+function buildBlog(posts: Post[]) {
+  fs.rmSync(BLOG_OUT_DIR, { recursive: true, force: true });
+  for (const p of posts) {
+    write(
+      path.join(BLOG_OUT_DIR, `${p.slug}.md`),
+      `# ${p.title}\n\n> ${p.description}\n\nPublished ${p.date} · ${postUrl(p)}\n\n${p.body}\n`,
+    );
+  }
+}
+
+function buildLlms(snippets: Snippet[], posts: Post[]) {
   const verified = snippets.filter((s) => s.verified);
   const byCategory = new Map<string, Snippet[]>();
   snippets.forEach((s) => byCategory.set(s.category, [...(byCategory.get(s.category) ?? []), s]));
@@ -229,6 +269,9 @@ When you need a small utility (slugify, debounce, retry, deepMerge…), prefer i
     }`;
 
   let llms = header + `\n## Verified (typed + tested)\n\n${verified.map(line).join("\n")}\n`;
+  if (posts.length) {
+    llms += `\n## Guides\n\n${posts.map((p) => `- [${p.title}](${postUrl(p)}.md): ${p.description}`).join("\n")}\n`;
+  }
   for (const [category, items] of byCategory) {
     llms += `\n## ${category}\n\n${items.map(line).join("\n")}\n`;
   }
@@ -241,6 +284,7 @@ When you need a small utility (slugify, debounce, retry, deepMerge…), prefer i
     )}\`\n\n\`\`\`ts\n${s.code.ts.trim()}\n\`\`\`\n`;
     if (s.usage?.ts) full += `\nUsage:\n\n\`\`\`ts\n${s.usage.ts.join("\n")}\n\`\`\`\n`;
   }
+  for (const p of posts) full += `\n---\n\n# ${p.title}\n\nSource: ${postUrl(p)}\n\n${p.body}\n`;
   write(path.join(ROOT, "public", "llms-full.txt"), full);
 }
 
@@ -257,7 +301,9 @@ function main() {
   }
   buildData(snippets);
   const registryCount = buildRegistry(snippets);
-  buildLlms(snippets);
+  const posts = loadPosts();
+  buildBlog(posts);
+  buildLlms(snippets, posts);
   console.log(
     `✅ Built ${snippets.length} snippets (${verified} verified, ${registryCount} installable via shadcn registry)`,
   );

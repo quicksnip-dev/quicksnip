@@ -1,0 +1,135 @@
+---
+title: "Retry failed requests with exponential backoff and jitter in TypeScript"
+description: "A production-ready retry helper for fetch and other async calls: exponential backoff, jitter, max delay, which errors to retry, Retry-After headers and cancellation with AbortSignal."
+date: "2026-11-27"
+featured: true
+tags: ["typescript", "javascript", "async", "networking"]
+snippets: ["function/retry", "function/sleep"]
+---
+
+Networks fail. APIs rate-limit you. Serverless functions take a few seconds to wake up. Retrying is the standard fix, but a naive retry loop can make an outage worse. This post builds a small, typed `retry` helper and explains each decision in it.
+
+## Why not just retry in a loop?
+
+```ts
+// ❌ Don't do this
+for (let i = 0; i < 3; i++) {
+  try {
+    return await fetchData();
+  } catch {}
+}
+```
+
+This has three problems:
+
+1. **No delay.** All three attempts happen within milliseconds, usually before the problem has had any chance to clear.
+2. **No limit on what gets retried.** A `404 Not Found` or a validation error will fail the same way every time.
+3. **Every client retries at the same moment.** If a server goes down and comes back, thousands of clients retrying in lockstep can knock it over again. This is called the *thundering herd* problem.
+
+## Exponential backoff
+
+Wait longer after each failure: 200 ms, then 400 ms, 800 ms, 1.6 s… Each retry gives the service more time to recover, and the total number of requests during an outage stays low.
+
+```ts
+const backoff = Math.min(maxDelay, delay * 2 ** (attempt - 1));
+```
+
+The `maxDelay` cap keeps a long series of retries from waiting minutes between attempts.
+
+## Jitter
+
+Backoff alone doesn't fix the thundering herd: clients that failed together still retry together, just less often. Adding randomness spreads them out:
+
+```ts
+const jittered = backoff / 2 + Math.random() * (backoff / 2);
+```
+
+This waits somewhere between 50% and 100% of the backoff. AWS's analysis of retry strategies found that jittered backoff greatly reduces both the total work done by clients and the load on the server compared with plain exponential backoff.
+
+## The full helper
+
+```ts
+export type RetryOptions = {
+  /** Total attempts, including the first one. Default: 3 */
+  attempts?: number;
+  /** Delay before the first retry in ms. Doubles on each retry. Default: 200 */
+  delay?: number;
+  /** Upper bound for a single delay in ms. Default: 10_000 */
+  maxDelay?: number;
+  /** Return false to stop retrying for a given error (e.g. a 4xx response). */
+  shouldRetry?: (error: unknown, attempt: number) => boolean;
+  signal?: AbortSignal;
+};
+
+export async function retry<T>(
+  fn: (attempt: number) => Promise<T>,
+  { attempts = 3, delay = 200, maxDelay = 10_000, shouldRetry = () => true, signal }: RetryOptions = {},
+): Promise<T> {
+  for (let attempt = 1; ; attempt++) {
+    signal?.throwIfAborted();
+    try {
+      return await fn(attempt);
+    } catch (error) {
+      if (attempt >= attempts || !shouldRetry(error, attempt)) throw error;
+      const backoff = Math.min(maxDelay, delay * 2 ** (attempt - 1));
+      const jittered = backoff / 2 + Math.random() * (backoff / 2);
+      await new Promise((resolve) => setTimeout(resolve, jittered));
+    }
+  }
+}
+```
+
+It rethrows the **last** error when it gives up, so your existing error handling keeps working, and it passes the attempt number to `fn` in case you want to log it.
+
+## Using it with `fetch`
+
+`fetch` only rejects on network failures. A `500` or `429` response **resolves** normally, so you need to turn bad statuses into errors yourself, and decide which ones are worth retrying:
+
+```ts
+class HttpError extends Error {
+  constructor(public status: number) {
+    super(`HTTP ${status}`);
+  }
+}
+
+async function getJson<T>(url: string, signal?: AbortSignal): Promise<T> {
+  return retry(
+    async () => {
+      const res = await fetch(url, { signal });
+      if (!res.ok) throw new HttpError(res.status);
+      return res.json() as Promise<T>;
+    },
+    {
+      attempts: 4,
+      signal,
+      shouldRetry: (error) => {
+        if (error instanceof HttpError) {
+          // Retry timeouts, rate limits and server errors. Don't retry other 4xx errors.
+          return error.status === 408 || error.status === 429 || error.status >= 500;
+        }
+        // Network failures (fetch rejects with a TypeError) are worth retrying.
+        // An aborted request is not.
+        return !(error instanceof DOMException && error.name === "AbortError");
+      },
+    },
+  );
+}
+```
+
+## Things to keep in mind
+
+- **Only retry idempotent operations.** A `GET` or a `PUT` can safely run twice. A `POST /payments` can't, unless the API supports an idempotency key (Stripe, for example, accepts an `Idempotency-Key` header).
+- **Respect `Retry-After`.** When a `429` or `503` response includes a `Retry-After` header, the server is telling you exactly how long to wait. Prefer that over your own backoff.
+- **Make it cancellable.** Passing an `AbortSignal` lets you stop retrying when the user leaves the page or a component unmounts.
+- **Retry at one layer only.** If your HTTP client, your helper and your server all retry 3 times, one failure can become 27 requests.
+- **Keep the total time bounded.** Users won't wait 30 seconds for a button click. For background jobs, longer is fine.
+
+## Get the code
+
+`retry` is a verified QuickSnip snippet, with unit tests for success after failures, giving up after the last attempt and stopping early with `shouldRetry`. Copy it from the [snippet page](/snippets/function/retry) or install it:
+
+```bash
+npx shadcn@latest add https://www.quicksnip.app/r/retry.json
+```
+
+If you only need a promise-based delay, see [Sleep](/snippets/function/sleep).

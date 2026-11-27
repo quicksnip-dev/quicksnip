@@ -10,7 +10,7 @@ export const metadata: Metadata = pageMetadata({
   path: "/privacy",
 });
 
-const UPDATED = "2026-11-24";
+const UPDATED = "2026-11-27";
 
 export default function PrivacyPage() {
   return (
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
         "We use Vercel Web Analytics and Speed Insights to count visits and measure page speed. They use no cookies and don't identify you.",
         "Your browser stores two small preferences: your theme and whether the snippet sidebar is open.",
         "Vercel hosts the site and keeps short-lived server logs (IP address, browser, page requested) to keep it running and secure. Namecheap manages our domain.",
-        "Contributor avatars load from GitHub, so GitHub can see those requests.",
+        "Contributor avatars load from GitHub and the footer badge loads from Product Hunt, so they can see those requests.",
         "If you contribute, your GitHub username is shown publicly as the author. That is how open source works.",
       ]}
     >
@@ -130,11 +130,16 @@ export default function PrivacyPage() {
           your IP address and browser details when those images load.
         </li>
         <li>
+          <strong>Product Hunt</strong>: the Product Hunt badge in the footer loads from{" "}
+          <code>api.producthunt.com</code>, so Product Hunt receives your IP address and browser details when it loads. See{" "}
+          <Link href="https://www.producthunt.com/privacy">Product Hunt&apos;s privacy policy</Link>.
+        </li>
+        <li>
           <strong>YouTube and Ko-fi images</strong>: these are fetched and resized by our own server, so your browser does
           not contact YouTube or Ko-fi to display them.
         </li>
         <li>
-          <strong>External links</strong>: links to GitHub, Discord, YouTube, Ko-fi and other sites are governed by those
+          <strong>External links</strong>: links to GitHub, Discord, Reddit, YouTube, Ko-fi and other sites are governed by those
           sites&apos; own privacy policies once you follow them.
         </li>
       </ul>

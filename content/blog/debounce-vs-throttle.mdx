@@ -1,0 +1,201 @@
+---
+title: "Debounce vs throttle in JavaScript: the difference, with examples"
+description: "Debounce waits for a pause, throttle sets a pace. Learn which one to use for search inputs, scroll, resize and autosave, with typed TypeScript implementations and the React mistakes to avoid."
+date: "2026-11-27"
+featured: true
+tags: ["javascript", "typescript", "react", "performance"]
+snippets: ["function/debounce", "function/throttle"]
+---
+
+Some events fire far more often than your code needs to react to them. A user typing "react hooks" triggers 11 `input` events. Scrolling a page can trigger `scroll` 60+ times a second. Running a network request or a layout calculation on every one of those is wasteful, and sometimes it is visibly slow.
+
+Debounce and throttle both reduce how often a function runs. They do it in different ways, and picking the wrong one produces bugs that feel "laggy" rather than broken, so they are easy to miss.
+
+## The short answer
+
+- **Debounce** runs the function once, **after the events stop** for a set time. 10 keystrokes in quick succession produce 1 call.
+- **Throttle** runs the function **at most once per interval** while events keep coming. 2 seconds of scrolling with a 100 ms throttle produces about 20 calls.
+
+| Situation | Use | Why |
+| --- | --- | --- |
+| Search-as-you-type | Debounce | You only care about the final query |
+| Autosave a form or editor | Debounce | Save when the user pauses |
+| Validate a field (e.g. "username taken?") | Debounce | Avoid one request per keystroke |
+| Window `resize` → recompute layout | Debounce or throttle | Debounce if only the final size matters, throttle if the layout should follow the drag |
+| `scroll` → update a progress bar or sticky header | Throttle | The UI must keep updating while scrolling |
+| `pointermove` / drag | Throttle | Steady updates, bounded cost |
+| Infinite scroll "near bottom?" checks | Throttle | Must fire during the scroll, not after |
+| Button that triggers an expensive action | Neither, use [once](/snippets/function/once) or disable the button | Rate limiting clicks hides a UX problem |
+
+A good rule of thumb: **if the user is waiting for the result while the events are still happening, throttle. If only the final state matters, debounce.**
+
+## Debounce
+
+A debounced function resets a timer on every call. The original function runs only when the timer finishes without being reset.
+
+```ts
+export function debounce<A extends unknown[]>(fn: (...args: A) => void, wait: number) {
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let pending: A | undefined;
+
+  const run = () => {
+    timer = undefined;
+    if (pending) {
+      const args = pending;
+      pending = undefined;
+      fn(...args);
+    }
+  };
+
+  const debounced = (...args: A) => {
+    pending = args;
+    clearTimeout(timer);
+    timer = setTimeout(run, wait);
+  };
+
+  debounced.cancel = () => {
+    clearTimeout(timer);
+    timer = undefined;
+    pending = undefined;
+  };
+
+  debounced.flush = () => {
+    clearTimeout(timer);
+    run();
+  };
+
+  return debounced;
+}
+```
+
+Two extras make this version practical in real apps:
+
+- `cancel()` drops a pending call. You need it when a component unmounts, otherwise the callback can run against state that no longer exists.
+- `flush()` runs the pending call right now. Use it for autosave when the user closes the tab or navigates away, so the last edit isn't lost.
+
+```ts
+const save = debounce((draft: string) => api.saveDraft(draft), 800);
+
+editor.on("change", (text) => save(text));
+window.addEventListener("pagehide", () => save.flush());
+```
+
+## Throttle
+
+A throttled function runs immediately, then ignores calls until the interval has passed. A careful implementation also remembers the **last** call made during the wait and runs it when the interval ends. Without that "trailing" call, the final scroll position or pointer position can be dropped, and your UI ends up slightly wrong.
+
+```ts
+export function throttle<A extends unknown[]>(fn: (...args: A) => void, wait: number) {
+  let last = 0;
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  let pending: A | undefined;
+
+  const invoke = (args: A) => {
+    last = Date.now();
+    fn(...args);
+  };
+
+  const throttled = (...args: A) => {
+    const remaining = wait - (Date.now() - last);
+    if (remaining <= 0) {
+      clearTimeout(timer);
+      timer = undefined;
+      invoke(args);
+    } else {
+      pending = args;
+      timer ??= setTimeout(() => {
+        timer = undefined;
+        if (pending) invoke(pending);
+        pending = undefined;
+      }, remaining);
+    }
+  };
+
+  throttled.cancel = () => {
+    clearTimeout(timer);
+    timer = undefined;
+    pending = undefined;
+  };
+
+  return throttled;
+}
+```
+
+```ts
+const onScroll = throttle(() => {
+  const progress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+  bar.style.transform = `scaleX(${progress})`;
+}, 100);
+
+window.addEventListener("scroll", onScroll, { passive: true });
+```
+
+For purely visual updates tied to scrolling, `requestAnimationFrame` is often an even better fit than a fixed interval, because it syncs with the display's refresh rate.
+
+## Using them in React without the classic bugs
+
+### Bug 1: a new debounced function on every render
+
+```tsx
+// ❌ Every render creates a new debounce with a new timer, so nothing is debounced.
+function Search() {
+  const [query, setQuery] = useState("");
+  const search = debounce((q: string) => fetchResults(q), 300);
+  return <input value={query} onChange={(e) => { setQuery(e.target.value); search(e.target.value); }} />;
+}
+```
+
+Create it once and cancel it on unmount:
+
+```tsx
+// ✅ One debounced function for the component's lifetime.
+function Search() {
+  const [query, setQuery] = useState("");
+  const search = useMemo(() => debounce((q: string) => fetchResults(q), 300), []);
+
+  useEffect(() => () => search.cancel(), [search]);
+
+  return (
+    <input
+      value={query}
+      onChange={(e) => {
+        setQuery(e.target.value);
+        search(e.target.value);
+      }}
+    />
+  );
+}
+```
+
+### Bug 2: stale closures
+
+If the debounced callback reads props or state, `useMemo(..., [])` freezes the values from the first render. Either pass everything the callback needs as arguments (as above), or store the latest callback in a ref:
+
+```tsx
+const callbackRef = useRef(onSearch);
+callbackRef.current = onSearch;
+
+const search = useMemo(() => debounce((q: string) => callbackRef.current(q), 300), []);
+```
+
+### Bug 3: debouncing the state instead of the side effect
+
+Keep the input itself controlled and instant. Debounce the **expensive part** (the request), never `setQuery`, or typing feels broken.
+
+## Picking the wait time
+
+- Search inputs: 200–400 ms. Shorter feels responsive but sends more requests.
+- Autosave: 500–1500 ms, plus `flush()` on page hide.
+- Scroll and pointer handlers: 50–100 ms, or one animation frame.
+- Resize: 100–250 ms.
+
+## Get the code
+
+Both functions above are verified QuickSnip snippets: typed, dependency-free and covered by unit tests (including `cancel` and `flush`). Copy them from the snippet pages, or install them into your project's `lib` folder:
+
+```bash
+npx shadcn@latest add https://www.quicksnip.app/r/debounce.json https://www.quicksnip.app/r/throttle.json
+```
+
+- [Debounce](/snippets/function/debounce)
+- [Throttle](/snippets/function/throttle)

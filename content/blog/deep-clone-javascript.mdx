@@ -1,0 +1,133 @@
+---
+title: "How to deep clone an object in JavaScript (and when structuredClone isn't enough)"
+description: "Spread, JSON.parse(JSON.stringify()), structuredClone or a custom function? What each one copies, what it silently breaks, and which to use in 2026."
+date: "2026-11-27"
+featured: true
+tags: ["javascript", "typescript", "objects"]
+snippets: ["object/deep-clone", "object/deep-merge"]
+---
+
+Copying an object in JavaScript looks simple until a nested change shows up somewhere you didn't expect it. This guide covers the four common ways to copy an object, exactly what each one gets wrong, and a short decision list at the end.
+
+## Shallow vs deep copies
+
+A **shallow copy** creates a new top-level object, but nested objects are still shared with the original:
+
+```ts
+const original = { name: "Ada", settings: { theme: "dark" } };
+const copy = { ...original };
+
+copy.settings.theme = "light";
+console.log(original.settings.theme); // "light" 😬
+```
+
+`{ ...obj }`, `Object.assign({}, obj)` and `[...arr]` are all shallow. They're perfect when the object is flat, or when you replace nested values instead of mutating them (which is what React and Redux reducers do).
+
+A **deep copy** recursively copies every nested object, so the copy and the original share nothing.
+
+## Option 1: `structuredClone` (use this by default)
+
+```ts
+const copy = structuredClone(original);
+```
+
+`structuredClone` is built into every modern browser, Node.js 17+, Deno and Bun. It handles a lot that older tricks don't:
+
+- `Date`, `RegExp`, `Map`, `Set`, `ArrayBuffer`, typed arrays and `Error` (plus `Blob` and `File` in browsers)
+- `undefined`, `NaN`, `Infinity` and `BigInt`
+- **Circular references**
+
+What it doesn't do:
+
+- **Functions throw** a `DataCloneError`, including methods on objects. DOM nodes throw too.
+- **Class instances become plain objects.** The prototype is dropped, so `copy instanceof User` is `false` and methods are gone.
+- **Getters run and setters are lost.** A getter's current value is copied as a normal property.
+- **Symbol keys and non-enumerable properties are skipped.**
+
+For JSON-like data (API responses, form state, config), none of that matters, and `structuredClone` is the right choice.
+
+## Option 2: `JSON.parse(JSON.stringify(obj))` (avoid)
+
+This was the go-to trick for years. It only works correctly for data that is already pure JSON, and it fails **silently** otherwise:
+
+```ts
+const input = {
+  createdAt: new Date("2026-01-01"),
+  tags: new Set(["a", "b"]),
+  retries: undefined,
+  ratio: NaN,
+};
+
+JSON.parse(JSON.stringify(input));
+// {
+//   createdAt: "2026-01-01T00:00:00.000Z",  ← string, not a Date
+//   tags: {},                               ← Set became an empty object
+//   ratio: null                             ← NaN became null
+// }                                         ← `retries` vanished
+```
+
+It also throws on circular references and on `BigInt`. There's no reason to reach for it now that `structuredClone` exists.
+
+## Option 3: lodash `cloneDeep`
+
+`_.cloneDeep` handles almost everything and keeps prototypes. If lodash is already in your bundle, it's a fine choice. Adding a dependency only for deep cloning usually isn't worth it.
+
+## Option 4: a small custom function
+
+You need your own function when `structuredClone` isn't available (very old runtimes) or when you want to **keep prototypes** and copy **symbol keys**. Here is a typed version that handles Dates, RegExps, Maps, Sets and circular references:
+
+```ts
+export function deepClone<T>(value: T, seen = new WeakMap<object, unknown>()): T {
+  if (value === null || typeof value !== "object") return value;
+  if (seen.has(value)) return seen.get(value) as T;
+
+  if (value instanceof Date) return new Date(value.getTime()) as T;
+  if (value instanceof RegExp) return new RegExp(value.source, value.flags) as T;
+
+  if (value instanceof Map) {
+    const out = new Map();
+    seen.set(value, out);
+    value.forEach((v, k) => out.set(deepClone(k, seen), deepClone(v, seen)));
+    return out as T;
+  }
+  if (value instanceof Set) {
+    const out = new Set();
+    seen.set(value, out);
+    value.forEach((v) => out.add(deepClone(v, seen)));
+    return out as T;
+  }
+
+  const out = (Array.isArray(value) ? [] : Object.create(Object.getPrototypeOf(value))) as Record<
+    PropertyKey,
+    unknown
+  >;
+  seen.set(value, out);
+  for (const key of Reflect.ownKeys(value)) {
+    out[key] = deepClone((value as Record<PropertyKey, unknown>)[key], seen);
+  }
+  return out as T;
+}
+```
+
+Three details are easy to get wrong when writing one from scratch:
+
+1. **The `WeakMap` of seen objects.** Without it, a circular reference causes infinite recursion and a stack overflow. With it, the copy has the same cycle as the original.
+2. **`Object.create(Object.getPrototypeOf(value))`** keeps the prototype, so class instances still have their methods.
+3. **`Reflect.ownKeys`** includes symbol keys, which `Object.keys` and `for...in` skip.
+
+Functions are returned as-is (shared, not copied), which is almost always what you want.
+
+## Which one should you use?
+
+1. **Flat object, or you're updating immutably?** Spread: `{ ...obj, field: value }`.
+2. **Nested, JSON-like data?** `structuredClone(obj)`.
+3. **Need class instances to stay instances, or symbol keys?** A custom `deepClone` (above) or lodash.
+4. **Combining two nested objects rather than copying one?** That's a merge, not a clone: see [Deep Merge](/snippets/object/deep-merge).
+
+## Get the code
+
+The `deepClone` function above is a verified QuickSnip snippet with unit tests for nested structures, Dates, Maps, Sets and circular references. Copy it from the [snippet page](/snippets/object/deep-clone) or install it:
+
+```bash
+npx shadcn@latest add https://www.quicksnip.app/r/deep-clone.json
+```

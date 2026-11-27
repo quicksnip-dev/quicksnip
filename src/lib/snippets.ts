@@ -23,6 +23,16 @@ export function getSnippet(category: string, slug: string): FullSnippet | null {
   return JSON.parse(fs.readFileSync(file, "utf-8"));
 }
 
+/** Live project numbers for the homepage. */
+export function getStats() {
+  const snippets = getSnippetIndex();
+  return {
+    snippets: snippets.length,
+    verified: snippets.filter((s) => s.verified).length,
+    contributors: new Set(snippets.flatMap((s) => s.contributors)).size,
+  };
+}
+
 /** Only the fields the list UI needs, to keep the page payload small. */
 export function getListSnippets(category?: string): ListSnippet[] {
   return getSnippetIndex()

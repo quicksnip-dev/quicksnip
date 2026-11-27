@@ -2,8 +2,10 @@ import Features from "@/components/layouts/features";
 import Hero from "@/components/layouts/hero";
 import AvailableFor from "@/components/layouts/available-for";
 import Sponsor from "@/components/layouts/sponsor";
+import FeaturedPosts from "@/components/layouts/featured-posts";
+import Stats from "@/components/layouts/stats";
 import JsonLd from "@/components/ui/json-ld";
-import { DISCORD_URL, GITHUB_URL, SITE_URL, YOUTUBE_URL } from "@/data/meta";
+import { AUTHOR, DISCORD_URL, GITHUB_URL, REDDIT_URL, SITE_URL, YOUTUBE_URL } from "@/data/meta";
 
 export default function Home() {
   return (
@@ -28,14 +30,17 @@ export default function Home() {
             name: "QuickSnip",
             url: SITE_URL,
             logo: `${SITE_URL}/icon-512.png`,
-            sameAs: [GITHUB_URL, DISCORD_URL, YOUTUBE_URL],
+            sameAs: [GITHUB_URL, DISCORD_URL, REDDIT_URL, YOUTUBE_URL],
+            founder: { "@type": "Person", name: AUTHOR.name, url: AUTHOR.github, sameAs: [AUTHOR.youtube] },
           },
         ]}
       />
       <Hero />
       <Features />
       <AvailableFor />
+      <FeaturedPosts />
       <Sponsor />
+      <Stats />
     </>
   );
 }

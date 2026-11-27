@@ -4,6 +4,10 @@ export const DISCORD_URL = "https://discord.com/invite/Nm5K46yUy5";
 export const SPONSOR_URL = "https://ko-fi.com/D1D217QALD";
 export const CONTACT_EMAIL = "technophilechannelyt+quicksnip@gmail.com";
 export const YOUTUBE_URL = "https://www.youtube.com/@technoph1le";
+/** Community subreddit. Update if the final name differs. */
+export const REDDIT_URL = "https://www.reddit.com/r/quicksnip";
+/** The creator of QuickSnip. */
+export const AUTHOR = { name: "Technophile", github: "https://github.com/technoph1le", youtube: YOUTUBE_URL };
 
 export const LANGUAGE_NAMES: Record<string, string> = {
   ts: "TypeScript",

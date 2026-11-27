@@ -13,7 +13,8 @@
     "snippets": "tsx scripts/build-snippets.ts",
     "snippets:check": "tsx scripts/build-snippets.ts --check",
     "predev": "tsx scripts/build-snippets.ts",
-    "typecheck:snippets": "tsc -p snippets/tsconfig.json"
+    "typecheck:snippets": "tsc -p snippets/tsconfig.json",
+    "indexnow": "tsx scripts/indexnow.ts"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.11",

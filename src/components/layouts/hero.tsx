@@ -2,13 +2,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "../ui/button";
 import { GITHUB_URL } from "@/data/meta";
-import { getSnippetIndex } from "@/lib/snippets";
 
 const Hero = () => {
-  const snippets = getSnippetIndex();
-  const verified = snippets.filter((s) => s.verified).length;
-  const contributors = new Set(snippets.flatMap((s) => s.contributors)).size;
-
   return (
     <section className="overflow-x-clip">
       <div className="wrapper grid grid-cols-1 gap-8 py-12 md:py-20 lg:grid-cols-[1.1fr_1fr] items-center">
@@ -43,19 +38,6 @@ const Hero = () => {
               </Link>
             </Button>
           </div>
-          <dl className="flex flex-wrap gap-x-8 gap-y-2 pt-2 text-sm">
-            {[
-              [snippets.length, "snippets"],
-              [verified, "verified by tests"],
-              [contributors, "contributors"],
-            ].map(([value, label]) => (
-              <div key={label} className="flex items-baseline gap-1.5">
-                <dt className="sr-only">{label}</dt>
-                <dd className="text-2xl font-bold">{value}</dd>
-                <span className="text-muted-foreground">{label}</span>
-              </div>
-            ))}
-          </dl>
         </article>
 
         <div className="relative isolate min-w-0">
